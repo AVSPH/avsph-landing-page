@@ -63,7 +63,7 @@ export default function ServicesSection() {
     ];
 
     return (
-        <section id="services" className="section" style={{ background: "var(--background)" }}>
+        <section id="services" className="section" style={{ background: "linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%)" }}>
             <div className="container">
                 <div className="text-center mb-16">
                     <span
@@ -85,27 +85,24 @@ export default function ServicesSection() {
                     {services.map((service, index) => (
                         <div
                             key={index}
-                            className="card group cursor-pointer"
-                            style={{
-                                background: `${service.color}15`,
-                                borderColor: `${service.color}30`,
-                            }}
+                            className="group p-6 rounded-2xl bg-[var(--card)] border border-[var(--border-light)] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                         >
                             <div
-                                className="w-14 h-14 rounded-xl flex items-center justify-center mb-4 transition-transform group-hover:scale-110"
-                                style={{                                
-                                    color: service.color,                                 
+                                className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110"
+                                style={{
+                                    background: `${service.color}10`,
+                                    color: service.color,
                                 }}
                             >
                                 {service.icon}
                             </div>
                             <h3
-                                className="font-semibold mb-2 text-lg"
+                                className="font-semibold mb-3 text-lg"
                                 style={{ color: "var(--primary)" }}
                             >
                                 {service.title}
                             </h3>
-                            <p className="text-sm" style={{ color: "var(--muted)" }}>
+                            <p className="text-sm leading-relaxed" style={{ color: "var(--foreground-light)" }}>
                                 {service.description}
                             </p>
                         </div>

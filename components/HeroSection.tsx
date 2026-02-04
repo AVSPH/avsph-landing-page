@@ -1,206 +1,135 @@
+"use client"
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, ArrowRight } from "lucide-react";
+import { ArrowRight, CheckCircle2, Star } from "lucide-react";
+import { motion } from "motion/react";
 
 export default function HeroSection() {
-  const trustBadges = [
-    { value: "4+", label: "Years Experience" },
-    { value: "126+", label: "Happy Clients" },
-    { value: "8+", label: "Months Avg. Retention" },
-    { value: "24/7", label: "Support Available" },
+  const staffImages = [
+    "/assets/hero-images/hero-1.JPG",
+    "/assets/hero-images/hero-2.JPG",
+    "/assets/hero-images/hero-3.JPG",
+    "/assets/hero-images/hero-4.JPG",
+    "/assets/hero-team.png",
   ];
+
+  // duplicate for infinite scroll
+  const column1 = [...staffImages, ...staffImages, ...staffImages];
+  const column2 = [...staffImages.reverse(), ...staffImages, ...staffImages];
 
   return (
     <section
-      id="home"
-      className="relative min-h-screen flex items-center overflow-hidden"
-      style={{ background: "var(--background)" }}
+      className="relative min-h-[90vh] flex items-center overflow-hidden pt-20"
+      style={{ background: "linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%)" }}
     >
-      {/* Background Pattern */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Gradient Overlay */}
+      {/* Background Decor */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
-          className="absolute top-0 right-0 w-1/2 h-full opacity-10"
-          style={{
-            background:
-              "radial-gradient(circle at 70% 30%, var(--secondary) 0%, transparent 50%)",
-          }}
+          className="absolute top-0 right-0 w-[70%] h-full bg-gradient-to-bl from-blue-50/50 to-transparent"
+          style={{ transform: 'skewX(-20deg) translateX(20%)' }}
         />
-        <div
-          className="absolute bottom-0 left-0 w-1/2 h-1/2 opacity-5"
-          style={{
-            background:
-              "radial-gradient(circle at 30% 70%, var(--accent) 0%, transparent 50%)",
-          }}
-        />
-        {/* Decorative Shapes */}
-        <svg
-          className="absolute top-20 right-10 w-64 h-64 opacity-5 animate-float"
-          viewBox="0 0 200 200"
-        >
-          <circle
-            cx="100"
-            cy="100"
-            r="80"
-            stroke="#00B4D8"
-            strokeWidth="2"
-            fill="none"
-          />
-          <circle
-            cx="100"
-            cy="100"
-            r="60"
-            stroke="#0F2A4A"
-            strokeWidth="2"
-            fill="none"
-          />
-          <circle
-            cx="100"
-            cy="100"
-            r="40"
-            stroke="#F5A623"
-            strokeWidth="2"
-            fill="none"
-          />
-        </svg>
-        <svg
-          className="absolute bottom-40 left-20 w-48 h-48 opacity-5"
-          viewBox="0 0 200 200"
-        >
-          <polygon
-            points="100,20 180,180 20,180"
-            stroke="#0F2A4A"
-            strokeWidth="2"
-            fill="none"
-          />
-        </svg>
       </div>
 
-      <div className="container relative z-10 py-32">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div className="animate-fade-in">
-            <div
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-6"
-              style={{
-                background: "rgba(0, 180, 216, 0.1)",
-                color: "var(--secondary-dark)",
-              }}
-            >
-              <span className="w-2 h-2 rounded-full bg-[var(--secondary)] animate-pulse" />
-              Virtual Staffing Solution
-            </div>
+      {/* Mobile Background Grid - Visible on mobile < lg */}
+      <div className="h-[100vh] absolute inset-0 z-0 lg:hidden overflow-hidden opacity-90 pointer-events-none">
+        <div className="relative w-full h-full flex gap-4 mask-gradient-vertical">
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="w-1/2 space-y-4 animate-marquee-up"
+          >
+            {column1.map((src, i) => (
+              <div key={i} className="relative aspect-[3/4] rounded-lg overflow-hidden">
+                <Image src={src} alt="Team Member" fill className="object-cover" />
+              </div>
+            ))}
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: -100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            className="w-1/2 space-y-4 mt-[-50px] animate-marquee-down"
+          >
+            {column2.map((src, i) => (
+              <div key={i} className="relative aspect-[3/4] rounded-lg overflow-hidden">
+                <Image src={src} alt="Team Member" fill className="object-cover" />
+              </div>
+            ))}
+          </motion.div>
+        </div>
+        {/* Mobile Overlay for Readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/50 to-white/90" />
+      </div>
 
-            <h1 className="mb-6">
-              Hire Once. <span className="gradient-text">Scale Fast.</span>
-              Cancel Anytime.
+      <div className="container relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+
+          {/* Left Content */}
+          <div className="max-w-2xl animate-fade-in relative z-20 text-center lg:text-left mx-auto lg:mx-0">
+
+            <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight text-slate-900">
+              Hire Once. <span className="text-blue-600">Scale Fast.</span> Cancel Anytime.
             </h1>
 
-            <p
-              className="text-lg md:text-xl mb-8 max-w-xl"
-              style={{ color: "var(--foreground-light)" }}
-            >
-              We help service-based businesses reclaim 20+ hours a week by
-              building and managing a reliable offshore team for them without
-              hiring headaches, long contracts, or HR stress.
+            <p className="text-lg lg:text-xl text-slate-600 mb-10 leading-relaxed max-w-lg">
+              We help service-based businesses reclaim 20+ hours a week by building and managing a reliable offshore team for them without hiring headaches, long contracts, or HR stress.
             </p>
 
-            <div className="flex flex-wrap gap-4 mb-6">
-              <Link href="#contact" className="btn-primary">
-                <Phone className="w-5 h-5" />
-                Book a Free Call
+            <div className="flex flex-col sm:flex-row gap-4 mb-12 justify-center lg:justify-start">
+              <Link href="#contact" className="btn-primary rounded-full px-8 py-4 text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">
+                Book a Strategy Call
               </Link>
-              <Link href="#services" className="btn-secondary">
-                Explore Services
-                <ArrowRight className="w-5 h-5" />
+              <Link href="#services" className="px-8 py-4 bg-white rounded-full font-semibold border-2 border-slate-200 text-slate-700 hover:border-blue-600 hover:text-blue-600 transition-all flex items-center justify-center gap-2">
+                View Services
               </Link>
             </div>
+          </div>
 
-            {/* Social Proof */}
-            <div
-              className="flex items-center gap-2 mb-8 text-sm"
-              style={{ color: "var(--foreground-light)" }}
+          {/* Right Content - Dynamic Sliding Grid (Desktop Only) */}
+          <div className="relative h-[600px] lg:h-[700px] w-full hidden lg:flex gap-6 overflow-hidden mask-gradient-vertical">
+            {/* Gradient Masks */}
+            <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-b from-[#EFF6FF] via-transparent to-[#EFF6FF] h-full w-full" style={{ background: 'linear-gradient(to bottom, #F8FAFC 0%, transparent 20%, transparent 80%, #EFF6FF 100%)' }} />
+
+            {/* Column 1 - Up */}
+            <motion.div
+              initial={{ opacity: 0, y: 100 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="w-1/2 space-y-6 animate-marquee-up opacity-90 pause-on-hover"
             >
-
-              <span className="ml-1">
-                Trusted by founders across <strong>US, AU & UK</strong>
-              </span>
-            </div>
-
-            {/* Trust Badges */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {trustBadges.map((badge, index) => (
-                <div key={index} className="trust-badge">
-                  <span className="trust-badge-value">{badge.value}</span>
-                  <span className="trust-badge-label">{badge.label}</span>
+              {column1.map((src, i) => (
+                <div key={i} className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group cursor-pointer">
+                  <Image src={src} alt="Team Member" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <div className="absolute inset-0 bg-blue-900/10 group-hover:bg-transparent transition-colors" />
                 </div>
               ))}
-            </div>
-          </div>
+            </motion.div>
 
-          {/* Right Content - Hero Image */}
-          <div className="relative animate-slide-up hidden lg:block">
-            <div
-              className="relative rounded-2xl overflow-hidden shadow-2xl"
-              style={{
-                background:
-                  "linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%)",
-              }}
+            {/* Column 2 - Down */}
+            <motion.div
+              initial={{ opacity: 0, y: -100 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+              className="w-1/2 space-y-6 mt-[-100px] animate-marquee-down pause-on-hover"
             >
-              {/* Team Photo */}
-              <div className="relative">
-                <Image
-                  src="/assets/hero-team.png"
-                  alt="Advanced Virtual Staff Team - Professional virtual assistants ready to support your business"
-                  width={600}
-                  height={450}
-                  className="w-full h-auto object-cover"
-                  priority
-                />
-                {/* Gradient Overlay at bottom */}
-                <div
-                  className="absolute bottom-0 left-0 right-0 h-24"
-                  style={{
-                    background:
-                      "linear-gradient(to top, var(--primary) 0%, transparent 100%)",
-                  }}
-                />
-                {/* Text overlay */}
-                <div className="absolute bottom-4 left-4 right-4 text-white">
-                  <p className="text-white text-lg font-semibold">
-                    Your Dedicated Team
-                  </p>
-                  <p className="text-white/80 text-sm">
-                    Ready to support your business 24/7
-                  </p>
+              {column2.map((src, i) => (
+                <div key={i} className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group cursor-pointer">
+                  <Image src={src} alt="Team Member" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                  {/* Card Badge */}
+                  {i % 3 === 0 && (
+                    <div className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm p-3 rounded-xl shadow-sm">
+                      <div className="flex items-center gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-green-500" />
+                        <span className="text-xs font-bold text-slate-800">Available Now</span>
+                      </div>
+                    </div>
+                  )}
                 </div>
-              </div>
-            </div>
-            
-                                        {/* Floating Elements */}
-                            <div
-                                className="absolute top-4 right-4 glass rounded-lg px-4 py-2 animate-float"
-                                style={{ animationDelay: "0.5s" }}
-                            >
-                                <span className="text-sm font-medium" style={{ color: "var(--primary)" }}>
-                                    ✓ 24/7 Support
-                                </span>
-                            </div>
-                            <div
-                                className="absolute bottom-4 left-4 glass rounded-lg px-4 py-2 animate-float"
-                                style={{ animationDelay: "1s" }}
-                            >
-                                <span className="text-sm font-medium" style={{ color: "var(--primary)" }}>
-                                    ✓ Cancel Anytime
-                                </span>
-                            </div>
-
-            {/* Decorative background element */}
-            <div
-              className="absolute -z-10 top-6 left-6 w-full h-full rounded-2xl"
-              style={{ background: "var(--secondary)", opacity: 0.15 }}
-            />
+              ))}
+            </motion.div>
           </div>
+
         </div>
       </div>
     </section>

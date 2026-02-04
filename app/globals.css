@@ -35,23 +35,25 @@
 }
 
 :root {
-  /* Primary - Deep Navy Blue */
-  --primary: #0F2A4A;
-  --primary-light: #1E3A5F;
-  --primary-dark: #091D33;
+  /* Primary - Dark Blue from Logo */
+  --primary: #044465;
+  --primary-light: #0A5C87;
+  --primary-dark: #022D42;
 
-  /* Secondary - Vibrant Teal */
-  --secondary: #00B4D8;
-  --secondary-light: #48CAE4;
-  --secondary-dark: #0096B7;
+  /* Secondary - Deep Blue */
+  --secondary: #003f62;
+  --secondary-light: #004E7A;
+  --secondary-dark: #002B45;
 
-  /* Accent - Warm Gold */
-  --accent: #F5A623;
-  --accent-light: #FFBF47;
-  --accent-dark: #D4890E;
+  /* Accent - Orange (Kept for contrast) */
+  --accent: #F97316;
+  --accent-light: #FB923C;
+  --accent-dark: #C2410C;
 
   /* Backgrounds */
   --background: #F8FAFC;
+  --background-section: #cdd9e0;
+  /* From logo light grayish blue */
   --background-alt: #EEF2F6;
   --card: #FFFFFF;
 
@@ -279,6 +281,18 @@
     }
   }
 
+  @keyframes float-delayed {
+
+    0%,
+    100% {
+      transform: translateY(0) translateX(0);
+    }
+
+    50% {
+      transform: translateY(-8px) translateX(5px);
+    }
+  }
+
   /* Gradient Backgrounds */
   .bg-gradient-primary {
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
@@ -323,5 +337,84 @@
     100% {
       transform: translateX(0);
     }
+  }
+
+  /* Vertical Marquees */
+  .animate-marquee-up {
+    animation: marquee-up 40s linear infinite;
+  }
+
+  .animate-marquee-down {
+    animation: marquee-down 40s linear infinite;
+  }
+
+  @keyframes marquee-up {
+    0% {
+      transform: translateY(0);
+    }
+
+    100% {
+      transform: translateY(-50%);
+    }
+  }
+
+  @keyframes marquee-down {
+    0% {
+      transform: translateY(-50%);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .pause-on-hover:hover {
+    animation-play-state: paused;
+  }
+
+  .mask-gradient-vertical {
+    mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+  }
+
+  /* 3D Isometric Utilities */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+
+  .rotate-x-60 {
+    transform: rotateX(60deg);
+  }
+
+  .rotate-z-45 {
+    transform: rotateZ(-45deg);
+  }
+
+  .translate-z-10 {
+    transform: translateZ(10px);
+  }
+
+  .translate-z-20 {
+    transform: translateZ(20px);
+  }
+
+  .translate-z-30 {
+    transform: translateZ(30px);
+  }
+
+  .translate-z-40 {
+    transform: translateZ(40px);
+  }
+
+  .translate-z-50 {
+    transform: translateZ(50px);
+  }
+
+  .translate-z-60 {
+    transform: translateZ(60px);
   }
 }

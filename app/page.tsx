@@ -2,7 +2,7 @@ import Header from "../components/Header";
 import HeroSection from "../components/HeroSection";
 import ChallengeSection from "../components/ChallengeSection";
 import ServicesSection from "../components/ServicesSection";
-import HowItWorksSection from "../components/HowItWorksSection";
+import JourneySection from "../components/JourneySection";
 import WhyChooseUsSection from "../components/WhyChooseUsSection";
 import TestimonialsSection from "../components/TestimonialsSection";
 import CTASection from "../components/CTASection";
@@ -14,9 +14,9 @@ export default function Home() {
       <Header />
       <main>
         <HeroSection />
-        <ChallengeSection />
         <ServicesSection />
-        <HowItWorksSection />
+        <ChallengeSection />
+        <JourneySection />
         <WhyChooseUsSection />
         <TestimonialsSection />
         <CTASection />

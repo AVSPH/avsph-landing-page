@@ -1,17 +1,15 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Inter } from "next/font/google";
+import { Lexend, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+const lexend = Lexend({
   variable: "--font-heading",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
 });
 
-const inter = Inter({
+const sourceSans3 = Source_Sans_3({
   variable: "--font-body",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
@@ -33,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${plusJakartaSans.variable} ${inter.variable} antialiased`}
+        className={`${lexend.variable} ${sourceSans3.variable} antialiased`}
       >
         {children}
       </body>

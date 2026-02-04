@@ -105,7 +105,7 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden glass mt-2 mx-4 rounded-xl p-4">
+        <div className="lg:hidden bg-white mt-2 mx-4 rounded-xl p-4">
           <nav className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <Link

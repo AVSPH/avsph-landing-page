@@ -46,7 +46,7 @@ export default function ChallengeSection() {
                                     <div
                                         className="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center"
                                         style={{
-                                            background: "rgba(0, 180, 216, 0.1)",
+                                            background: "rgba(4, 68, 101, 0.1)", // derived from new secondary
                                             color: "var(--secondary)",
                                         }}
                                     >
@@ -128,6 +128,6 @@ export default function ChallengeSection() {
                     </div>
                 </div>
             </div>
-        </section>
+        </section >
     );
 }
