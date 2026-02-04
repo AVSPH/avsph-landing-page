@@ -5,7 +5,8 @@ import { CheckCircle, ArrowRight, Phone } from "lucide-react";
 
 export default function CTASection() {
   const [formData, setFormData] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
     company: "",
   });
@@ -28,6 +29,23 @@ export default function CTASection() {
 
       if (!response.ok) {
         console.error("Error response:", result);
+
+        // Handle duplicate contact error
+        if (result.error === "duplicate") {
+          alert(
+            result.message ||
+              "You've already submitted your information. We'll be in touch soon!",
+          );
+          // Reset form
+          setFormData({
+            firstName: "",
+            lastName: "",
+            email: "",
+            company: "",
+          });
+          return;
+        }
+
         throw new Error(result.error || "Failed to create contact");
       }
 
@@ -36,7 +54,8 @@ export default function CTASection() {
 
       // Reset form
       setFormData({
-        name: "",
+        firstName: "",
+        lastName: "",
         email: "",
         company: "",
       });
@@ -141,30 +160,58 @@ export default function CTASection() {
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium mb-2"
-                  style={{ color: "var(--foreground)" }}
-                >
-                  Full Name *
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  required
-                  className="w-full px-4 py-3 rounded-lg border transition-colors focus:outline-none focus:border-[var(--secondary)]"
-                  style={{
-                    background: "var(--background)",
-                    borderColor: "var(--border)",
-                    color: "var(--foreground)",
-                  }}
-                  placeholder="John Smith"
-                  value={formData.name}
-                  onChange={(e) =>
-                    setFormData({ ...formData, name: e.target.value })
-                  }
-                />
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label
+                    htmlFor="firstName"
+                    className="block text-sm font-medium mb-2"
+                    style={{ color: "var(--foreground)" }}
+                  >
+                    First Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="firstName"
+                    required
+                    className="w-full px-4 py-3 rounded-lg border transition-colors focus:outline-none focus:border-[var(--secondary)]"
+                    style={{
+                      background: "var(--background)",
+                      borderColor: "var(--border)",
+                      color: "var(--foreground)",
+                    }}
+                    placeholder="John"
+                    value={formData.firstName}
+                    onChange={(e) =>
+                      setFormData({ ...formData, firstName: e.target.value })
+                    }
+                  />
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="lastName"
+                    className="block text-sm font-medium mb-2"
+                    style={{ color: "var(--foreground)" }}
+                  >
+                    Last Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="lastName"
+                    required
+                    className="w-full px-4 py-3 rounded-lg border transition-colors focus:outline-none focus:border-[var(--secondary)]"
+                    style={{
+                      background: "var(--background)",
+                      borderColor: "var(--border)",
+                      color: "var(--foreground)",
+                    }}
+                    placeholder="Smith"
+                    value={formData.lastName}
+                    onChange={(e) =>
+                      setFormData({ ...formData, lastName: e.target.value })
+                    }
+                  />
+                </div>
               </div>
 
               <div>

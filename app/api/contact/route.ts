@@ -3,17 +3,12 @@ import { NextRequest, NextResponse } from "next/server";
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, email, company } = body;
-
-    // Split name into first and last name
-    const nameParts = name.trim().split(" ");
-    const firstName = nameParts[0] || "";
-    const lastName = nameParts.slice(1).join(" ") || "";
+    const { firstName, lastName, email, company } = body;
 
     const contactData = {
       firstName,
       lastName,
-      name,
+      name: `${firstName} ${lastName}`.trim(),
       email,
       locationId: "v5B8RwBmXC6dQlHStfhH",
       companyName: company || undefined,
@@ -36,6 +31,23 @@ export async function POST(request: NextRequest) {
 
     if (!ghlResponse.ok) {
       console.error("GHL API Error:", responseData);
+
+      // Check if it's a duplicate contact error
+      if (
+        responseData.statusCode === 400 &&
+        responseData.message?.includes("duplicated contacts")
+      ) {
+        return NextResponse.json(
+          {
+            error: "duplicate",
+            message:
+              "You've already submitted your information. We'll be in touch soon!",
+            contactId: responseData.meta?.contactId,
+          },
+          { status: 400 },
+        );
+      }
+
       return NextResponse.json(
         { error: "Failed to create contact", details: responseData },
         { status: ghlResponse.status },
