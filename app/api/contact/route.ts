@@ -1,0 +1,53 @@
+import { NextRequest, NextResponse } from "next/server";
+
+export async function POST(request: NextRequest) {
+  try {
+    const body = await request.json();
+    const { name, email, company } = body;
+
+    // Split name into first and last name
+    const nameParts = name.trim().split(" ");
+    const firstName = nameParts[0] || "";
+    const lastName = nameParts.slice(1).join(" ") || "";
+
+    const contactData = {
+      firstName,
+      lastName,
+      name,
+      email,
+      locationId: "v5B8RwBmXC6dQlHStfhH",
+      companyName: company || undefined,
+      source: "AVSPH Website",
+      tags: ["Landing Page Lead"],
+    };
+
+    const ghlResponse = await fetch(`${process.env.GHL_BASE_URL}contacts/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Version: "2021-07-28",
+        Authorization: `Bearer ${process.env.GHL_TOKEN}`,
+      },
+      body: JSON.stringify(contactData),
+    });
+
+    const responseData = await ghlResponse.json();
+
+    if (!ghlResponse.ok) {
+      console.error("GHL API Error:", responseData);
+      return NextResponse.json(
+        { error: "Failed to create contact", details: responseData },
+        { status: ghlResponse.status },
+      );
+    }
+
+    return NextResponse.json({ success: true, data: responseData });
+  } catch (error) {
+    console.error("Error creating contact:", error);
+    return NextResponse.json(
+      { error: "Internal server error" },
+      { status: 500 },
+    );
+  }
+}
