@@ -105,19 +105,27 @@ export const Header = () => {
   return (
     <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0">
       <h1 className="text-4xl md:text-7xl font-bold text-slate-900 leading-tight">
-        The team behind your <br /> <span className="text-[var(--primary)]">everyday support</span>
+        Building Your Dream Team <br />{" "}
+        <span className="text-[var(--primary)]">in the Philippines</span>
       </h1>
       <p className="max-w-2xl text-base md:text-xl mt-8 text-slate-600">
-        From planning to admin support, we bring steady, reliable help to your daily routine.
-        Clean up your workflow today with our top 1% virtual staff.
+        We assist you in establishing a full-time, committed team in the
+        Philippines, taking care of everything there while you maintain complete
+        control over your operations.
       </p>
 
       {/* Added CTA Buttons to Header */}
       <div className="flex flex-col sm:flex-row gap-4 mt-10">
-        <a href="#contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-white transition-all duration-300 bg-[var(--accent)] hover:-translate-y-1 shadow-lg hover:shadow-xl">
-          Start for Free
+        <a
+          href="#contact"
+          className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-white transition-all duration-300 bg-[var(--accent)] hover:-translate-y-1 shadow-lg hover:shadow-xl"
+        >
+          Book a Free Call
         </a>
-        <a href="#services" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-[var(--primary)] border-2 border-[var(--primary)] transition-all duration-300 hover:bg-[var(--primary)] hover:text-white">
+        <a
+          href="#services"
+          className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-[var(--primary)] border-2 border-[var(--primary)] transition-all duration-300 hover:bg-[var(--primary)] hover:text-white"
+        >
           Explore Services
         </a>
       </div>

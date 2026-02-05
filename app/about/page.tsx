@@ -1,5 +1,3 @@
-"use client";
-
 import Footer from "../../components/Footer";
 import AboutHeroSection from "../../components/about/AboutHeroSection";
 import MissionVisionSection from "../../components/about/MissionVisionSection";
