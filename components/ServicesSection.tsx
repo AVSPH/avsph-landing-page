@@ -63,7 +63,7 @@ export default function ServicesSection() {
     ];
 
     return (
-        <section id="services" className="section" style={{ background: "linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%)" }}>
+        <section id="services" className="section" style={{ background: "#FFFFFF" }}>
             <div className="container">
                 <div className="text-center mb-16">
                     <span
