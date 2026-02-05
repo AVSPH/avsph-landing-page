@@ -5,7 +5,6 @@ import { useParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, Calendar, Tag, Loader2, Clock } from "lucide-react";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getBlogBySlug } from "@/api/blogs.api";
 
@@ -59,7 +58,6 @@ export default function BlogPostPage() {
 
   return (
     <>
-      <Header />
       <main>
         {loading && (
           <section

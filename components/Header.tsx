@@ -1,133 +1,133 @@
 "use client";
-
-import { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, Phone } from "lucide-react";
+import { Phone } from "lucide-react";
+import {
+  Navbar,
+  NavBody,
+  NavItems,
+  MobileNav,
+  MobileNavHeader,
+  MobileNavToggle,
+  MobileNavMenu,
+} from "./ui/resizable-navbar";
 
 export default function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { href: "#home", label: "Home" },
-    { href: "/about", label: "About" },
-    { href: "#services", label: "Services" },
-    { href: "/blog", label: "Blogs" },
-    { href: "/faqs", label: "FAQs" },
+    { link: "/", name: "Home" },
+    { link: "/about", name: "About" },
+    { link: "/#services", name: "Services" },
+    { link: "/blog", name: "Blogs" },
+    { link: "/#faqs", name: "FAQs" },
   ];
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background shadow-md py-3" : "bg-transparent py-5"
-      }`}
-    >
-      <div className="container flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
-          <Image
-            src="/assets/logo.jpeg"
-            alt="Advanced Virtual Staff Logo"
-            width={40}
-            height={40}
-            className="rounded-lg"
-          />
-          <div className="flex flex-col">
-            <span
-              className="text-lg font-bold leading-tight"
-              style={{ color: "var(--primary)" }}
-            >
-              ADVANCED
-            </span>
-            <span
-              className="text-sm font-medium leading-tight"
-              style={{ color: "var(--secondary)" }}
-            >
-              VIRTUAL STAFF
-            </span>
-          </div>
-        </Link>
-
-        {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium transition-colors hover:text-[var(--secondary)]"
-              style={{ color: "var(--foreground)" }}
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
-
-        {/* CTA Button */}
-        <div className="hidden lg:flex items-center gap-4">
-          <Link
-            href="tel:+13183929582"
-            className="flex items-center gap-2 text-sm font-medium"
-            style={{ color: "var(--muted)" }}
-          >
-            <Phone className="w-4 h-4" />
-            +1 (318) 392-9582
-          </Link>
-          <Link
-            href="https://calendly.com/advancedvirtualstaff/30min"
-            className="btn-primary"
-          >
-            Book a Call
-          </Link>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <button
-          className="lg:hidden p-2"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          {isMobileMenuOpen ? (
-            <X className="w-6 h-6" />
-          ) : (
-            <Menu className="w-6 h-6" />
-          )}
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="lg:hidden bg-white mt-2 mx-4 rounded-xl p-4">
-          <nav className="flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium py-2 transition-colors hover:text-[var(--secondary)]"
-                style={{ color: "var(--foreground)" }}
-                onClick={() => setIsMobileMenuOpen(false)}
+    <div className="fixed top-0 left-0 right-0 z-50 w-full">
+      <Navbar className="top-4vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv">
+        <NavBody>
+          {/* Logo Section */}
+          <Link href="/" className="flex items-center gap-2 relative z-50 mr-8">
+            <Image
+              src="/assets/logo.jpeg"
+              alt="Advanced Virtual Staff Logo"
+              width={40}
+              height={40}
+              className="rounded-lg"
+            />
+            <div className="flex flex-col">
+              <span
+                className="text-lg font-bold leading-tight"
+                style={{ color: "var(--primary)" }}
               >
-                {link.label}
-              </Link>
-            ))}
+                ADVANCED
+              </span>
+              <span
+                className="text-sm font-medium leading-tight"
+                style={{ color: "var(--secondary)" }}
+              >
+                VIRTUAL STAFF
+              </span>
+            </div>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <NavItems
+            items={navLinks}
+            className="text-[var(--foreground)]"
+          />
+
+          {/* CTA Buttons */}
+          <div className="hidden lg:flex items-center gap-4 relative z-50 ml-auto">
             <Link
-              href="#contact"
-              className="btn-primary text-center mt-2"
-              onClick={() => setIsMobileMenuOpen(false)}
+              href="https://calendly.com/advancedvirtualstaff/30min"
+              className="px-6 py-2 rounded-full font-semibold text-white transition-all duration-300 shadow-md hover:translate-y-[-2px] hover:shadow-lg"
+              style={{
+                background: "linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%)",
+              }}
             >
               Book a Call
             </Link>
-          </nav>
-        </div>
-      )}
-    </header>
+          </div>
+        </NavBody>
+
+        {/* Mobile Navigation */}
+        <MobileNav visible={true} className="lg:hidden">
+          <MobileNavHeader>
+            <Link href="/" className="flex items-center gap-2">
+              <Image
+                src="/assets/logo.jpeg"
+                alt="Advanced Virtual Staff Logo"
+                width={32}
+                height={32}
+                className="rounded-md"
+              />
+              <div className="flex flex-col">
+                <span
+                  className="text-base font-bold leading-tight"
+                  style={{ color: "var(--primary)" }}
+                >
+                  ADVANCED
+                </span>
+                <span
+                  className="text-xs font-medium leading-tight color-[var(--secondary)]"
+                >
+                  VIRTUAL STAFF
+                </span>
+              </div>
+            </Link>
+            <MobileNavToggle isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />
+          </MobileNavHeader>
+
+          <MobileNavMenu isOpen={isOpen} onClose={() => setIsOpen(false)}>
+            <div className="flex flex-col gap-4 w-full">
+              {navLinks.map((item, idx) => (
+                <Link
+                  key={idx}
+                  href={item.link}
+                  className="text-lg font-medium py-2 border-b border-slate-100"
+                  style={{ color: "var(--foreground)" }}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ))}
+              <Link
+                href="https://calendly.com/advancedvirtualstaff/30min"
+                className="w-full text-center px-6 py-3 rounded-xl font-bold text-white mt-2"
+                style={{
+                  background: "linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%)",
+                }}
+                onClick={() => setIsOpen(false)}
+              >
+                Book a Call
+              </Link>
+            </div>
+          </MobileNavMenu>
+        </MobileNav>
+      </Navbar>
+    </div>
   );
 }

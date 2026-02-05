@@ -1,15 +1,13 @@
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BlogSection from "@/components/BlogSection";
 
 export default function BlogPage() {
   return (
     <>
-      <Header />
-      <main>
+      <main className="pt-32 pb-20">
         <section
           className="section"
-          
+
         >
           <div className="container">
             <div className="text-center mt-16">

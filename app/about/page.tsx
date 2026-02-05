@@ -1,6 +1,5 @@
 "use client";
 
-import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import AboutHeroSection from "../../components/about/AboutHeroSection";
 import MissionVisionSection from "../../components/about/MissionVisionSection";
@@ -12,8 +11,7 @@ import CTASection from "../../components/CTASection";
 export default function AboutPage() {
   return (
     <>
-      <Header />
-      <main>
+      <main className="pt-20">
         <AboutHeroSection />
         <OurStorySection />
         <MilestonesSection />
