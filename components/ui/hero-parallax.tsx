@@ -8,8 +8,6 @@ import {
   MotionValue,
 } from "motion/react";
 
-
-
 export const HeroParallax = ({
   products,
 }: {
@@ -32,27 +30,27 @@ export const HeroParallax = ({
 
   const translateX = useSpring(
     useTransform(scrollYProgress, [0, 1], [0, 1000]),
-    springConfig
+    springConfig,
   );
   const translateXReverse = useSpring(
     useTransform(scrollYProgress, [0, 1], [0, -1000]),
-    springConfig
+    springConfig,
   );
   const rotateX = useSpring(
     useTransform(scrollYProgress, [0, 0.2], [15, 0]),
-    springConfig
+    springConfig,
   );
   const opacity = useSpring(
     useTransform(scrollYProgress, [0, 0.2], [0.2, 1]),
-    springConfig
+    springConfig,
   );
   const rotateZ = useSpring(
     useTransform(scrollYProgress, [0, 0.2], [20, 0]),
-    springConfig
+    springConfig,
   );
   const translateY = useSpring(
     useTransform(scrollYProgress, [0, 0.2], [-700, 500]),
-    springConfig
+    springConfig,
   );
   return (
     <div
@@ -103,7 +101,7 @@ export const HeroParallax = ({
 
 export const Header = () => {
   return (
-    <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0">
+    <div className="max-w-7xl relative mx-auto py-0 md:py-40 px-4 w-full  left-0 top-0">
       <h1 className="text-4xl md:text-7xl font-bold text-slate-900 leading-tight">
         Building Your Dream Team <br />{" "}
         <span className="text-[var(--primary)]">in the Philippines</span>
@@ -128,6 +126,34 @@ export const Header = () => {
         >
           Explore Services
         </a>
+      </div>
+
+      {/* Stats Section */}
+      <div className="grid grid-cols-3 gap-6 max-w-2xl mt-5">
+        <div className="text-center">
+          <div className="text-3xl md:text-4xl font-bold text-[var(--primary)] mb-2">
+            4+
+          </div>
+          <div className="text-sm md:text-base text-slate-600">
+            Years Experience
+          </div>
+        </div>
+        <div className="text-center">
+          <div className="text-3xl md:text-4xl font-bold text-[var(--primary)] mb-2">
+            126+
+          </div>
+          <div className="text-sm md:text-base text-slate-600">
+            Happy Clients
+          </div>
+        </div>
+        <div className="text-center">
+          <div className="text-3xl md:text-4xl font-bold text-[var(--primary)] mb-2">
+            95%
+          </div>
+          <div className="text-sm md:text-base text-slate-600">
+            Client Retention
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -155,10 +181,7 @@ export const ProductCard = ({
       key={product.title}
       className="group/product h-96 w-[30rem] relative shrink-0"
     >
-      <a
-        href={product.link}
-        className="block group-hover/product:shadow-2xl "
-      >
+      <a href={product.link} className="block group-hover/product:shadow-2xl ">
         <img
           src={product.thumbnail}
           height="600"
