@@ -7,7 +7,7 @@ import { motion } from "motion/react";
 
 export default function HeroSection() {
   const staffImages = [
-    "/assets/hero-images/hero-1.jpg",
+    "/assets/hero-images/hero-1.JPG",
     "/assets/hero-images/hero-2.jpg",
     "/assets/hero-images/hero-3.jpg",
     "/assets/hero-images/hero-4.jpg",
