@@ -7,14 +7,14 @@ import { motion } from "motion/react";
 
 export default function HeroSection() {
   const staffImages = [
-    "/assets/hero-images/hero-1.JPG",
-    "/assets/hero-images/hero-2.JPG",
-    "/assets/hero-images/hero-3.JPG",
-    "/assets/hero-images/hero-4.JPG",
-    "/assets/hero-images/hero-5.JPG",
-    "/assets/hero-images/hero-6.JPG",
-    "/assets/hero-images/hero-8.JPG",
-    "/assets/hero-images/hero-9.JPG",
+    "/assets/hero-images/hero-1.jpg",
+    "/assets/hero-images/hero-2.jpg",
+    "/assets/hero-images/hero-3.jpg",
+    "/assets/hero-images/hero-4.jpg",
+    "/assets/hero-images/hero-5.jpg",
+    "/assets/hero-images/hero-6.jpg",
+    "/assets/hero-images/hero-8.jpg",
+    "/assets/hero-images/hero-9.jpg",
   ];
 
   // Duplicate for infinite scroll - enough items for smoother loop
