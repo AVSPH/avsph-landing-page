@@ -92,8 +92,8 @@ export default function HeroSection() {
 
       {/* Radial Blur Overlay for Text Readability */}
       <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
-        <div className="w-[90%] md:w-[600px] h-[700px] bg-white blur-[80px] rounded-full" />
-        <div className="absolute w-full h-full bg-white/80 mix-blend-overlay" />
+        <div className="w-[90%] md:w-[600px] h-[700px] bg-white blur-[120px] rounded-full" />
+        <div className="absolute w-full h-full bg-white/60 mix-blend-overlay" />
       </div>
 
       {/* Content */}
@@ -103,10 +103,10 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-5xl md:text-7xl font-bold leading-tight text-slate-900 tracking-tight"
+            className="font-[family-name:var(--font-hero)] text-5xl md:text-7xl font-bold leading-tight text-slate-900 tracking-tight"
           >
-            Hire Once. <span className="text-primary  ">Scale Fast.</span>{" "}
-            Cancel Anytime.
+            Empowering the Digital-First World with
+            <span className="text-primary"> AI-Driven </span> Virtual Assistant.
           </motion.h1>
 
           <motion.p

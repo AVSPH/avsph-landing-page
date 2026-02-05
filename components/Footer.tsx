@@ -151,14 +151,14 @@ export default function Footer() {
               className="flex items-center gap-2 hover:text-white transition-colors"
             >
               <Phone className="w-4 h-4" />
-              +1 (318) 392-9582
+              +1 731-300-9692
             </a>
             <a
               href="mailto:info@advancedvirtualstaff.com"
               className="flex items-center gap-2 hover:text-white transition-colors"
             >
               <Mail className="w-4 h-4" />
-              info@advancedvirtualstaff.com
+              admin@advancedvirtualstaff.com
             </a>
           </div>
         </div>

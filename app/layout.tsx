@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Lexend, Source_Sans_3 } from "next/font/google";
+import { Lexend, Source_Sans_3, Plus_Jakarta_Sans } from "next/font/google";
 import Header from "@/components/Header";
 import "./globals.css";
 
@@ -13,13 +13,22 @@ const sourceSans3 = Source_Sans_3({
   subsets: ["latin"],
 });
 
+const plusJakartaSans = Plus_Jakarta_Sans({
+  variable: "--font-hero",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+});
+
 export const metadata: Metadata = {
   title: "Advanced Virtual Staff | 24/7 Premium Outsource Support",
-  description: "Partner with Advanced Virtual Staff for dedicated, exceptional virtual assistants. We match you with top 1% talent for admin support, customer service, bookkeeping, and more. Cancel anytime, affordable rates.",
-  keywords: "virtual assistant, VA services, outsourcing, remote staff, Philippines, admin support, customer service, bookkeeping",
+  description:
+    "Partner with Advanced Virtual Staff for dedicated, exceptional virtual assistants. We match you with top 1% talent for admin support, customer service, bookkeeping, and more. Cancel anytime, affordable rates.",
+  keywords:
+    "virtual assistant, VA services, outsourcing, remote staff, Philippines, admin support, customer service, bookkeeping",
   openGraph: {
     title: "Advanced Virtual Staff | Your Growth. Our Mission.",
-    description: "Get matched with exceptional virtual assistants from our top 1% talent pool. 24/7 support, affordable rates, no contracts.",
+    description:
+      "Get matched with exceptional virtual assistants from our top 1% talent pool. 24/7 support, affordable rates, no contracts.",
     type: "website",
   },
 };
@@ -32,7 +41,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${lexend.variable} ${sourceSans3.variable} antialiased`}
+        className={`${lexend.variable} ${sourceSans3.variable} ${plusJakartaSans.variable} antialiased`}
       >
         <Header />
         {children}

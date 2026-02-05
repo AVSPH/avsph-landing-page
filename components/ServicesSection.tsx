@@ -1,65 +1,73 @@
 import {
-    LayoutGrid,
-    MessageSquare,
-    DollarSign,
-    Monitor,
-    Share2,
-    TrendingUp,
-    Settings,
-    Layers,
-    ArrowRight
+  LayoutGrid,
+  Phone,
+  DollarSign,
+  Calendar,
+  ClipboardList,
+  TrendingUp,
+  Star,
+  Layers,
+  ArrowRight,
 } from "lucide-react";
 
 export default function ServicesSection() {
     const services = [
-        {
-            icon: <LayoutGrid className="w-7 h-7" />,
-            title: "Administrative Support",
-            description: "Email management, calendar scheduling, data entry, and document preparation.",
-            color: "#00B4D8",
-        },
-        {
-            icon: <MessageSquare className="w-7 h-7" />,
-            title: "Customer Service",
-            description: "24/7 customer support, live chat handling, and client relationship management.",
-            color: "#F5A623",
-        },
-        {
-            icon: <DollarSign className="w-7 h-7" />,
-            title: "Bookkeeping & Finance",
-            description: "Invoicing, expense tracking, financial reports, and accounts management.",
-            color: "#10B981",
-        },
-        {
-            icon: <Monitor className="w-7 h-7" />,
-            title: "Web Development",
-            description: "Website building, maintenance, WordPress management, and landing pages.",
-            color: "#8B5CF6",
-        },
-        {
-            icon: <Share2 className="w-7 h-7" />,
-            title: "Social Media Management",
-            description: "Content creation, scheduling, community management, and analytics.",
-            color: "#EC4899",
-        },
-        {
-            icon: <TrendingUp className="w-7 h-7" />,
-            title: "Lead Generation",
-            description: "Prospect research, cold outreach, CRM management, and appointment setting.",
-            color: "#F97316",
-        },
-        {
-            icon: <Settings className="w-7 h-7" />,
-            title: "Technical Support",
-            description: "IT helpdesk, software troubleshooting, and technical documentation.",
-            color: "#06B6D4",
-        },
-        {
-            icon: <Layers className="w-7 h-7" />,
-            title: "Project Management",
-            description: "Task coordination, team communication, and project tracking.",
-            color: "#0F2A4A",
-        },
+      {
+        icon: <LayoutGrid className="w-7 h-7" />,
+        title: "Administrative Support",
+        description:
+          "Email management, document preparation, CRM updates, and daily office tasks tailored for service businesses.",
+        color: "#00B4D8",
+      },
+      {
+        icon: <Phone className="w-7 h-7" />,
+        title: "Call Handling & Customer Support",
+        description:
+          "Inbound call answering, customer inquiries, follow-ups, and missed-call recovery to help you book more jobs.",
+        color: "#F5A623",
+      },
+      {
+        icon: <Calendar className="w-7 h-7" />,
+        title: "Scheduling & Dispatching",
+        description:
+          "Appointment scheduling, technician dispatching, route coordination, and calendar management.",
+        color: "#10B981",
+      },
+      {
+        icon: <ClipboardList className="w-7 h-7" />,
+        title: "Estimates & Invoicing",
+        description:
+          "Sending estimates, invoices, payment follow-ups, and job documentation support.",
+        color: "#8B5CF6",
+      },
+      {
+        icon: <DollarSign className="w-7 h-7" />,
+        title: "Bookkeeping Support",
+        description:
+          "Invoice tracking, expense categorization, payroll assistance, and basic financial reporting.",
+        color: "#EC4899",
+      },
+      {
+        icon: <TrendingUp className="w-7 h-7" />,
+        title: "Lead Intake & Follow-Ups",
+        description:
+          "Handling new leads, CRM updates, appointment setting, and consistent follow-ups to close more jobs.",
+        color: "#F97316",
+      },
+      {
+        icon: <Star className="w-7 h-7" />,
+        title: "Review & Reputation Management",
+        description:
+          "Review requests, Google & Yelp follow-ups, and reputation monitoring for local service brands.",
+        color: "#06B6D4",
+      },
+      {
+        icon: <Layers className="w-7 h-7" />,
+        title: "Operations & Task Coordination",
+        description:
+          "Daily task tracking, internal coordination, SOP execution, and workflow support.",
+        color: "#0F2A4A",
+      },
     ];
 
     return (
