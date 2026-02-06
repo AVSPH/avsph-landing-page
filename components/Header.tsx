@@ -26,7 +26,7 @@ export default function Header() {
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50 w-full">
-      <Navbar className="top-4vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv">
+      <Navbar className="top-4">
         <NavBody>
           {/* Logo Section */}
           <Link href="/" className="flex items-center gap-2 relative z-50 mr-8">

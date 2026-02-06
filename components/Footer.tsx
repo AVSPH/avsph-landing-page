@@ -20,7 +20,7 @@ export default function Footer() {
       { label: "Blog", href: "/blog" },
     ],
     services: [
-      { label: "Administrative Support", href: "#services" },
+      { label: "Administrative Support", href: "/services/administrative-support" },
       { label: "Call Handling & Customer Support", href: "#services" },
       { label: "Scheduling & Dispatching", href: "#services" },
       { label: "Estimates & Invoicing", href: "#services" },

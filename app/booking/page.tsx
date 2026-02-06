@@ -13,7 +13,6 @@ export default function BookingPage() {
       <main className="pt-20">
         <BookingEmbed />
       </main>
-      <Footer />
     </>
   );
 }

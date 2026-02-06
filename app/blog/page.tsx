@@ -29,7 +29,6 @@ export default function BlogPage() {
         </section>
         <BlogSection />
       </main>
-      <Footer />
     </>
   );
 }
