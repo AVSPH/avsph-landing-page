@@ -10,11 +10,8 @@ import {
 } from "@/components/ui/accordion";
 import { faqs } from "@/data/faq.data";
 
-
 export default function FAQSection() {
   const [searchQuery, setSearchQuery] = useState<string>("");
-
-
 
   // Filter FAQs based on search query
   const filteredFAQs = searchQuery
@@ -148,7 +145,7 @@ export default function FAQSection() {
               ready to help you get started.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <a href="/#contact" className="btn-primary">
+              <a href="/booking" className="btn-primary">
                 <Phone className="w-5 h-5" />
                 Book a Free Call
               </a>

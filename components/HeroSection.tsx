@@ -127,7 +127,7 @@ export default function HeroSection() {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <Link
-              href="#contact"
+              href="/booking"
               className="btn-primary rounded-full px-8 py-4 text-lg shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all w-full sm:w-auto"
             >
               Book a Free Call

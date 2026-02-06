@@ -246,7 +246,7 @@ export default function BlogSection() {
               difference it makes for your productivity and growth.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Link href="/#contact" className="btn-primary">
+              <Link href="/booking" className="btn-primary">
                 Book a Free Call
               </Link>
               <Link

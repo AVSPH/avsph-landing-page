@@ -115,7 +115,7 @@ export const Header = () => {
       {/* Added CTA Buttons to Header */}
       <div className="flex flex-col sm:flex-row gap-4 mt-10">
         <a
-          href="#contact"
+          href="/booking"
           className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-white transition-all duration-300 bg-[var(--accent)] hover:-translate-y-1 shadow-lg hover:shadow-xl"
         >
           Book a Free Call

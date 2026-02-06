@@ -62,7 +62,7 @@ export default function Header() {
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-4 relative z-50 ml-auto">
             <Link
-              href="https://calendly.com/advancedvirtualstaff/30min"
+              href="/booking"
               className="px-6 py-2 rounded-full font-semibold text-white transition-all duration-300 shadow-md hover:translate-y-[-2px] hover:shadow-lg"
               style={{
                 background: "linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%)",
@@ -115,7 +115,7 @@ export default function Header() {
                 </Link>
               ))}
               <Link
-                href="https://calendly.com/advancedvirtualstaff/30min"
+                href="/booking"
                 className="w-full text-center px-6 py-3 rounded-xl font-bold text-white mt-2"
                 style={{
                   background: "linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%)",
