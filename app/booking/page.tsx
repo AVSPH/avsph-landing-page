@@ -1,5 +1,5 @@
 import Footer from "../../components/Footer";
-import BookingSection from "../../components/BookingSection";
+import BookingEmbed from "../../components/BookingEmbed";
 
 export const metadata = {
   title: "Book a Discovery Call | Advanced Virtual Staff",
@@ -11,7 +11,7 @@ export default function BookingPage() {
   return (
     <>
       <main className="pt-20">
-        <BookingSection />
+        <BookingEmbed />
       </main>
       <Footer />
     </>
