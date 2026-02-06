@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { CheckCircle, ArrowRight, Phone } from "lucide-react";
+import { CheckCircle, ArrowRight, Phone, Loader2 } from "lucide-react";
 
 export default function CTASection() {
   const [formData, setFormData] = useState({
@@ -11,6 +11,7 @@ export default function CTASection() {
     company: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -32,10 +33,8 @@ export default function CTASection() {
 
         // Handle duplicate contact error
         if (result.error === "duplicate") {
-          alert(
-            result.message ||
-              "You've already submitted your information. We'll be in touch soon!",
-          );
+          // Show success state even for duplicates
+          setIsSubmitted(true);
           // Reset form
           setFormData({
             firstName: "",
@@ -50,7 +49,7 @@ export default function CTASection() {
       }
 
       console.log("Contact created:", result);
-      alert("Thank you! We'll be in touch shortly.");
+      setIsSubmitted(true);
 
       // Reset form
       setFormData({
@@ -97,22 +96,22 @@ export default function CTASection() {
               className="inline-block text-sm font-semibold uppercase tracking-wider mb-4 px-4 py-2 rounded-full"
               style={{ background: "rgba(255, 255, 255, 0.15)" }}
             >
-              Get Started Today
+              Stay Connected
             </span>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              Ready to Scale Your Business?
+              Subscribe to Our Newsletter
             </h2>
             <p className="text-xl text-white/80 mb-8">
-              Book a free consultation call and discover how our virtual
-              assistants can transform your operations.
+              Get the latest insights, tips, and exclusive offers delivered
+              straight to your inbox.
             </p>
 
             <div className="space-y-4 mb-8">
               {[
-                "Free 30-minute consultation",
-                "No obligation, no pressure",
-                "Get matched within 48 hours",
-                "Start with a risk-free trial",
+                "Weekly industry insights and trends",
+                "Exclusive tips for business growth",
+                "Early access to new services",
+                "Special offers for subscribers only",
               ].map((item, index) => (
                 <div key={index} className="flex items-center gap-3">
                   <span
@@ -128,13 +127,13 @@ export default function CTASection() {
 
             <div className="flex items-center gap-6">
               <div>
-                <p className="text-white/60 text-sm">Call us directly</p>
+                <p className="text-white/60 text-sm">Questions? Contact us</p>
                 <a
                   href="tel:+13183929582"
                   className="flex items-center gap-2 text-2xl font-bold text-white hover:text-[var(--accent)] transition-colors"
                 >
                   <Phone className="w-6 h-6" />
-                  +1 (318) 392-9582
+                  +1 731-300-9692
                 </a>
               </div>
             </div>
@@ -152,11 +151,11 @@ export default function CTASection() {
               className="text-2xl font-bold mb-2"
               style={{ color: "var(--primary)" }}
             >
-              Book Your Free Call
+              Join Our Newsletter
             </h3>
             <p className="mb-6" style={{ color: "var(--muted)" }}>
-              Fill out the form below and we&apos;ll get back to you within 24
-              hours.
+              Subscribe now and stay updated with valuable insights and
+              exclusive content.
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -267,18 +266,31 @@ export default function CTASection() {
 
               <button
                 type="submit"
-                disabled={isSubmitting}
-                className="w-full btn-primary py-4 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                disabled={isSubmitting || isSubmitted}
+                className="w-full py-4 text-lg font-semibold rounded-lg transition-all flex items-center justify-center gap-2 disabled:cursor-not-allowed"
+                style={{
+                  background: isSubmitted ? "#22c55e" : "var(--primary)",
+                  color: "white",
+                  opacity: isSubmitting ? 0.7 : 1,
+                }}
               >
-                {isSubmitting ? "Submitting..." : "Book My Free Consultation"}
-                <ArrowRight className="w-5 h-5" />
+                {isSubmitted ? (
+                  "Submitted ✓"
+                ) : isSubmitting ? (
+                  <Loader2 className="w-5 h-5 animate-spin" />
+                ) : (
+                  <>
+                    Subscribe to Newsletter
+                    <ArrowRight className="w-5 h-5" />
+                  </>
+                )}
               </button>
 
               <p
                 className="text-center text-sm"
                 style={{ color: "var(--muted)" }}
               >
-                No spam, no sales pressure. Just a friendly conversation.
+                Unsubscribe anytime. We respect your privacy.
               </p>
             </form>
           </div>

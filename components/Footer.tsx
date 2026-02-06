@@ -20,10 +20,14 @@ export default function Footer() {
       { label: "Blog", href: "/blog" },
     ],
     services: [
-      { label: "Admin Support", href: "#services" },
-      { label: "Customer Service", href: "#services" },
-      { label: "Bookkeeping", href: "#services" },
-      { label: "Web Development", href: "#services" },
+      { label: "Administrative Support", href: "#services" },
+      { label: "Call Handling & Customer Support", href: "#services" },
+      { label: "Scheduling & Dispatching", href: "#services" },
+      { label: "Estimates & Invoicing", href: "#services" },
+      { label: "Bookkeeping Support", href: "#services" },
+      { label: "Lead Intake & Follow-Ups", href: "#services" },
+      { label: "Review & Reputation Management", href: "#services" },
+      { label: "Operations & Task Coordination", href: "#services" },
     ],
     resources: [
       { label: "FAQs", href: "/faqs" },
@@ -34,19 +38,14 @@ export default function Footer() {
   };
 
   const socialLinks = [
-    { name: "Facebook", icon: <Facebook className="w-5 h-5" />, href: "#" },
-    { name: "LinkedIn", icon: <Linkedin className="w-5 h-5" />, href: "#" },
+    { name: "Facebook", icon: <Facebook className="w-5 h-5 " />, href: "https://www.facebook.com/avsphvirtualassistanceservices" },
+    { name: "LinkedIn", icon: <Linkedin className="w-5 h-5" />, href: "https://www.linkedin.com/company/advanced-virtual-staff-ph/" },
     { name: "Twitter", icon: <Twitter className="w-5 h-5" />, href: "#" },
     { name: "Instagram", icon: <Instagram className="w-5 h-5" />, href: "#" },
   ];
 
   return (
-    <footer
-      style={{
-        background: "var(--primary)",
-        color: "rgba(255, 255, 255, 0.8)",
-      }}
-    >
+    <footer className="bg-white text-gray-600 border-t border-gray-100">
       <div className="container py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand Column */}
@@ -55,50 +54,71 @@ export default function Footer() {
               <Image
                 src="/assets/logo.jpeg"
                 alt="Advanced Virtual Staff Logo"
-                width={48}
-                height={48}
+                width={40}
+                height={40}
                 className="rounded-lg"
               />
-              <div>
-                <span className="text-xl font-bold text-white block leading-tight">
-                  Advanced
+              <div className="flex flex-col">
+                <span
+                  className="text-lg font-bold leading-tight"
+                  style={{ color: "var(--primary)" }}
+                >
+                  ADVANCED
                 </span>
                 <span
                   className="text-sm font-medium leading-tight"
-                  style={{ color: "var(--secondary-light)" }}
+                  style={{ color: "var(--secondary)" }}
                 >
-                  Virtual Staff
+                  VIRTUAL STAFF
                 </span>
               </div>
             </Link>
-            <p className="mb-6 max-w-sm">
+            <p className="mb-6 max-w-sm text-gray-600">
               Your trusted partner for premium virtual staffing solutions. We
               connect businesses with exceptional talent from our top 1% pool.
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-4 mb-6">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
                   href={social.href}
-                  className="w-10 h-10 rounded-lg flex items-center justify-center transition-colors hover:bg-white/10"
-                  style={{ background: "rgba(255, 255, 255, 0.05)" }}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-lg flex items-center justify-center transition-colors bg-gray-100 hover:bg-primary hover:text-white"
                   aria-label={social.name}
                 >
                   {social.icon}
                 </a>
               ))}
             </div>
+
+            <div className="flex flex-col gap-2">
+              <a
+                href="tel:+13183929582"
+                className="flex items-center gap-2 hover:text-primary transition-colors text-gray-600"
+              >
+                <Phone className="w-4 h-4" />
+                +1 731-300-9692
+              </a>
+              <a
+                href="mailto:info@advancedvirtualstaff.com"
+                className="flex items-center gap-2 hover:text-primary transition-colors text-gray-600"
+              >
+                <Mail className="w-4 h-4" />
+                admin@advancedvirtualstaff.com
+              </a>
+            </div>
           </div>
 
           {/* Links Columns */}
           <div>
-            <h4 className="font-semibold text-white mb-4">Company</h4>
+            <h4 className="font-semibold text-gray-900 mb-4">Company</h4>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="hover:text-white transition-colors"
+                    className="hover:text-primary transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -108,13 +128,13 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-white mb-4">Services</h4>
+            <h4 className="font-semibold text-gray-900 mb-4">Services</h4>
             <ul className="space-y-3">
               {footerLinks.services.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="hover:text-white transition-colors"
+                    className="hover:text-primary transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -124,13 +144,13 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-white mb-4">Resources</h4>
+            <h4 className="font-semibold text-gray-900 mb-4">Resources</h4>
             <ul className="space-y-3">
               {footerLinks.resources.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="hover:text-white transition-colors"
+                    className="hover:text-primary transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -139,43 +159,20 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-
-        {/* Contact Info */}
-        <div
-          className="mt-12 pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4"
-          style={{ borderColor: "rgba(255, 255, 255, 0.1)" }}
-        >
-          <div className="flex flex-wrap justify-center md:justify-start gap-6">
-            <a
-              href="tel:+13183929582"
-              className="flex items-center gap-2 hover:text-white transition-colors"
-            >
-              <Phone className="w-4 h-4" />
-              +1 731-300-9692
-            </a>
-            <a
-              href="mailto:info@advancedvirtualstaff.com"
-              className="flex items-center gap-2 hover:text-white transition-colors"
-            >
-              <Mail className="w-4 h-4" />
-              admin@advancedvirtualstaff.com
-            </a>
-          </div>
-        </div>
       </div>
 
       {/* Copyright Bar */}
-      <div className="py-4" style={{ background: "rgba(0, 0, 0, 0.2)" }}>
-        <div className="container flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+      <div className="py-4 bg-gray-50 border-t border-gray-200">
+        <div className="container flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
           <p>© {currentYear} Advanced Virtual Staff. All rights reserved.</p>
           <div className="flex gap-6">
             <Link
               href="/privacy"
-              className="hover:text-white transition-colors"
+              className="hover:text-primary transition-colors"
             >
               Privacy Policy
             </Link>
-            <Link href="/terms" className="hover:text-white transition-colors">
+            <Link href="/terms" className="hover:text-primary transition-colors">
               Terms of Service
             </Link>
           </div>

@@ -67,42 +67,7 @@ export default function BookingEmbed() {
               />
             </div>
 
-            {/* Trust Indicators */}
-            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-              <div className="p-4">
-                <div
-                  className="text-3xl font-bold mb-2"
-                  style={{ color: "var(--primary)" }}
-                >
-                  30 Min
-                </div>
-                <p className="text-sm" style={{ color: "var(--muted)" }}>
-                  Free Consultation
-                </p>
-              </div>
-              <div className="p-4">
-                <div
-                  className="text-3xl font-bold mb-2"
-                  style={{ color: "var(--primary)" }}
-                >
-                  48 Hours
-                </div>
-                <p className="text-sm" style={{ color: "var(--muted)" }}>
-                  Get Matched With VA
-                </p>
-              </div>
-              <div className="p-4">
-                <div
-                  className="text-3xl font-bold mb-2"
-                  style={{ color: "var(--primary)" }}
-                >
-                  Zero Risk
-                </div>
-                <p className="text-sm" style={{ color: "var(--muted)" }}>
-                  No Obligation Trial
-                </p>
-              </div>
-            </div>
+
           </div>
         </div>
       </section>
