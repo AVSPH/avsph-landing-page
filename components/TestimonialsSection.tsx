@@ -38,7 +38,7 @@ export default function TestimonialsSection() {
           className="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold flex-shrink-0"
           style={{
             background: "var(--secondary)",
-            color: "var(--primary)",
+            color: "var(--card)",
           }}
         >
           {testimonial.avatar}
