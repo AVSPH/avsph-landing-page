@@ -5,8 +5,7 @@ import JourneySection from "../components/JourneySection";
 import WhyChooseUsSection from "../components/WhyChooseUsSection";
 import TestimonialsSection from "../components/TestimonialsSection";
 import CTASection from "../components/CTASection";
-import Footer from "../components/Footer";
-
+import HowItWorksSection from "@/components/HowItWorksSection";
 export default function Home() {
   return (
     <>
@@ -14,6 +13,7 @@ export default function Home() {
         <HeroSection />
         <ServicesSection />
         <ChallengeSection />
+        <HowItWorksSection />
         <WhyChooseUsSection />
         <JourneySection />
         <TestimonialsSection />

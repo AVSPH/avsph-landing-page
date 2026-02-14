@@ -1,45 +1,53 @@
 export const administrativeFeatures = [
     {
-        title: "Email & Inbox Management",
-        description: "Keep your inbox fully organized. We handle sorting, responding, and flagging important messages so you never miss an opportunity.",
+        title: "Proactive Inbox Management",
+        description: "Achieve 'Inbox Zero' daily. We filter spam, categorize urgent emails, draft responses, and ensure critical communications are prioritized so you never miss a lead.",
     },
     {
-        title: "Calendar & Schedule Management",
-        description: "Expert coordination of your meetings, appointments, and events, ensuring no double-bookings and optimal time management.",
+        title: "Strategic Calendar Management",
+        description: "Eliminate scheduling conflicts. We handle appointment setting, time-blocking, and meeting confirmations across zones, maximizing your productivity.",
     },
     {
-        title: "Data Entry & CRM Management",
-        description: "Accurate entry and maintenance of your customer data, ensuring your CRM is always up-to-date and reliable.",
+        title: "CRM Management & Data Entry",
+        description: "Maintain spotless records in HubSpot, Salesforce, or your preferred CRM. We ensure accurate data entry, lead updating, and pipeline organization.",
     },
     {
-        title: "Document Preparation",
-        description: "Formatting, editing, and creating professional documents, presentations, and spreadsheets tailored to your brand.",
+        title: "Document Preparation & Formatting",
+        description: "Impress stakeholders with professionally formatted reports, presentations, and spreadsheets. We handle editing, proofreading, and layout design.",
     },
     {
         title: "Travel & Itinerary Planning",
-        description: "Comprehensive travel arrangements including flights, accommodations, and detailed itineraries for stress-free business trips.",
+        description: "Seamless business travel logistics. From flight booking to hotel reservations and detailed itineraries, we ensure your trips are stress-free and efficient.",
     },
     {
-        title: "General Research",
-        description: "In-depth internet research on competitors, market trends, or potential leads to support your business decisions.",
+        title: "Market Research & Lead Gen",
+        description: "Make data-driven decisions. We conduct in-depth internet research, competitor analysis, and lead generation to fuel your business growth strategies.",
     },
 ];
 
 export const administrativeFaqs = [
     {
-        question: "What tasks can an Administrative VA handle?",
-        answer: "Our administrative virtual assistants can handle a wide range of tasks including email management, calendar scheduling, data entry, CRM updates, travel planning, deeper internet research, and document preparation. If it can be done remotely, our team can likely handle it.",
+        question: "What specific tasks can an Administrative VA handle?",
+        answer: "Our administrative virtual assistants are versatile professionals capable of handling email management, complex calendar scheduling, CRM maintenance, data entry, travel research, personal errands, and document preparation. If it's a repeatable digital task, we can likely take it off your plate.",
     },
     {
-        question: "How do you ensure data security?",
-        answer: "We prioritize security. All our VAs go through strict vetting processes and we use secure tools for password sharing (like LastPass) and encrypted communication. NDAs are standard practice for all our engagements.",
+        question: "How do you ensure the security of my business data?",
+        answer: "Data security is paramount at AVSPH. All our VAs undergo rigorous background checks and sign strict Non-Disclosure Agreements (NDAs). We utilize enterprise-grade password managers (like LastPass or 1Password) so you never have to share raw credentials, and we operate on secure, encrypted networks.",
     },
     {
-        question: "Can I interview my VA before hiring?",
-        answer: "Absolutely. We pre-vet candidates based on your requirements, but you have the final say. You can interview top candidates to ensure they are the perfect fit for your team and culture.",
+        question: "Can I interview candidates before hiring?",
+        answer: "Yes, absolutely. We believe in finding the perfect fit. We pre-vet the top 1% of talent based on your specific requirements, and then present you with the best candidates to interview. You make the final hiring decision.",
     },
     {
-        question: "What are your working hours?",
-        answer: "AVSPH offers flexible scheduling. Whether you need support during US business hours, Australian time zones, or overnight coverage, we can match you with a VA who works your required shift.",
+        question: "What time zones do your Virtual Assistants work in?",
+        answer: "We offer 100% flexible scheduling. Whether you need coverage during US (EST/PST), UK, Australian, or Asian business hours, we assign a dedicated VA who works exclusively during your preferred shift to ensure real-time collaboration.",
+    },
+    {
+        question: "Is there a long-term contract required?",
+        answer: "No, we offer flexible month-to-month agreements. We believe in earning your business every month through exceptional service. You can scale your team up or down as your business needs change without being locked into rigid long-term contracts.",
+    },
+    {
+        question: "How quickly can I get started?",
+        answer: "We maximize speed without compromising quality. typically, we can have a fully vetted and dedicated Administrative VA ready to start working with you within 3-5 business days after your initial consultation.",
     },
 ];

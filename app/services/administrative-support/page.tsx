@@ -13,59 +13,120 @@ import { administrativeFeatures, administrativeFaqs } from "@/data/service.data"
 
 
 export const metadata: Metadata = {
-    title: "Administrative Support Virtual Assistants | AVSPH - Reliable & Efficient",
+    title: "Best Administrative Support Virtual Assistants | AVSPH - Reliable & Secure",
     description:
-        "Hire top-tier administrative support virtual assistants. Expert email management, scheduling, data entry, and office coordination for growing businesses.",
+        "Hire top-tier administrative support virtual assistants. Expert email management, scheduling, data entry, CRM maintenance, and travel planning for growing businesses.",
     openGraph: {
-        title: "Administrative Support Virtual Assistants | AVSPH",
+        title: "Best Administrative Support Virtual Assistants | AVSPH",
         description:
-            "Hire top-tier administrative support virtual assistants. Expert email management, scheduling, data entry, and office coordination for growing businesses.",
+            "Hire top-tier administrative support virtual assistants. Expert email management, scheduling, data entry, CRM maintenance, and travel planning for growing businesses.",
         url: "https://advancedvirtualstaff.com/services/administrative-support",
-        siteName: "Advanced Virtual Staff",
+        siteName: "Advanced Virtual Staff Ph",
         locale: "en_US",
         type: "website",
-    },
-};
-
-
-const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: "Administrative Support Virtual Assistant",
-    provider: {
-        "@type": "Organization",
-        name: "Advanced Virtual Staff",
-        url: "https://advancedvirtualstaff.com",
-    },
-    description: "Professional administrative support services including email management, scheduling, and data entry.",
-    areaServed: "Worldwide",
-    hasOfferCatalog: {
-        "@type": "OfferCatalog",
-        name: "Administrative Services",
-        itemListElement: [
+        images: [
             {
-                "@type": "Offer",
-                itemOffered: {
-                    "@type": "Service",
-                    name: "Email Management",
-                },
-            },
-            {
-                "@type": "Offer",
-                itemOffered: {
-                    "@type": "Service",
-                    name: "Calendar Management",
-                },
-            },
-            {
-                "@type": "Offer",
-                itemOffered: {
-                    "@type": "Service",
-                    name: "CRM Management",
-                },
+                url: "/assets/hero-images/administrative-support.jpg",
+                width: 1200,
+                height: 630,
+                alt: "Administrative Support Virtual Assistant",
             },
         ],
     },
+    alternates: {
+        canonical: "https://advancedvirtualstaff.com/services/administrative-support",
+    },
+};
+
+const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Service",
+            name: "Administrative Support Virtual Assistant",
+            provider: {
+                "@type": "Organization",
+                name: "Advanced Virtual Staff Ph",
+                url: "https://advancedvirtualstaff.com",
+                logo: "https://advancedvirtualstaff.com/assets/logo.png",
+                sameAs: [
+                    "https://www.facebook.com/advancedvirtualstaffph",
+                    "https://www.linkedin.com/company/advanced-virtual-staff-ph",
+                ],
+            },
+            description:
+                "Professional administrative support services including email management, calendar scheduling, data entry, CRM maintenance, and travel planning.",
+            areaServed: "Worldwide",
+            hasOfferCatalog: {
+                "@type": "OfferCatalog",
+                name: "Administrative Services",
+                itemListElement: [
+                    {
+                        "@type": "Offer",
+                        itemOffered: {
+                            "@type": "Service",
+                            name: "Email & Inbox Management",
+                        },
+                    },
+                    {
+                        "@type": "Offer",
+                        itemOffered: {
+                            "@type": "Service",
+                            name: "Calendar & Schedule Management",
+                        },
+                    },
+                    {
+                        "@type": "Offer",
+                        itemOffered: {
+                            "@type": "Service",
+                            name: "CRM Management & Data Entry",
+                        },
+                    },
+                    {
+                        "@type": "Offer",
+                        itemOffered: {
+                            "@type": "Service",
+                            name: "Travel & Itinerary Planning",
+                        },
+                    },
+                ],
+            },
+        },
+        {
+            "@type": "FAQPage",
+            mainEntity: administrativeFaqs.map((faq) => ({
+                "@type": "Question",
+                name: faq.question,
+                acceptedAnswer: {
+                    "@type": "Answer",
+                    text: faq.answer,
+                },
+            })),
+        },
+        {
+            "@type": "BreadcrumbList",
+            itemListElement: [
+                {
+                    "@type": "ListItem",
+                    position: 1,
+                    name: "Home",
+                    item: "https://advancedvirtualstaff.com",
+                },
+                {
+                    "@type": "ListItem",
+                    position: 2,
+                    name: "Services",
+                    item: "https://advancedvirtualstaff.com/services",
+                },
+                {
+                    "@type": "ListItem",
+                    position: 3,
+                    name: "Administrative Support",
+                    item: "https://advancedvirtualstaff.com/services/administrative-support",
+                },
+            ],
+        },
+    ],
 };
 
 export default function AdministrativeSupportPage() {
@@ -77,26 +138,36 @@ export default function AdministrativeSupportPage() {
             />
 
             {/* Hero Section */}
-            <section className="relative pt-32 pb-20 overflow-hidden bg-white">
-                <div className="absolute inset-0 opacity-5 bg-[url('/assets/grid-pattern.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
+            <section className="relative pt-32 pb-20 overflow-hidden">
+                <div className="absolute inset-0 z-0">
+                    <Image
+                        src="/assets/hero-images/administrative-support.jpg"
+                        alt="Administrative Support Background"
+                        fill
+                        className="object-cover"
+                        priority
+                    />
+                    <div className="absolute inset-0 bg-white/90" />
+                </div>
+                <div className="absolute inset-0 z-0 opacity-5 bg-[url('/assets/grid-pattern.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
                 <div className="container relative z-10">
                     <div className="text-center max-w-4xl mx-auto">
                         <span className="inline-block py-1 px-3 rounded-full bg-blue-50 text-blue-600 font-semibold text-sm mb-6 border border-blue-100">
-                            Administrative Support Services
+                            Premium Administrative Support Services
                         </span>
                         <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900 leading-tight">
-                            Reclaim Your Time with Expert <span className="text-primary">Admin Support</span>
+                            Delegate to Expert <span className="text-primary">Virtual Assistants</span> & Reclaim Your Time
                         </h1>
                         <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-                            Stop drowning in busy work. Our premium virtual assistants handle your emails, scheduling, and data so you can focus on growing your business.
+                            Stop getting bogged down by administrative tasks. Our vetted administrative VAs handle your inbox, complex scheduling, CRM, and data entry so you can focus on scaling your business.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a href="#contact" className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white transition-all duration-200 bg-blue-600 rounded-full hover:bg-blue-700 hover:shadow-lg hover:-translate-y-1">
+                            <a style={{
+                                background: "linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%)",
+                            }} href="#contact" className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white transition-all duration-200 bg-blue-600 rounded-full hover:bg-blue-700 hover:shadow-lg hover:-translate-y-1">
                                 Get Started Today
                             </a>
-                            <a href="#features" className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-gray-700 transition-all duration-200 bg-white border-2 border-gray-100 rounded-full hover:border-gray-300 hover:bg-gray-50">
-                                View Services
-                            </a>
+
                         </div>
                     </div>
                 </div>
@@ -106,9 +177,9 @@ export default function AdministrativeSupportPage() {
             <section id="features" className="py-20 bg-gray-50">
                 <div className="container">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Comprehensive Admin Solutions</h2>
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Comprehensive Administrative Solutions</h2>
                         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            We don't just "do tasks". We take ownership of your administrative workflow.
+                            We don't just "do tasks". We take ownership of your operational workflow. From inbox management to complex travel logistics, our VAs are trained to deliver excellence.
                         </p>
                     </div>
 
@@ -146,9 +217,9 @@ export default function AdministrativeSupportPage() {
                         </div>
 
                         <div>
-                            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Why Choose AVSPH?</h2>
+                            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Why Choose AVSPH for Admin Support?</h2>
                             <p className="text-lg text-gray-600 mb-8">
-                                We provide more than just staff. We provide a partnership dedicated to your operational excellence.
+                                We provide more than just remote staff. We provide a strategic partnership dedicated to your operational excellence and scalability.
                             </p>
 
                             <div className="space-y-6">
@@ -157,8 +228,8 @@ export default function AdministrativeSupportPage() {
                                         <DollarSign className="w-5 h-5" />
                                     </div>
                                     <div>
-                                        <h4 className="text-lg font-bold text-gray-900 mb-1">Cost Effective</h4>
-                                        <p className="text-gray-600">Save up to 70% compared to hiring local staff without compiling on quality.</p>
+                                        <h4 className="text-lg font-bold text-gray-900 mb-1">Cost-Effective Outsourcing</h4>
+                                        <p className="text-gray-600">Save up to 70% on overhead compared to hiring local staff, without compromising on work quality or reliability.</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
@@ -166,8 +237,8 @@ export default function AdministrativeSupportPage() {
                                         <Clock className="w-5 h-5" />
                                     </div>
                                     <div>
-                                        <h4 className="text-lg font-bold text-gray-900 mb-1">Fast Turnaround</h4>
-                                        <p className="text-gray-600">Get tasks done overnight. Assign work before you sleep and wake up to completed projects.</p>
+                                        <h4 className="text-lg font-bold text-gray-900 mb-1">Rapid Turnaround & Efficiency</h4>
+                                        <p className="text-gray-600">Experience the "follow the sun" model. Assign tasks before you sleep and wake up to completed projects.</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
@@ -175,8 +246,8 @@ export default function AdministrativeSupportPage() {
                                         <Shield className="w-5 h-5" />
                                     </div>
                                     <div>
-                                        <h4 className="text-lg font-bold text-gray-900 mb-1">Secure & Reliable</h4>
-                                        <p className="text-gray-600">Enterprise-grade security protocols to keep your sensitive business data safe.</p>
+                                        <h4 className="text-lg font-bold text-gray-900 mb-1">Enterprise-Grade Security</h4>
+                                        <p className="text-gray-600">We utilize NDA protection, secure password management, and encrypted communication to keep your business data safe.</p>
                                     </div>
                                 </div>
                             </div>
@@ -187,13 +258,13 @@ export default function AdministrativeSupportPage() {
 
             {/* FAQs Section */}
             <section className="py-20 bg-gray-50">
-                <div className="container max-w-3xl">
+                <div className="container max-w-3xl pb-2 ">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
                         <p className="text-gray-600">Common questions about our administrative support services.</p>
                     </div>
 
-                    <Accordion type="single" collapsible className="space-y-4">
+                    <Accordion type="single" collapsible className="space-y-4  py-2">
                         {administrativeFaqs.map((faq, index) => (
                             <AccordionItem
                                 key={index}

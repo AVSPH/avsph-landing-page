@@ -7,21 +7,21 @@ export default function HowItWorksSection() {
       title: "Tell Us Your Needs",
       description:
         "Share your requirements with us. What tasks do you need help with? What skills are you looking for? We'll understand your business and find the perfect match.",
-      icon: <MessageSquare className="w-8 h-8" />,
+      icon: <MessageSquare className="w-8 h-8 text-white" />,
     },
     {
       number: "02",
       title: "We Match You With Talent",
       description:
         "Our team rigorously screens candidates from our top 1% talent pool. We present you with the best matches based on skills, experience, and cultural fit.",
-      icon: <Users className="w-8 h-8" />,
+      icon: <Users className="w-8 h-8 text-white" />,
     },
     {
       number: "03",
       title: "Start Working Together",
       description:
         "Once you approve, your virtual assistant starts immediately. We provide ongoing support, monitoring, and daily reports to ensure smooth collaboration.",
-      icon: <CheckCircle className="w-8 h-8" />,
+      icon: <CheckCircle className="w-8 h-8 text-white" />,
     },
   ];
 
@@ -53,7 +53,7 @@ export default function HowItWorksSection() {
         <div className="text-center mb-16">
           <span
             className="text-sm font-semibold uppercase tracking-wider mb-4 block"
-            style={{ color: "var(--secondary-light)" }}
+            style={{ color: "var(--background)" }}
           >
             How It Works
           </span>
