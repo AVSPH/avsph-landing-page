@@ -2,31 +2,31 @@
 export const testimonialsRow1 = [
   {
     quote:
-      "Best roofing service I've ever used! They completed our roof replacement in just 3 days with exceptional craftsmanship. Highly professional team.",
-    author: "Michael Thompson",
-    role: "Homeowner in Dallas, TX",
+      "Since hiring AVSPH, I don't miss calls while I'm in an attic anymore. They handle my scheduling and dispatch so I can focus on the technical work.",
+    author: "Mark Davis",
+    role: "Owner, CoolAir HVAC Services",
+    avatar: "MD",
+  },
+  {
+    quote:
+      "Scaling was impossible until AVSPH took over our booking and customer support. We've doubled our recurring cleaning clients in just 6 months.",
+    author: "Sarah Jenkins",
+    role: "Founder, SparkleClean Solutions",
+    avatar: "SJ",
+  },
+  {
+    quote:
+      "Paperwork used to keep me up until midnight. Now AVSPH handles the estimates and follow-ups. I've finally got my evenings back.",
+    author: "Mike Thompson",
+    role: "CEO, Thompson Roofing Co.",
     avatar: "MT",
   },
   {
     quote:
-      "Our office has never looked cleaner! The cleaning crew is thorough, reliable, and always on time. Worth every penny for the peace of mind.",
-    author: "Sarah Martinez",
-    role: "Office Manager at Henderson & Associates",
-    avatar: "SM",
-  },
-  {
-    quote:
-      "Called them for an emergency plumbing issue and they arrived within an hour. Professional, efficient, and reasonably priced. Will definitely use again!",
-    author: "David Chen",
-    role: "Property Manager at Riverside Apartments",
-    avatar: "DC",
-  },
-  {
-    quote:
-      "Transformed our backyard into an oasis! The landscaping team was creative, professional, and stayed within our budget. Couldn't be happier with the results.",
-    author: "Emily Rodriguez",
-    role: "Homeowner in Phoenix, AZ",
-    avatar: "ER",
+      "The dispatch support is phenomenal. My technicians are always at the right place, and customers are updated instantly. It's a game changer.",
+    author: "David Lewis",
+    role: "Director, CityWide Plumbing",
+    avatar: "DL",
   },
 ];
 
@@ -34,30 +34,30 @@ export const testimonialsRow1 = [
 export const testimonialsRow2 = [
   {
     quote:
-      "Our HVAC system broke during a heatwave and they had us up and running the same day. Fantastic service, fair pricing, and truly care about their customers.",
-    author: "James Anderson",
-    role: "Restaurant Owner in Austin, TX",
-    avatar: "JA",
+      "Seasonal rushes were a nightmare before. AVSPH scales with us, handling the influx of landscaping quotes and scheduling perfectly.",
+    author: "Chris Ramirez",
+    role: "Owner, GreenScapes Design",
+    avatar: "CR",
   },
   {
     quote:
-      "We've used their cleaning service for our retail store for over a year now. Consistently excellent work, trustworthy team, and great communication.",
-    author: "Patricia Lee",
-    role: "Store Manager at Boutique Central",
-    avatar: "PL",
+      "I need reliable admin support, not just someone to answer phones. AVSPH understands the construction process and handles our permits and docs.",
+    author: "Robert Kim",
+    role: "Lead Contractor, BuildRight Construction",
+    avatar: "RK",
   },
   {
     quote:
-      "Had our gutters repaired and the team was professional from start to finish. They explained everything clearly and left the area spotless. Highly recommend!",
-    author: "Robert Williams",
-    role: "Homeowner in Seattle, WA",
-    avatar: "RW",
+      "Invoicing was a mess. AVSPH got us organized, and our cash flow improved immediately because bills finally go out on time.",
+    author: "James Peterson",
+    role: "Master Electrician, BrightWire Electric",
+    avatar: "JP",
   },
   {
     quote:
-      "Best carpet cleaning service in town! Removed stains I thought were permanent. Friendly staff, quick service, and affordable rates. Will use them again!",
-    author: "Linda Garcia",
-    role: "Property Owner in Denver, CO",
-    avatar: "LG",
+      "Customer retention is key in pest control. AVSPH follows up with every client, ensuring they rebook. My churn rate dropped significantly.",
+    author: "Jennifer Miller",
+    role: "Owner, SafeGuard Pest Control",
+    avatar: "JM",
   },
 ];

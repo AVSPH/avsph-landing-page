@@ -15,6 +15,7 @@ export default function Home() {
         <ServicesSection />
         <ChallengeSection />
         <WhyChooseUsSection />
+        <JourneySection />
         <TestimonialsSection />
         <CTASection />
       </main>
