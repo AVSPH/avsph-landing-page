@@ -1,41 +1,40 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { CheckCircle, Clock, DollarSign, Shield, Star, Users } from "lucide-react";
+import { CheckCircle, Star, MessageSquare, Shield, Globe, TrendingUp } from "lucide-react";
 import CTASection from "@/components/CTASection";
-import Link from "next/link";
+import CTABookACall from "@/components/CTABookACall";
 import {
     Accordion,
     AccordionContent,
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion";
-import { administrativeFeatures, administrativeFaqs } from "@/data/service.data";
-import CTABookACall from "@/components/CTABookACall";
+import { reviewFeatures, reviewFaqs } from "@/data/service.data";
 
 
 export const metadata: Metadata = {
-    title: "Best Administrative Support Virtual Assistants | AVSPH - Reliable & Secure",
+    title: "Best Review & Reputation Management Virtual Assistants | AVSPH",
     description:
-        "Hire top-tier administrative support virtual assistants. Expert email management, scheduling, data entry, CRM maintenance, and travel planning for growing businesses.",
+        "Hire top-tier reputation management virtual assistants. Automated review requests, negative feedback mitigation, and cross-platform monitoring.",
     openGraph: {
-        title: "Best Administrative Support Virtual Assistants | AVSPH",
+        title: "Best Review & Reputation Management Virtual Assistants | AVSPH",
         description:
-            "Hire top-tier administrative support virtual assistants. Expert email management, scheduling, data entry, CRM maintenance, and travel planning for growing businesses.",
-        url: "https://advancedvirtualstaff.com/services/administrative-support",
+            "Hire top-tier reputation management virtual assistants. Automated review requests, negative feedback mitigation, and cross-platform monitoring.",
+        url: "https://advancedvirtualstaff.com/services/review-and-reputation-management",
         siteName: "Advanced Virtual Staff Ph",
         locale: "en_US",
         type: "website",
         images: [
             {
-                url: "/assets/hero-images/administrative-support.jpg",
+                url: "/assets/hero-images/administrative-support.jpg", // Using placeholder image
                 width: 1200,
                 height: 630,
-                alt: "Administrative Support Virtual Assistant",
+                alt: "Review & Reputation Management Virtual Assistant",
             },
         ],
     },
     alternates: {
-        canonical: "https://advancedvirtualstaff.com/services/administrative-support",
+        canonical: "https://advancedvirtualstaff.com/services/review-and-reputation-management",
     },
 };
 
@@ -44,7 +43,7 @@ const jsonLd = {
     "@graph": [
         {
             "@type": "Service",
-            name: "Administrative Support Virtual Assistant",
+            name: "Review & Reputation Management Virtual Assistant",
             provider: {
                 "@type": "Organization",
                 name: "Advanced Virtual Staff Ph",
@@ -56,38 +55,38 @@ const jsonLd = {
                 ],
             },
             description:
-                "Professional administrative support services including email management, calendar scheduling, data entry, CRM maintenance, and travel planning.",
+                "Professional review and reputation management services including automated review requests, negative feedback mitigation, and cross-platform monitoring.",
             areaServed: "Worldwide",
             hasOfferCatalog: {
                 "@type": "OfferCatalog",
-                name: "Administrative Services",
+                name: "Reputation Services",
                 itemListElement: [
                     {
                         "@type": "Offer",
                         itemOffered: {
                             "@type": "Service",
-                            name: "Email & Inbox Management",
+                            name: "Review Requests",
                         },
                     },
                     {
                         "@type": "Offer",
                         itemOffered: {
                             "@type": "Service",
-                            name: "Calendar & Schedule Management",
+                            name: "Negative Feedback Mitigation",
                         },
                     },
                     {
                         "@type": "Offer",
                         itemOffered: {
                             "@type": "Service",
-                            name: "CRM Management & Data Entry",
+                            name: "Response Management",
                         },
                     },
                     {
                         "@type": "Offer",
                         itemOffered: {
                             "@type": "Service",
-                            name: "Travel & Itinerary Planning",
+                            name: "Review Marketing",
                         },
                     },
                 ],
@@ -95,7 +94,7 @@ const jsonLd = {
         },
         {
             "@type": "FAQPage",
-            mainEntity: administrativeFaqs.map((faq) => ({
+            mainEntity: reviewFaqs.map((faq) => ({
                 "@type": "Question",
                 name: faq.question,
                 acceptedAnswer: {
@@ -122,15 +121,15 @@ const jsonLd = {
                 {
                     "@type": "ListItem",
                     position: 3,
-                    name: "Administrative Support",
-                    item: "https://advancedvirtualstaff.com/services/administrative-support",
+                    name: "Review & Reputation Management",
+                    item: "https://advancedvirtualstaff.com/services/review-and-reputation-management",
                 },
             ],
         },
     ],
 };
 
-export default function AdministrativeSupportPage() {
+export default function ReviewManagementPage() {
     return (
         <>
             <script
@@ -143,7 +142,7 @@ export default function AdministrativeSupportPage() {
                 <div className="absolute inset-0 z-0">
                     <Image
                         src="/assets/hero-images/administrative-support.jpg"
-                        alt="Administrative Support Background"
+                        alt="Review and Reputation Management Background"
                         fill
                         className="object-cover"
                         priority
@@ -153,14 +152,14 @@ export default function AdministrativeSupportPage() {
                 <div className="absolute inset-0 z-0 opacity-5 bg-[url('/assets/grid-pattern.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
                 <div className="container relative z-10">
                     <div className="text-center max-w-4xl mx-auto">
-                        <span className="inline-block py-1 px-3 rounded-full bg-blue-50 text-blue-600 font-semibold text-sm mb-6 border border-blue-100">
-                            Premium Administrative Support Services
+                        <span className="inline-block py-1 px-3 rounded-full bg-cyan-50 text-cyan-600 font-semibold text-sm mb-6 border border-cyan-100">
+                            Professional Reputation Management
                         </span>
                         <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900 leading-tight">
-                            Delegate to Expert <span className="text-primary">Virtual Assistants</span> & Reclaim Your Time
+                            Turn Happy Customers into <span className="text-primary">5-Star Reviews.</span>
                         </h1>
                         <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-                            Stop getting bogged down by administrative tasks. Our vetted administrative VAs handle your inbox, complex scheduling, CRM, and data entry so you can focus on scaling your business.
+                            Build unbreakable trust. We automate review requests, monitor every platform, and help you dominate your local market with social proof.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <a style={{
@@ -178,17 +177,17 @@ export default function AdministrativeSupportPage() {
             <section id="features" className="py-20 bg-gray-50">
                 <div className="container">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Comprehensive Administrative Solutions</h2>
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Dominate Local Search</h2>
                         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            We don't just "do tasks". We take ownership of your operational workflow. From inbox management to complex travel logistics, our VAs are trained to deliver excellence.
+                            Reviews are the currency of the internet. We help you mint more of them and protect your reputation from negativity.
                         </p>
                     </div>
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {administrativeFeatures.map((feature, index) => (
+                        {reviewFeatures.map((feature, index) => (
                             <div key={index} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                                <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6 text-blue-600">
-                                    <CheckCircle className="w-6 h-6" />
+                                <div className="w-12 h-12 bg-cyan-50 rounded-xl flex items-center justify-center mb-6 text-cyan-600">
+                                    <Star className="w-6 h-6" />
                                 </div>
                                 <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
                                 <p className="text-gray-600 leading-relaxed">{feature.description}</p>
@@ -208,38 +207,37 @@ export default function AdministrativeSupportPage() {
                                 <div className="absolute inset-0 bg-blue-600/5"></div>
                                 <div className="absolute inset-0 flex items-center justify-center">
                                     <div className="text-center p-8">
-                                        <Users className="w-16 h-16 text-blue-600 mx-auto mb-4" />
-                                        <h3 className="text-2xl font-bold text-gray-900 mb-2">Dedicated Talent</h3>
-                                        <p className="text-gray-600">Top 1% of VAs in the Philippines</p>
+                                        <TrendingUp className="w-16 h-16 text-blue-600 mx-auto mb-4" />
+                                        <h3 className="text-2xl font-bold text-gray-900 mb-2">Rank Higher on Google</h3>
+                                        <p className="text-gray-600">More reviews = better SEO.</p>
                                     </div>
                                 </div>
                             </div>
-                            {/* Floating cards could be added here for visual flair */}
                         </div>
 
                         <div>
-                            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Why Choose AVSPH for Admin Support?</h2>
+                            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Why Delegate Reputation Management?</h2>
                             <p className="text-lg text-gray-600 mb-8">
-                                We provide more than just remote staff. We provide a strategic partnership dedicated to your operational excellence and scalability.
+                                One bad review can cost you thousands. We acts as your shield, ensuring your online presence reflects the quality of your work.
                             </p>
 
                             <div className="space-y-6">
                                 <div className="flex items-start gap-4">
                                     <div className="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center flex-shrink-0 text-green-600 mt-1">
-                                        <DollarSign className="w-5 h-5" />
+                                        <Globe className="w-5 h-5" />
                                     </div>
                                     <div>
-                                        <h4 className="text-lg font-bold text-gray-900 mb-1">Cost-Effective Outsourcing</h4>
-                                        <p className="text-gray-600">Save up to 70% on overhead compared to hiring local staff, without compromising on work quality or reliability.</p>
+                                        <h4 className="text-lg font-bold text-gray-900 mb-1">Be the #1 Choice</h4>
+                                        <p className="text-gray-600">When customers search for services, they pick the company with the most and best reviews. We make sure that's you.</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
                                     <div className="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center flex-shrink-0 text-purple-600 mt-1">
-                                        <Clock className="w-5 h-5" />
+                                        <MessageSquare className="w-5 h-5" />
                                     </div>
                                     <div>
-                                        <h4 className="text-lg font-bold text-gray-900 mb-1">Rapid Turnaround & Efficiency</h4>
-                                        <p className="text-gray-600">Experience the "follow the sun" model. Assign tasks before you sleep and wake up to completed projects.</p>
+                                        <h4 className="text-lg font-bold text-gray-900 mb-1">Control the Narrative</h4>
+                                        <p className="text-gray-600">We respond professionally to every review, showing potential customers that you care and are easy to work with.</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
@@ -247,8 +245,8 @@ export default function AdministrativeSupportPage() {
                                         <Shield className="w-5 h-5" />
                                     </div>
                                     <div>
-                                        <h4 className="text-lg font-bold text-gray-900 mb-1">Enterprise-Grade Security</h4>
-                                        <p className="text-gray-600">We utilize NDA protection, secure password management, and encrypted communication to keep your business data safe.</p>
+                                        <h4 className="text-lg font-bold text-gray-900 mb-1">Mitigate Bad Feedback</h4>
+                                        <p className="text-gray-600">We intercept unhappy customers before they vent online, turning potential detractors into loyal fans.</p>
                                     </div>
                                 </div>
                             </div>
@@ -262,11 +260,11 @@ export default function AdministrativeSupportPage() {
                 <div className="container max-w-3xl pb-2 ">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-                        <p className="text-gray-600">Common questions about our administrative support services.</p>
+                        <p className="text-gray-600">Common questions about our reputation management services.</p>
                     </div>
 
                     <Accordion type="single" collapsible className="space-y-4  py-2">
-                        {administrativeFaqs.map((faq, index) => (
+                        {reviewFaqs.map((faq, index) => (
                             <AccordionItem
                                 key={index}
                                 value={`faq-${index}`}
@@ -284,7 +282,7 @@ export default function AdministrativeSupportPage() {
                 </div>
             </section>
 
-            <CTABookACall />               
+            <CTABookACall />
             <CTASection />
         </>
     );

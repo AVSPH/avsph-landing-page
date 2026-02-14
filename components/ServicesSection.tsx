@@ -28,7 +28,7 @@ export default function ServicesSection() {
       description:
         "Inbound call answering, customer inquiries, follow-ups, and missed-call recovery to help you book more jobs.",
       color: "#F5A623",
-      href: "#",
+      href: "/services/call-handling-and-customer-support",
     },
     {
       icon: <Calendar className="w-7 h-7" />,
@@ -36,7 +36,7 @@ export default function ServicesSection() {
       description:
         "Appointment scheduling, technician dispatching, route coordination, and calendar management.",
       color: "#10B981",
-      href: "#",
+      href: "/services/scheduling-and-dispatching",
     },
     {
       icon: <ClipboardList className="w-7 h-7" />,
@@ -44,7 +44,7 @@ export default function ServicesSection() {
       description:
         "Sending estimates, invoices, payment follow-ups, and job documentation support.",
       color: "#8B5CF6",
-      href: "#",
+      href: "/services/estimates-and-invoicing",
     },
     {
       icon: <DollarSign className="w-7 h-7" />,
@@ -52,7 +52,7 @@ export default function ServicesSection() {
       description:
         "Invoice tracking, expense categorization, payroll assistance, and basic financial reporting.",
       color: "#EC4899",
-      href: "#",
+      href: "/services/book-keeping-support",
     },
     {
       icon: <TrendingUp className="w-7 h-7" />,
@@ -60,7 +60,7 @@ export default function ServicesSection() {
       description:
         "Handling new leads, CRM updates, appointment setting, and consistent follow-ups to close more jobs.",
       color: "#F97316",
-      href: "#",
+      href: "/services/lead-intake-and-follow-ups",
     },
     {
       icon: <Star className="w-7 h-7" />,
@@ -68,7 +68,7 @@ export default function ServicesSection() {
       description:
         "Review requests, Google & Yelp follow-ups, and reputation monitoring for local service brands.",
       color: "#06B6D4",
-      href: "#",
+      href: "/services/review-and-reputation-management",
     },
     {
       icon: <Layers className="w-7 h-7" />,
@@ -76,7 +76,7 @@ export default function ServicesSection() {
       description:
         "Daily task tracking, internal coordination, SOP execution, and workflow support.",
       color: "#0F2A4A",
-      href: "#",
+      href: "/services/operations-and-task-coordination",
     },
   ];
 

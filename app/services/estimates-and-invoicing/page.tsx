@@ -1,41 +1,40 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { CheckCircle, Clock, DollarSign, Shield, Star, Users } from "lucide-react";
+import { CheckCircle, Clock, DollarSign, Shield, Receipt, FileText } from "lucide-react";
 import CTASection from "@/components/CTASection";
-import Link from "next/link";
+import CTABookACall from "@/components/CTABookACall";
 import {
     Accordion,
     AccordionContent,
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion";
-import { administrativeFeatures, administrativeFaqs } from "@/data/service.data";
-import CTABookACall from "@/components/CTABookACall";
+import { estimatesFeatures, estimatesFaqs } from "@/data/service.data";
 
 
 export const metadata: Metadata = {
-    title: "Best Administrative Support Virtual Assistants | AVSPH - Reliable & Secure",
+    title: "Best Estimates & Invoicing Virtual Assistants | AVSPH",
     description:
-        "Hire top-tier administrative support virtual assistants. Expert email management, scheduling, data entry, CRM maintenance, and travel planning for growing businesses.",
+        "Hire top-tier estimates and invoicing virtual assistants. Rapid estimate creation, invoice generation, payment follow-ups, and job documentation management.",
     openGraph: {
-        title: "Best Administrative Support Virtual Assistants | AVSPH",
+        title: "Best Estimates & Invoicing Virtual Assistants | AVSPH",
         description:
-            "Hire top-tier administrative support virtual assistants. Expert email management, scheduling, data entry, CRM maintenance, and travel planning for growing businesses.",
-        url: "https://advancedvirtualstaff.com/services/administrative-support",
+            "Hire top-tier estimates and invoicing virtual assistants. Rapid estimate creation, invoice generation, payment follow-ups, and job documentation management.",
+        url: "https://advancedvirtualstaff.com/services/estimates-and-invoicing",
         siteName: "Advanced Virtual Staff Ph",
         locale: "en_US",
         type: "website",
         images: [
             {
-                url: "/assets/hero-images/administrative-support.jpg",
+                url: "/assets/hero-images/administrative-support.jpg", // Using placeholder image
                 width: 1200,
                 height: 630,
-                alt: "Administrative Support Virtual Assistant",
+                alt: "Estimates and Invoicing Virtual Assistant",
             },
         ],
     },
     alternates: {
-        canonical: "https://advancedvirtualstaff.com/services/administrative-support",
+        canonical: "https://advancedvirtualstaff.com/services/estimates-and-invoicing",
     },
 };
 
@@ -44,7 +43,7 @@ const jsonLd = {
     "@graph": [
         {
             "@type": "Service",
-            name: "Administrative Support Virtual Assistant",
+            name: "Estimates & Invoicing Virtual Assistant",
             provider: {
                 "@type": "Organization",
                 name: "Advanced Virtual Staff Ph",
@@ -56,38 +55,38 @@ const jsonLd = {
                 ],
             },
             description:
-                "Professional administrative support services including email management, calendar scheduling, data entry, CRM maintenance, and travel planning.",
+                "Professional estimates and invoicing services including rapid estimate creation, invoice generation, payment follow-ups, and job documentation management.",
             areaServed: "Worldwide",
             hasOfferCatalog: {
                 "@type": "OfferCatalog",
-                name: "Administrative Services",
+                name: "Estimates & Invoicing Services",
                 itemListElement: [
                     {
                         "@type": "Offer",
                         itemOffered: {
                             "@type": "Service",
-                            name: "Email & Inbox Management",
+                            name: "Rapid Estimate Creation",
                         },
                     },
                     {
                         "@type": "Offer",
                         itemOffered: {
                             "@type": "Service",
-                            name: "Calendar & Schedule Management",
+                            name: "Invoice Generation",
                         },
                     },
                     {
                         "@type": "Offer",
                         itemOffered: {
                             "@type": "Service",
-                            name: "CRM Management & Data Entry",
+                            name: "Payment Follow-Ups",
                         },
                     },
                     {
                         "@type": "Offer",
                         itemOffered: {
                             "@type": "Service",
-                            name: "Travel & Itinerary Planning",
+                            name: "Job Documentation",
                         },
                     },
                 ],
@@ -95,7 +94,7 @@ const jsonLd = {
         },
         {
             "@type": "FAQPage",
-            mainEntity: administrativeFaqs.map((faq) => ({
+            mainEntity: estimatesFaqs.map((faq) => ({
                 "@type": "Question",
                 name: faq.question,
                 acceptedAnswer: {
@@ -122,15 +121,15 @@ const jsonLd = {
                 {
                     "@type": "ListItem",
                     position: 3,
-                    name: "Administrative Support",
-                    item: "https://advancedvirtualstaff.com/services/administrative-support",
+                    name: "Estimates & Invoicing",
+                    item: "https://advancedvirtualstaff.com/services/estimates-and-invoicing",
                 },
             ],
         },
     ],
 };
 
-export default function AdministrativeSupportPage() {
+export default function EstimatesPage() {
     return (
         <>
             <script
@@ -143,7 +142,7 @@ export default function AdministrativeSupportPage() {
                 <div className="absolute inset-0 z-0">
                     <Image
                         src="/assets/hero-images/administrative-support.jpg"
-                        alt="Administrative Support Background"
+                        alt="Estimates and Invoicing Background"
                         fill
                         className="object-cover"
                         priority
@@ -153,14 +152,14 @@ export default function AdministrativeSupportPage() {
                 <div className="absolute inset-0 z-0 opacity-5 bg-[url('/assets/grid-pattern.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
                 <div className="container relative z-10">
                     <div className="text-center max-w-4xl mx-auto">
-                        <span className="inline-block py-1 px-3 rounded-full bg-blue-50 text-blue-600 font-semibold text-sm mb-6 border border-blue-100">
-                            Premium Administrative Support Services
+                        <span className="inline-block py-1 px-3 rounded-full bg-purple-50 text-purple-600 font-semibold text-sm mb-6 border border-purple-100">
+                            Professional Financial Admin Services
                         </span>
                         <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900 leading-tight">
-                            Delegate to Expert <span className="text-primary">Virtual Assistants</span> & Reclaim Your Time
+                            Get Paid Faster. <span className="text-primary">Less Paperwork.</span>
                         </h1>
                         <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-                            Stop getting bogged down by administrative tasks. Our vetted administrative VAs handle your inbox, complex scheduling, CRM, and data entry so you can focus on scaling your business.
+                            Stop letting cash flow suffer because you're too busy to invoice. We handle estimates, invoicing, and follow-ups so you can focus on the work.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <a style={{
@@ -178,17 +177,17 @@ export default function AdministrativeSupportPage() {
             <section id="features" className="py-20 bg-gray-50">
                 <div className="container">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Comprehensive Administrative Solutions</h2>
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Streamline Your Cash Flow</h2>
                         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            We don't just "do tasks". We take ownership of your operational workflow. From inbox management to complex travel logistics, our VAs are trained to deliver excellence.
+                            From the initial quote to the final payment, we ensure your financial documentation is professional, accurate, and on time.
                         </p>
                     </div>
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {administrativeFeatures.map((feature, index) => (
+                        {estimatesFeatures.map((feature, index) => (
                             <div key={index} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                                <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6 text-blue-600">
-                                    <CheckCircle className="w-6 h-6" />
+                                <div className="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center mb-6 text-purple-600">
+                                    <Receipt className="w-6 h-6" />
                                 </div>
                                 <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
                                 <p className="text-gray-600 leading-relaxed">{feature.description}</p>
@@ -208,19 +207,18 @@ export default function AdministrativeSupportPage() {
                                 <div className="absolute inset-0 bg-blue-600/5"></div>
                                 <div className="absolute inset-0 flex items-center justify-center">
                                     <div className="text-center p-8">
-                                        <Users className="w-16 h-16 text-blue-600 mx-auto mb-4" />
-                                        <h3 className="text-2xl font-bold text-gray-900 mb-2">Dedicated Talent</h3>
-                                        <p className="text-gray-600">Top 1% of VAs in the Philippines</p>
+                                        <FileText className="w-16 h-16 text-blue-600 mx-auto mb-4" />
+                                        <h3 className="text-2xl font-bold text-gray-900 mb-2">Professional Proposals</h3>
+                                        <p className="text-gray-600">Win more jobs with speed.</p>
                                     </div>
                                 </div>
                             </div>
-                            {/* Floating cards could be added here for visual flair */}
                         </div>
 
                         <div>
-                            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Why Choose AVSPH for Admin Support?</h2>
+                            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Why Delegate Invoicing?</h2>
                             <p className="text-lg text-gray-600 mb-8">
-                                We provide more than just remote staff. We provide a strategic partnership dedicated to your operational excellence and scalability.
+                                Administrative lag is the #1 killer of cash flow for service businesses. We eliminate the bottleneck between finishing the job and sending the bill.
                             </p>
 
                             <div className="space-y-6">
@@ -229,8 +227,8 @@ export default function AdministrativeSupportPage() {
                                         <DollarSign className="w-5 h-5" />
                                     </div>
                                     <div>
-                                        <h4 className="text-lg font-bold text-gray-900 mb-1">Cost-Effective Outsourcing</h4>
-                                        <p className="text-gray-600">Save up to 70% on overhead compared to hiring local staff, without compromising on work quality or reliability.</p>
+                                        <h4 className="text-lg font-bold text-gray-900 mb-1">Improve Cash Flow</h4>
+                                        <p className="text-gray-600">Invoices sent within 24 hours of job completion are paid 50% faster. We ensure they go out instantly.</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
@@ -238,8 +236,8 @@ export default function AdministrativeSupportPage() {
                                         <Clock className="w-5 h-5" />
                                     </div>
                                     <div>
-                                        <h4 className="text-lg font-bold text-gray-900 mb-1">Rapid Turnaround & Efficiency</h4>
-                                        <p className="text-gray-600">Experience the "follow the sun" model. Assign tasks before you sleep and wake up to completed projects.</p>
+                                        <h4 className="text-lg font-bold text-gray-900 mb-1">Win More Bids</h4>
+                                        <p className="text-gray-600">Speed wins. By getting a professional estimate to the customer before your competitor does, you increase your close rate.</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
@@ -247,8 +245,8 @@ export default function AdministrativeSupportPage() {
                                         <Shield className="w-5 h-5" />
                                     </div>
                                     <div>
-                                        <h4 className="text-lg font-bold text-gray-900 mb-1">Enterprise-Grade Security</h4>
-                                        <p className="text-gray-600">We utilize NDA protection, secure password management, and encrypted communication to keep your business data safe.</p>
+                                        <h4 className="text-lg font-bold text-gray-900 mb-1">Audit-Proof Records</h4>
+                                        <p className="text-gray-600">We meticulously organize every signed document, permit, and changelog so you're always prepared.</p>
                                     </div>
                                 </div>
                             </div>
@@ -262,11 +260,11 @@ export default function AdministrativeSupportPage() {
                 <div className="container max-w-3xl pb-2 ">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-                        <p className="text-gray-600">Common questions about our administrative support services.</p>
+                        <p className="text-gray-600">Common questions about our estimates and invoicing services.</p>
                     </div>
 
                     <Accordion type="single" collapsible className="space-y-4  py-2">
-                        {administrativeFaqs.map((faq, index) => (
+                        {estimatesFaqs.map((faq, index) => (
                             <AccordionItem
                                 key={index}
                                 value={`faq-${index}`}
@@ -284,7 +282,7 @@ export default function AdministrativeSupportPage() {
                 </div>
             </section>
 
-            <CTABookACall />               
+            <CTABookACall />
             <CTASection />
         </>
     );

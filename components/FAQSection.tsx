@@ -9,6 +9,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { faqs } from "@/data/faq.data";
+import CTABookACall from "./CTABookACall";
 
 export default function FAQSection() {
   const [searchQuery, setSearchQuery] = useState<string>("");
@@ -25,7 +26,7 @@ export default function FAQSection() {
   return (
     <section className="section" style={{ background: "var(--background)" }}>
       <div className="container">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <span
             className="text-sm font-semibold uppercase tracking-wider mb-4 block"
             style={{ color: "var(--secondary)" }}
@@ -63,7 +64,7 @@ export default function FAQSection() {
         </div>
 
         {/* FAQ Accordion */}
-        <div className="max-w-4xl mx-auto pb-5">
+        <div className="max-w-4xl mx-auto ">
           {filteredFAQs.length === 0 ? (
             <div
               className="text-center py-16 px-6 rounded-2xl "
@@ -117,7 +118,47 @@ export default function FAQSection() {
             </Accordion>
           )}
         </div>
+        
+            {/* CTA at bottom */}
+        <div
+          className="mt-10 p-10 md:p-12 rounded-3xl text-center relative overflow-hidden max-w-6xl mx-auto"
+          style={{
+            background:
+              "linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 50%, var(--secondary-dark) 100%)",
+          }}
+        >
+          {/* Decorative circles */}
+          <div
+            className="absolute top-0 right-0 w-64 h-64 rounded-full opacity-10"
+            style={{ background: "var(--secondary)" }}
+          />
+          <div
+            className="absolute bottom-0 left-0 w-48 h-48 rounded-full opacity-10"
+            style={{ background: "var(--accent)" }}
+          />
 
+          <div className="relative z-10">
+            <h3 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+              Still have questions?
+            </h3>
+            <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+              Can't find the answer you're looking for? Our friendly team is
+              ready to help you get started.
+            </p>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <a href="/booking" className="btn-primary">
+                <Phone className="w-5 h-5" />
+                Book a Free Call
+              </a>
+              <a
+                href="mailto:info@advancedvirtualstaff.com"
+                className="inline-flex items-center gap-2 px-8 py-3 bg-white/10 backdrop-blur-sm border-2 border-white text-white rounded-lg font-semibold transition-all hover:bg-white hover:text-[var(--primary)]"
+              >
+                Send us an Email
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
