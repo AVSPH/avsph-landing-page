@@ -9,14 +9,13 @@ import CTASection from "../../components/CTASection";
 export default function AboutPage() {
   return (
     <>
-      <main className="pt-20">
+      <main className="">
         <AboutHeroSection />
         <OurStorySection />
         <MilestonesSection />
         <MissionVisionSection />
         <CTASection />
       </main>
-      <Footer />
     </>
   );
 }

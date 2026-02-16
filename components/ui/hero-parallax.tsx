@@ -101,12 +101,12 @@ export const HeroParallax = ({
 
 export const Header = () => {
   return (
-    <div className="max-w-7xl relative mx-auto py-0 md:py-40 px-4 w-full  left-0 top-0">
-      <h1 className="text-4xl md:text-7xl font-bold text-slate-900 leading-tight">
+    <div className="max-w-7xl relative mx-auto py-10 px-4 w-full  left-0 top-0 z-20">
+      <h1 className="text-4xl md:text-7xl font-bold dark:text-white text-[var(--primary)] leading-tight">
         Building Your Dream Team <br />{" "}
-        <span className="text-[var(--primary)]">in the Philippines</span>
+        <span className="text-[var(--primary)] dark:text-[var(--accent)]">in the Philippines</span>
       </h1>
-      <p className="max-w-2xl text-base md:text-xl mt-8 text-slate-600">
+      <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200 text-[var(--foreground-light)]">
         We assist you in establishing a full-time, committed team in the
         Philippines, taking care of everything there while you maintain complete
         control over your operations.
@@ -116,13 +116,13 @@ export const Header = () => {
       <div className="flex flex-col sm:flex-row gap-4 mt-10">
         <a
           href="/booking"
-          className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-white transition-all duration-300 bg-[var(--accent)] hover:-translate-y-1 shadow-lg hover:shadow-xl"
+          className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-white transition-all duration-300 btn-primary hover:-translate-y-1 shadow-lg hover:shadow-xl"
         >
           Book a Free Call
         </a>
         <a
           href="#services"
-          className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-[var(--primary)] border-2 border-[var(--primary)] transition-all duration-300 hover:bg-[var(--primary)] hover:text-white"
+          className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-[var(--primary)] border-2 border-[var(--primary)] transition-all duration-300 bg-primary text-[var(--primary)] text-white"
         >
           Explore Services
         </a>
@@ -134,7 +134,7 @@ export const Header = () => {
           <div className="text-3xl md:text-4xl font-bold text-[var(--primary)] mb-2">
             4+
           </div>
-          <div className="text-sm md:text-base text-slate-600">
+          <div className="text-sm md:text-base text-[var(--foreground-light)]">
             Years Experience
           </div>
         </div>
@@ -142,7 +142,7 @@ export const Header = () => {
           <div className="text-3xl md:text-4xl font-bold text-[var(--primary)] mb-2">
             126+
           </div>
-          <div className="text-sm md:text-base text-slate-600">
+          <div className="text-sm md:text-base text-[var(--foreground-light)]">
             Happy Clients
           </div>
         </div>
@@ -150,7 +150,7 @@ export const Header = () => {
           <div className="text-3xl md:text-4xl font-bold text-[var(--primary)] mb-2">
             95%
           </div>
-          <div className="text-sm md:text-base text-slate-600">
+          <div className="text-sm md:text-base text-[var(--foreground-light)]">
             Client Retention
           </div>
         </div>
@@ -158,6 +158,7 @@ export const Header = () => {
     </div>
   );
 };
+
 
 export const ProductCard = ({
   product,
@@ -181,7 +182,7 @@ export const ProductCard = ({
       key={product.title}
       className="group/product h-96 w-[30rem] relative shrink-0"
     >
-      <a href={product.link} className="block group-hover/product:shadow-2xl ">
+      <div className="block group-hover/product:shadow-2xl ">
         <img
           src={product.thumbnail}
           height="600"
@@ -189,11 +190,8 @@ export const ProductCard = ({
           className="object-cover object-left-top absolute h-full w-full inset-0"
           alt={product.title}
         />
-      </a>
+      </div>
       <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-40 bg-blue-900 pointer-events-none transition-opacity duration-300"></div>
-      <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white font-bold text-lg">
-        {product.title}
-      </h2>
     </motion.div>
   );
 };

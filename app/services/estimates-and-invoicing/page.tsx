@@ -138,36 +138,53 @@ export default function EstimatesPage() {
             />
 
             {/* Hero Section */}
-            <section className="relative pt-32 pb-20 overflow-hidden">
-                <div className="absolute inset-0 z-0">
-                    <Image
-                        src="https://res.cloudinary.com/drpxke63n/image/upload/v1771238401/invoicing-software_mqysnc.jpg"
-                        alt="Estimates and Invoicing Background"
-                        fill
-                        className="object-cover"
-                        priority
-                    />
-                    <div className="absolute inset-0 bg-white/50" />
-                </div>
-                <div className="absolute inset-0 z-0 opacity-5 bg-[url('/assets/grid-pattern.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
+            <section className="relative pt-20 lg:pt-32 pb-20 overflow-hidden bg-[var(--background)]">
                 <div className="container relative z-10">
-                    <div className="text-center max-w-4xl mx-auto">
-                        <span className="inline-block py-1 px-3 rounded-full bg-purple-50 text-purple-600 font-semibold text-sm mb-6 border border-purple-100">
-                            Professional Financial Admin Services
-                        </span>
-                        <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900 leading-tight">
-                            Get Paid Faster. <span className="text-primary">Less Paperwork.</span>
-                        </h1>
-                        <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-                            Stop letting cash flow suffer because you're too busy to invoice. We handle estimates, invoicing, and follow-ups so you can focus on the work.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a style={{
-                                background: "linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%)",
-                            }} href="#contact" className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white transition-all duration-200 bg-blue-600 rounded-full hover:bg-blue-700 hover:shadow-lg hover:-translate-y-1">
-                                Get Started Today
-                            </a>
+                    <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                        {/* Content Side */}
+                        <div className="text-left animate-slide-up">
+                            <span className="inline-block py-2 px-4 rounded-full bg-purple-50 text-purple-600 font-bold text-sm tracking-wide mb-6 border border-purple-100">
+                                Professional Financial Admin Services
+                            </span>
+                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 text-[var(--primary)] leading-tight">
+                                Get Paid Faster. <br />
+                                <span className="text-[var(--accent)]">Less Paperwork.</span>
+                            </h1>
+                            <p className="text-lg md:text-xl text-[var(--foreground-light)] mb-8 leading-relaxed max-w-xl">
+                                Stop letting cash flow suffer because you're too busy to invoice. We handle estimates, invoicing, and follow-ups so you can focus on the work.
+                            </p>
+                            <div className="flex flex-col sm:flex-row gap-4">
+                                <a
+                                    href="#contact"
+                                    className="btn-primary"
+                                >
+                                    Get Started Today
+                                </a>
+                                <a
+                                    href="#features"
+                                    className="btn-secondary"
+                                >
+                                    See How We Help
+                                </a>
+                            </div>
+                        </div>
 
+                        {/* Image Side */}
+                        <div className="relative animate-fade-in lg:h-[600px] h-[400px] w-full">
+                            {/* Decorative background blob/shape */}
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-purple-50/50 rounded-full blur-3xl -z-10"></div>
+
+                            <div className="relative h-full w-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white/50">
+                                <Image
+                                    src="https://res.cloudinary.com/drpxke63n/image/upload/v1771238401/invoicing-software_mqysnc.jpg"
+                                    alt="Estimates and Invoicing Background"
+                                    fill
+                                    className="object-cover"
+                                    priority
+                                />
+                                {/* Subtle overlay gradient for depth */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-[var(--primary)]/20 to-transparent"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
