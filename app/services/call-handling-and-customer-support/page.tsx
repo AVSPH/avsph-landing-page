@@ -140,7 +140,7 @@ export default function CallHandlingPage() {
             <section className="relative pt-32 pb-20 overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="/assets/hero-images/administrative-support.jpg"
+                        src="https://res.cloudinary.com/drpxke63n/image/upload/v1771237846/asian-woman-assisting-remote-clients_1_vswmmd.jpg"
                         alt="Call Handling Support Background"
                         fill
                         className="object-cover"

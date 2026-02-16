@@ -141,7 +141,7 @@ export default function LeadIntakePage() {
             <section className="relative pt-32 pb-20 overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="/assets/hero-images/administrative-support.jpg"
+                        src="https://res.cloudinary.com/drpxke63n/image/upload/v1771238617/4_metrics_to_track_lead_follow-up_effectiveness.776x0_khmuyi.jpg"
                         alt="Lead Intake and Follow-Up Background"
                         fill
                         className="object-cover"

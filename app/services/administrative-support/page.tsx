@@ -142,7 +142,7 @@ export default function AdministrativeSupportPage() {
             <section className="relative pt-32 pb-20 overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="/assets/hero-images/administrative-support.jpg"
+                        src="https://res.cloudinary.com/drpxke63n/image/upload/v1771237552/two-asian-businesswomen-sitting-together-office-desk-looking-computer-screen_1_dctsjx.jpg"
                         alt="Administrative Support Background"
                         fill
                         className="object-cover"

@@ -141,7 +141,7 @@ export default function ReviewManagementPage() {
             <section className="relative pt-32 pb-20 overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="/assets/hero-images/administrative-support.jpg"
+                        src="https://res.cloudinary.com/drpxke63n/image/upload/v1771238702/5-benefits-of-online-reputation-management_se2trl.jpg"
                         alt="Review and Reputation Management Background"
                         fill
                         className="object-cover"

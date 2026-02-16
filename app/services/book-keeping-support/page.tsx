@@ -141,7 +141,7 @@ export default function BookkeepingPage() {
             <section className="relative pt-32 pb-20 overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="/assets/hero-images/administrative-support.jpg"
+                        src="https://res.cloudinary.com/drpxke63n/image/upload/v1771238539/Orlando-Bookkeeping-Services-1_xtxr3h.jpg"
                         alt="Bookkeeping Support Background"
                         fill
                         className="object-cover"
