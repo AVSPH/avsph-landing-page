@@ -14,23 +14,26 @@ import {
     reviewFeatures,
     operationsFeatures
 } from "@/data/service.data";
+import SOPProcessSection from "@/components/SOPProcessSection";
 
 export default function ServicesPage() {
     return (
-        <main className="pb-20 bg-[var(--background)]">
+        <main className=" bg-[var(--background)]">
             {/* Hero Section */}
-            <section className="relative py-20 lg:py-28 overflow-hidden bg-[var(--primary)] text-white">
-
+            <section className="relative py-20 lg:py-28 overflow-hidden bg-white">
+                {/* Background Decor */}
+                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[var(--primary)]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+                <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[var(--accent)]/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
 
                 <div className="container relative z-10 text-center">
-                    <span className="text-[var(--primary)] font-bold tracking-wider uppercase mb-4 block animate-fade-in">
+                    <span className="text-[var(--accent)] font-bold tracking-wider uppercase mb-4 block animate-fade-in">
                         Our Services
                     </span>
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 text-white animate-slide-up leading-tight">
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 text-[var(--primary)] animate-slide-up leading-tight">
                         Dedicated, SOP-Trained <br className="hidden md:block" />
                         <span className="text-[var(--accent)]">Virtual Staff</span> for Service-Based Businesses
                     </h1>
-                    <p className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto mb-10 leading-relaxed animate-slide-up opacity-90" style={{ animationDelay: "0.2s" }}>
+                    <p className="text-lg md:text-xl text-[var(--foreground-light)] max-w-3xl mx-auto mb-10 leading-relaxed animate-slide-up" style={{ animationDelay: "0.2s" }}>
                         Every role we provide is backed by clear Standard Operating Procedures (SOPs), structured onboarding, and ongoing quality checks. Our virtual staff don’t “figure it out as they go”, they follow proven systems aligned with your business.
                     </p>
                 </div>
@@ -119,20 +122,9 @@ export default function ServicesPage() {
                 </div>
             </section>
 
-            {/* CTA Section */}
-            <section className="py-24 bg-[var(--primary)] text-white relative overflow-hidden">
-                <div className="absolute inset-0 bg-[url('/assets/grid.svg')] opacity-10"></div>
-                <div className="container relative z-10 text-center">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-8">Ready to Scale Your Business?</h2>
-                    <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto leading-relaxed">
-                        Stop handling everything yourself. Get matched with a dedicated, trained virtual assistant today and reclaim your time.
-                    </p>
-                    <Link href="/booking" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-bold text-[var(--primary)] bg-white hover:bg-[var(--accent)] hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                        Book a Discovery Call
-                        <ArrowRight className="w-5 h-5" />
-                    </Link>
-                </div>
-            </section>
+
+            {/* SOP Process Section */}
+            <SOPProcessSection />
         </main>
     );
 }
