@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { CheckCircle, Clock, DollarSign, Shield, Receipt, FileText } from "lucide-react";
-import CTASection from "@/components/CTASection";
+import ServiceBenefitsSection from '@/components/ServiceBenefitsSection'
 import CTABookACall from "@/components/CTABookACall";
 import {
     Accordion,
@@ -215,62 +215,7 @@ export default function EstimatesPage() {
             </section>
 
             {/* Benefits Section */}
-            <section className="py-20 bg-white border-y border-gray-100">
-                <div className="container">
-                    <div className="grid lg:grid-cols-2 gap-16 items-center">
-                        <div className="relative">
-                            {/* Placeholder for an image or graphic */}
-                            <div className="aspect-square rounded-3xl bg-gray-100 overflow-hidden relative">
-                                <div className="absolute inset-0 bg-blue-600/5"></div>
-                                <div className="absolute inset-0 flex items-center justify-center">
-                                    <div className="text-center p-8">
-                                        <FileText className="w-16 h-16 text-blue-600 mx-auto mb-4" />
-                                        <h3 className="text-2xl font-bold text-gray-900 mb-2">Professional Proposals</h3>
-                                        <p className="text-gray-600">Win more jobs with speed.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Why Delegate Invoicing?</h2>
-                            <p className="text-lg text-gray-600 mb-8">
-                                Administrative lag is the #1 killer of cash flow for service businesses. We eliminate the bottleneck between finishing the job and sending the bill.
-                            </p>
-
-                            <div className="space-y-6">
-                                <div className="flex items-start gap-4">
-                                    <div className="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center flex-shrink-0 text-green-600 mt-1">
-                                        <DollarSign className="w-5 h-5" />
-                                    </div>
-                                    <div>
-                                        <h4 className="text-lg font-bold text-gray-900 mb-1">Improve Cash Flow</h4>
-                                        <p className="text-gray-600">Invoices sent within 24 hours of job completion are paid 50% faster. We ensure they go out instantly.</p>
-                                    </div>
-                                </div>
-                                <div className="flex items-start gap-4">
-                                    <div className="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center flex-shrink-0 text-purple-600 mt-1">
-                                        <Clock className="w-5 h-5" />
-                                    </div>
-                                    <div>
-                                        <h4 className="text-lg font-bold text-gray-900 mb-1">Win More Bids</h4>
-                                        <p className="text-gray-600">Speed wins. By getting a professional estimate to the customer before your competitor does, you increase your close rate.</p>
-                                    </div>
-                                </div>
-                                <div className="flex items-start gap-4">
-                                    <div className="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center flex-shrink-0 text-orange-600 mt-1">
-                                        <Shield className="w-5 h-5" />
-                                    </div>
-                                    <div>
-                                        <h4 className="text-lg font-bold text-gray-900 mb-1">Audit-Proof Records</h4>
-                                        <p className="text-gray-600">We meticulously organize every signed document, permit, and changelog so you're always prepared.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <ServiceBenefitsSection />
 
             {/* FAQs Section */}
             <section className="py-20 bg-gray-50">

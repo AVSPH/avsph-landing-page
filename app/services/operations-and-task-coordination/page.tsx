@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { CheckCircle, Layers, ClipboardList, Users, TrendingUp, BarChart3 } from "lucide-react";
-import CTASection from "@/components/CTASection";
+import ServiceBenefitsSection from "@/components/ServiceBenefitsSection";
 import CTABookACall from "@/components/CTABookACall";
 import {
     Accordion,
@@ -215,62 +215,7 @@ export default function OperationsPage() {
             </section>
 
             {/* Benefits Section */}
-            <section className="py-20 bg-white border-y border-gray-100">
-                <div className="container">
-                    <div className="grid lg:grid-cols-2 gap-16 items-center">
-                        <div className="relative">
-                            {/* Placeholder for an image or graphic */}
-                            <div className="aspect-square rounded-3xl bg-gray-100 overflow-hidden relative">
-                                <div className="absolute inset-0 bg-blue-600/5"></div>
-                                <div className="absolute inset-0 flex items-center justify-center">
-                                    <div className="text-center p-8">
-                                        <TrendingUp className="w-16 h-16 text-blue-600 mx-auto mb-4" />
-                                        <h3 className="text-2xl font-bold text-gray-900 mb-2">Scale with Confidence</h3>
-                                        <p className="text-gray-600">Structure allows for growth.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Why Delegate Operations?</h2>
-                            <p className="text-lg text-gray-600 mb-8">
-                                You can't be the CEO and the office manager at the same time. We handle the day-to-day execution so you can drive the vision.
-                            </p>
-
-                            <div className="space-y-6">
-                                <div className="flex items-start gap-4">
-                                    <div className="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center flex-shrink-0 text-green-600 mt-1">
-                                        <ClipboardList className="w-5 h-5" />
-                                    </div>
-                                    <div>
-                                        <h4 className="text-lg font-bold text-gray-900 mb-1">Consistency & Quality</h4>
-                                        <p className="text-gray-600">We ensure that your SOPs aren't just documents in a folder—they are active processes being followed every day.</p>
-                                    </div>
-                                </div>
-                                <div className="flex items-start gap-4">
-                                    <div className="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center flex-shrink-0 text-purple-600 mt-1">
-                                        <Users className="w-5 h-5" />
-                                    </div>
-                                    <div>
-                                        <h4 className="text-lg font-bold text-gray-900 mb-1">Aligned Teams</h4>
-                                        <p className="text-gray-600">We facilitate better communication between the field and the office, reducing errors and friction.</p>
-                                    </div>
-                                </div>
-                                <div className="flex items-start gap-4">
-                                    <div className="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center flex-shrink-0 text-orange-600 mt-1">
-                                        <BarChart3 className="w-5 h-5" />
-                                    </div>
-                                    <div>
-                                        <h4 className="text-lg font-bold text-gray-900 mb-1">Data-Driven Decisions</h4>
-                                        <p className="text-gray-600">With accurate KPI tracking, you'll have the numbers you need to make smart business moves.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <ServiceBenefitsSection />
 
             {/* FAQs Section */}
             <section className="py-20 bg-gray-50">

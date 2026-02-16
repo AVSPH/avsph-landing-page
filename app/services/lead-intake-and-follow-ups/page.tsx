@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { CheckCircle, Clock, DollarSign, Shield, PhoneIncoming, MessageSquare } from "lucide-react";
-import CTASection from "@/components/CTASection";
+import ServiceBenefitsSection from "@/components/ServiceBenefitsSection";
 import CTABookACall from "@/components/CTABookACall";
 import {
     Accordion,
@@ -215,62 +215,7 @@ export default function LeadIntakePage() {
             </section>
 
             {/* Benefits Section */}
-            <section className="py-20 bg-white border-y border-gray-100">
-                <div className="container">
-                    <div className="grid lg:grid-cols-2 gap-16 items-center">
-                        <div className="relative">
-                            {/* Placeholder for an image or graphic */}
-                            <div className="aspect-square rounded-3xl bg-gray-100 overflow-hidden relative">
-                                <div className="absolute inset-0 bg-blue-600/5"></div>
-                                <div className="absolute inset-0 flex items-center justify-center">
-                                    <div className="text-center p-8">
-                                        <MessageSquare className="w-16 h-16 text-blue-600 mx-auto mb-4" />
-                                        <h3 className="text-2xl font-bold text-gray-900 mb-2">Relentless Follow-Up</h3>
-                                        <p className="text-gray-600">We call until they book or say no.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Why Delegate Lead Management?</h2>
-                            <p className="text-lg text-gray-600 mb-8">
-                                Most service businesses miss 20-30% of their calls and rarely follow up more than once. We fix that leak in your bucket.
-                            </p>
-
-                            <div className="space-y-6">
-                                <div className="flex items-start gap-4">
-                                    <div className="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center flex-shrink-0 text-green-600 mt-1">
-                                        <DollarSign className="w-5 h-5" />
-                                    </div>
-                                    <div>
-                                        <h4 className="text-lg font-bold text-gray-900 mb-1">Increase Booking Rates</h4>
-                                        <p className="text-gray-600">Speed-to-lead is the #1 factor in conversion. We ensure you're the first company they talk to.</p>
-                                    </div>
-                                </div>
-                                <div className="flex items-start gap-4">
-                                    <div className="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center flex-shrink-0 text-purple-600 mt-1">
-                                        <Clock className="w-5 h-5" />
-                                    </div>
-                                    <div>
-                                        <h4 className="text-lg font-bold text-gray-900 mb-1">Clean & Organized CRM</h4>
-                                        <p className="text-gray-600">Every lead is tracked, tagged, and updated in your system so you always know your pipeline status.</p>
-                                    </div>
-                                </div>
-                                <div className="flex items-start gap-4">
-                                    <div className="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center flex-shrink-0 text-orange-600 mt-1">
-                                        <Shield className="w-5 h-5" />
-                                    </div>
-                                    <div>
-                                        <h4 className="text-lg font-bold text-gray-900 mb-1">Reactivate Old Customers</h4>
-                                        <p className="text-gray-600">We turn your "dead" leads into new revenue by systematically following up with past estimates.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <ServiceBenefitsSection />
 
             {/* FAQs Section */}
             <section className="py-20 bg-gray-50">

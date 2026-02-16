@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { CheckCircle, Star, MessageSquare, Shield, Globe, TrendingUp } from "lucide-react";
-import CTASection from "@/components/CTASection";
+import ServiceBenefitsSection from '@/components/ServiceBenefitsSection'
 import CTABookACall from "@/components/CTABookACall";
 import {
     Accordion,
@@ -9,7 +9,7 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion";
-import { reviewFeatures, reviewFaqs } from "@/data/service.data";
+import { reviewFeatures, reviewFaqs } from "@/data/service.data";   
 
 
 export const metadata: Metadata = {
@@ -215,62 +215,7 @@ export default function ReviewManagementPage() {
             </section>
 
             {/* Benefits Section */}
-            <section className="py-20 bg-white border-y border-gray-100">
-                <div className="container">
-                    <div className="grid lg:grid-cols-2 gap-16 items-center">
-                        <div className="relative">
-                            {/* Placeholder for an image or graphic */}
-                            <div className="aspect-square rounded-3xl bg-gray-100 overflow-hidden relative">
-                                <div className="absolute inset-0 bg-blue-600/5"></div>
-                                <div className="absolute inset-0 flex items-center justify-center">
-                                    <div className="text-center p-8">
-                                        <TrendingUp className="w-16 h-16 text-blue-600 mx-auto mb-4" />
-                                        <h3 className="text-2xl font-bold text-gray-900 mb-2">Rank Higher on Google</h3>
-                                        <p className="text-gray-600">More reviews = better SEO.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Why Delegate Reputation Management?</h2>
-                            <p className="text-lg text-gray-600 mb-8">
-                                One bad review can cost you thousands. We acts as your shield, ensuring your online presence reflects the quality of your work.
-                            </p>
-
-                            <div className="space-y-6">
-                                <div className="flex items-start gap-4">
-                                    <div className="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center flex-shrink-0 text-green-600 mt-1">
-                                        <Globe className="w-5 h-5" />
-                                    </div>
-                                    <div>
-                                        <h4 className="text-lg font-bold text-gray-900 mb-1">Be the #1 Choice</h4>
-                                        <p className="text-gray-600">When customers search for services, they pick the company with the most and best reviews. We make sure that's you.</p>
-                                    </div>
-                                </div>
-                                <div className="flex items-start gap-4">
-                                    <div className="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center flex-shrink-0 text-purple-600 mt-1">
-                                        <MessageSquare className="w-5 h-5" />
-                                    </div>
-                                    <div>
-                                        <h4 className="text-lg font-bold text-gray-900 mb-1">Control the Narrative</h4>
-                                        <p className="text-gray-600">We respond professionally to every review, showing potential customers that you care and are easy to work with.</p>
-                                    </div>
-                                </div>
-                                <div className="flex items-start gap-4">
-                                    <div className="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center flex-shrink-0 text-orange-600 mt-1">
-                                        <Shield className="w-5 h-5" />
-                                    </div>
-                                    <div>
-                                        <h4 className="text-lg font-bold text-gray-900 mb-1">Mitigate Bad Feedback</h4>
-                                        <p className="text-gray-600">We intercept unhappy customers before they vent online, turning potential detractors into loyal fans.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <ServiceBenefitsSection />
 
             {/* FAQs Section */}
             <section className="py-20 bg-gray-50">

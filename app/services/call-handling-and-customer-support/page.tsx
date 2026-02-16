@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { CheckCircle, Clock, DollarSign, Shield, Phone, Headset } from "lucide-react";
 import CTABookACall from "@/components/CTABookACall";
+import ServiceBenefitsSection from "@/components/ServiceBenefitsSection";
 import {
     Accordion,
     AccordionContent,
@@ -214,62 +215,7 @@ export default function CallHandlingPage() {
             </section>
 
             {/* Benefits Section */}
-            <section className="py-20 bg-white border-y border-gray-100">
-                <div className="container">
-                    <div className="grid lg:grid-cols-2 gap-16 items-center">
-                        <div className="relative">
-                            {/* Placeholder for an image or graphic */}
-                            <div className="aspect-square rounded-3xl bg-gray-100 overflow-hidden relative">
-                                <div className="absolute inset-0 bg-blue-600/5"></div>
-                                <div className="absolute inset-0 flex items-center justify-center">
-                                    <div className="text-center p-8">
-                                        <Headset className="w-16 h-16 text-blue-600 mx-auto mb-4" />
-                                        <h3 className="text-2xl font-bold text-gray-900 mb-2">Professional Representation</h3>
-                                        <p className="text-gray-600">Your brand's voice, perfected.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Why Choose AVSPH for Call Handling?</h2>
-                            <p className="text-lg text-gray-600 mb-8">
-                                We provide reliable, articulate, and empathetic virtual receptionists who treat your callers with the same care you would.
-                            </p>
-
-                            <div className="space-y-6">
-                                <div className="flex items-start gap-4">
-                                    <div className="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center flex-shrink-0 text-green-600 mt-1">
-                                        <DollarSign className="w-5 h-5" />
-                                    </div>
-                                    <div>
-                                        <h4 className="text-lg font-bold text-gray-900 mb-1">Stop Losing Revenue</h4>
-                                        <p className="text-gray-600">Missed calls are missed money. Capture every opportunity, even when you're on a job site or sleeping.</p>
-                                    </div>
-                                </div>
-                                <div className="flex items-start gap-4">
-                                    <div className="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center flex-shrink-0 text-purple-600 mt-1">
-                                        <Clock className="w-5 h-5" />
-                                    </div>
-                                    <div>
-                                        <h4 className="text-lg font-bold text-gray-900 mb-1">24/7 Availability</h4>
-                                        <p className="text-gray-600">Expand your business hours without burning out. Offer true 24/7 support to gain a competitive edge.</p>
-                                    </div>
-                                </div>
-                                <div className="flex items-start gap-4">
-                                    <div className="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center flex-shrink-0 text-orange-600 mt-1">
-                                        <Shield className="w-5 h-5" />
-                                    </div>
-                                    <div>
-                                        <h4 className="text-lg font-bold text-gray-900 mb-1">Scale Instantly</h4>
-                                        <p className="text-gray-600">Handle seasonal spikes or rapid growth without the headache of hiring and training local staff.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <ServiceBenefitsSection />
 
             {/* FAQs Section */}
             <section className="py-20 bg-gray-50">
