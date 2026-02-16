@@ -1,3 +1,54 @@
+export const services = [
+    {
+        title: "Administrative Support",
+        description: "Reliable admin support, done your way, every time.",
+        href: "/services/administrative-support",
+        image: "https://res.cloudinary.com/drpxke63n/image/upload/v1771237552/two-asian-businesswomen-sitting-together-office-desk-looking-computer-screen_1_dctsjx.jpg"
+    },
+    {
+        title: "Call Handling & Customer Support",
+        description: "Professional customer interactions, scripted, trained, and consistent.",
+        href: "/services/call-handling-and-customer-support",
+        image: "https://res.cloudinary.com/drpxke63n/image/upload/v1771237846/asian-woman-assisting-remote-clients_1_vswmmd.jpg"
+    },
+    {
+        title: "Scheduling & Dispatching",
+        description: "Structured scheduling that keeps jobs on track.",
+        href: "/services/scheduling-and-dispatching",
+        image: "https://res.cloudinary.com/drpxke63n/image/upload/v1771238278/calendar-planner-agenda-schedule-concept_ulfero.jpg"
+    },
+    {
+        title: "Estimates & Invoicing",
+        description: "Billing done accurately, following proven processes.",
+        href: "/services/estimates-and-invoicing",
+        image: "https://res.cloudinary.com/drpxke63n/image/upload/v1771238401/invoicing-software_mqysnc.jpg"
+    },
+    {
+        title: "Bookkeeping Support",
+        description: "Clean, organized books, done by process, not memory.",
+        href: "/services/book-keeping-support",
+        image: "https://res.cloudinary.com/drpxke63n/image/upload/v1771238539/Orlando-Bookkeeping-Services-1_xtxr3h.jpg"
+    },
+    {
+        title: "Lead Intake & Follow-Ups",
+        description: "Every lead handled using a proven follow-up system.",
+        href: "/services/lead-intake-and-follow-ups",
+        image: "https://res.cloudinary.com/drpxke63n/image/upload/v1771238617/4_metrics_to_track_lead_follow-up_effectiveness.776x0_khmuyi.jpg"
+    },
+    {
+        title: "Review & Reputation Management",
+        description: "Reputation management, done systematically.",
+        href: "/services/review-and-reputation-management",
+        image: "https://res.cloudinary.com/drpxke63n/image/upload/v1771238702/5-benefits-of-online-reputation-management_se2trl.jpg"
+    },
+    {
+        title: "Operations & Task Coordination",
+        description: "Operations that run on systems, not stress.",
+        href: "/services/operations-and-task-coordination",
+        image: "https://res.cloudinary.com/drpxke63n/image/upload/v1771238781/pexels-fauxels-3184325_go45vz.jpg"
+    },
+];
+
 export const administrativeFeatures = [
     {
         title: "Proactive Inbox Management",

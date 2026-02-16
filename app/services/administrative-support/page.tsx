@@ -270,7 +270,7 @@ export default function AdministrativeSupportPage() {
                             <AccordionItem
                                 key={index}
                                 value={`faq-${index}`}
-                                className="bg-white border rounded-xl px-2"
+                                className="bg-white border rounded-xl px-2 last:border-b"
                             >
                                 <AccordionTrigger className="px-4 py-4 hover:no-underline text-lg font-semibold text-gray-900 text-left">
                                     {faq.question}
@@ -284,8 +284,10 @@ export default function AdministrativeSupportPage() {
                 </div>
             </section>
 
-            <CTABookACall />               
-            <CTASection />
+            <CTABookACall
+                title="Get admin support that follows systems, not guesswork."
+                subtitle="Schedule a free consultation to discuss your administrative needs and find your perfect virtual assistant match."
+            />
         </>
     );
 }

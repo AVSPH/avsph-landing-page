@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { CheckCircle, Clock, DollarSign, Shield, Phone, Headset } from "lucide-react";
-import CTASection from "@/components/CTASection";
+import CTABookACall from "@/components/CTABookACall";
 import {
     Accordion,
     AccordionContent,
@@ -267,7 +267,7 @@ export default function CallHandlingPage() {
                             <AccordionItem
                                 key={index}
                                 value={`faq-${index}`}
-                                className="bg-white border rounded-xl px-2"
+                                className="bg-white border rounded-xl px-2 last:border-b"
                             >
                                 <AccordionTrigger className="px-4 py-4 hover:no-underline text-lg font-semibold text-gray-900 text-left">
                                     {faq.question}
@@ -282,7 +282,10 @@ export default function CallHandlingPage() {
             </section>
 
             {/* CTA Section */}
-            <CTASection />
+            <CTABookACall
+                title="Never miss another call. Deploy a trained support VA."
+                subtitle="Schedule a free consultation to discuss your call handling needs and find your perfect virtual assistant match."
+            />
         </>
     );
 }

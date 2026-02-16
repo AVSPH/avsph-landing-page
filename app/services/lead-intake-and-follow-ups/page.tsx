@@ -268,7 +268,7 @@ export default function LeadIntakePage() {
                             <AccordionItem
                                 key={index}
                                 value={`faq-${index}`}
-                                className="bg-white border rounded-xl px-2"
+                                className="bg-white border rounded-xl px-2 last:border-b"
                             >
                                 <AccordionTrigger className="px-4 py-4 hover:no-underline text-lg font-semibold text-gray-900 text-left">
                                     {faq.question}
@@ -282,8 +282,10 @@ export default function LeadIntakePage() {
                 </div>
             </section>
 
-            <CTABookACall />
-            <CTASection />
+            <CTABookACall
+                title="Turn more leads into jobs."
+                subtitle="Schedule a free consultation to discuss your lead intake and follow-up needs and find your perfect virtual assistant match."
+            />
         </>
     );
 }
