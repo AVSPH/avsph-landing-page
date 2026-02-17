@@ -1,31 +1,47 @@
-import { Construction } from "lucide-react";
-import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+"use client";
 
-export const metadata = {
-    title: "Case Studies | Coming Soon",
-    description: "Explore our success stories and see how we've helped businesses scale.",
-};
+import { ResourceCard } from "@/components/ResourceCard";
+import { CASE_STUDIES } from "@/data/case-studies.data";
+import { FileText, ArrowLeft } from "lucide-react";
+import Link from "next/link";
+
+// Metadata cannot be exported from a Client Component.
+// If metadata is needed, it should be moved to a layout.tsx or a separate server component wrapper.
 
 export default function CaseStudiesPage() {
     return (
-        <div className="min-h-screen bg-slate-950 flex flex-col items-center justify-center p-4 text-center">
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-12 max-w-lg w-full backdrop-blur-sm">
-                <div className="w-16 h-16 bg-emerald-500/10 rounded-full flex items-center justify-center mx-auto mb-6 text-emerald-400">
-                    <Construction className="w-8 h-8" />
+        <main className="min-h-screen bg-[var(--background)] pt-32 pb-20">
+            <div className="container px-4 md:px-6">
+                <div className="mb-12">
+                    <Link
+                        href="/resources"
+                        className="inline-flex items-center text-sm font-medium text-[var(--foreground-light)] hover:text-[var(--primary)] mb-6 transition-colors"
+                    >
+                        <ArrowLeft className="w-4 h-4 mr-2" />
+                        Back to Resources
+                    </Link>
+                    <h1 className="text-4xl md:text-5xl font-extrabold mb-6 text-[var(--primary)]">
+                        Case Studies
+                    </h1>
+                    <p className="text-xl text-[var(--foreground-light)] max-w-3xl">
+                        Real results from real businesses. See the impact of strategic delegation and professional support.
+                    </p>
                 </div>
-                <h1 className="text-3xl font-bold text-white mb-4">Coming Soon</h1>
-                <p className="text-gray-400 mb-8">
-                    We're currently compiling our success stories. Check back soon to see how we've helped businesses like yours scale with ease.
-                </p>
-                <Link
-                    href="/resources"
-                    className="inline-flex items-center gap-2 text-white hover:text-emerald-400 transition-colors font-medium"
-                >
-                    <ArrowLeft className="w-4 h-4" />
-                    Back to Resources
-                </Link>
+
+                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    {CASE_STUDIES.map((study) => (
+                        <ResourceCard
+                            key={study.slug}
+                            title={study.client}
+                            description={study.title} // Use the catchy title as description for the card
+                            href={`/case-studies/${study.slug}`}
+                            icon={FileText}
+                            badge={study.industry}
+                            variant="default"
+                        />
+                    ))}
+                </div>
             </div>
-        </div>
+        </main>
     );
 }
