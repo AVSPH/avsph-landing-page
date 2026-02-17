@@ -370,11 +370,11 @@ export default function DelegationMatrixPage() {
 
                             {/* Recommendation Result */}
                             {recommendation && (
-                                <div className="bg-gray-900 rounded-[2rem] p-8 md:p-12 text-center relative overflow-hidden text-white shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-500">
+                                <div className="bg-primary rounded-[2rem] p-8 md:p-12 text-center relative overflow-hidden text-white shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-500">
                                     <div className="absolute top-0 left-0 w-full h-full opacity-20 bg-[url('/grid.svg')]"></div>
                                     <div className="relative z-10 max-w-2xl mx-auto">
                                         <h2 className="text-2xl md:text-3xl font-bold mb-4">
-                                            Your Hiring Roadmap
+                                            <span className="text-white">Your Hiring Roadmap</span>
                                         </h2>
                                         <p className="text-gray-300 mb-8 text-lg">
                                             Based on your matrix, your immediate next hire should be:
@@ -387,13 +387,13 @@ export default function DelegationMatrixPage() {
                                         <div className="flex justify-center gap-4">
                                             <Link
                                                 href="/booking"
-                                                className="bg-[var(--primary)] text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-700 transition-colors flex items-center gap-2 shadow-lg hover:shadow-blue-500/20"
+                                                className="bg-[var(--accent)] text-white px-8 py-4 rounded-xl font-bold  transition-colors flex items-center gap-2 shadow-lg hover:shadow-blue-500/20"
                                             >
                                                 Book a Strategy Call{" "}
                                                 <ArrowRight className="w-4 h-4" />
                                             </Link>
                                         </div>
-                                        <p className="mt-4 text-sm text-gray-500">
+                                        <p className="mt-4 text-sm text-white">
                                             We have pre-vetted {recommendation}s ready to start in 72h.
                                         </p>
                                     </div>

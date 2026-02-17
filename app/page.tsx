@@ -6,6 +6,8 @@ import WhyChooseUsSection from "../components/WhyChooseUsSection";
 import TestimonialsSection from "../components/TestimonialsSection";
 import CTASection from "../components/CTASection";
 import HowItWorksSection from "@/components/HowItWorksSection";
+import ResourcesSection from "@/components/ResourcesSection";
+
 export default function Home() {
   return (
     <>
@@ -14,6 +16,7 @@ export default function Home() {
         <ServicesSection />
         <ChallengeSection />
         <HowItWorksSection />
+        <ResourcesSection />
         <WhyChooseUsSection />
         <JourneySection />
         <TestimonialsSection />

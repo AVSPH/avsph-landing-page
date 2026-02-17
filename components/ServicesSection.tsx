@@ -83,20 +83,16 @@ export default function ServicesSection() {
   return (
     <section id="services" className="section" style={{ background: "#FFFFFF" }}>
       <div className="container">
-        <div className="text-center mb-16">
-          <span
-            className="text-sm font-semibold uppercase tracking-wider mb-4 block"
-            style={{ color: "var(--secondary)" }}
-          >
-            Our Services
-          </span>
-          <h2 className="section-title">
-            Expert <span className="gradient-text">Virtual Assistants</span> for Every Need
-          </h2>
-          <p className="section-subtitle">
-            From administrative tasks to specialized technical work, our virtual assistants
-            are equipped to handle all your business needs with excellence.
-          </p>
+        <div className="text-center mb-16 animate-in slide-in-from-bottom-4 duration-700 fade-in">
+                    <span className="text-[var(--accent)] font-bold tracking-wider uppercase mb-4 block">
+                        Our Services
+                    </span>
+                    <h2 className="text-3xl md:text-5xl font-extrabold mb-6 text-[var(--primary)] leading-tight">
+                        Expert <span className="text-[var(--accent)]">Virtual Assistants</span> for Every Need
+                    </h2>
+                    <p className="text-lg text-[var(--foreground-light)] max-w-2xl mx-auto leading-relaxed">
+                         From administrative tasks to specialized technical work, our virtual assistants are equipped to handle all your business needs with excellence.
+                    </p>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">

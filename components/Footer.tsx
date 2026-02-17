@@ -31,7 +31,8 @@ export default function Footer() {
     ],
     resources: [
       { label: "FAQs", href: "/faqs" },
-      { label: "Savings Calculator", href: "/savings-calculator" },
+      { label: "Savings Calculator", href: "/resources/savings-calculator" },
+      { label: "Delegation Matrix", href: "/resources/delegation-matrix" },
       { label: "Case Studies", href: "/case-studies" },
       { label: "Contact Us", href: "#contact" },
     ],
