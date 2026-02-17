@@ -5,7 +5,7 @@ import ComparisonSection from "../../components/ComparisonSection";
 export default function FAQsPage() {
   return (
     <>
-      <main className="pt-32 pb-20">
+      <main className="">
         <ComparisonSection />
         <FAQSection />
       </main>

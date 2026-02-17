@@ -232,7 +232,7 @@ export default function LeadIntakePage() {
                                 value={`faq-${index}`}
                                 className="bg-white border rounded-xl px-2 last:border-b"
                             >
-                                <AccordionTrigger className="px-4 py-4 hover:no-underline text-lg font-semibold text-gray-900 text-left">
+                                <AccordionTrigger className="px-4 py-4 hover:no-underline text-lg font-semibold text-gray-900 text-left cursor-pointer">
                                     {faq.question}
                                 </AccordionTrigger>
                                 <AccordionContent className="px-4 pb-4 text-gray-600 leading-relaxed">

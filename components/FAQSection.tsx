@@ -93,14 +93,14 @@ export default function FAQSection() {
                 <AccordionItem
                   key={index}
                   value={`faq-${index}`}
-                  className="rounded-2xl overflow-hidden border-2 transition-all"
+                  className="rounded-2xl overflow-hidden border-2 transition-all last:border-b-2"
                   style={{
                     background: "var(--card)",
                     borderColor: "var(--border)",
                   }}
                 >
-                  <AccordionTrigger
-                    className="px-6 py-5 hover:no-underline"
+                  <AccordionTrigger 
+                    className="px-6 py-5 hover:no-underline cursor-pointer"
                     style={{ color: "var(--primary)" }}
                   >
                     <span className="font-semibold text-base md:text-lg text-left">

@@ -104,7 +104,7 @@ export const Header = () => {
     <div className="max-w-7xl relative mx-auto py-10 px-4 w-full  left-0 top-0 z-20">
       <h1 className="text-4xl md:text-7xl font-bold dark:text-white text-[var(--primary)] leading-tight">
         Building Your Dream Team <br />{" "}
-        <span className="text-[var(--primary)] dark:text-[var(--accent)]">in the Philippines</span>
+        <span className="text-[var(--accent)]">in the Philippines</span>
       </h1>
       <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200 text-[var(--foreground-light)]">
         We assist you in establishing a full-time, committed team in the
