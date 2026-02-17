@@ -296,7 +296,7 @@ export default function SavingsCalculatorPage() {
                                         <p className="text-white font-bold text-lg">Reinvest {formatCurrency(annualSavings)} into growth.</p>
                                     </div>
                                     <Link
-                                        href="/book-a-call"
+                                        href="/booking"
                                         className="group bg-white text-slate-900 px-8 py-4 rounded-xl font-bold hover:bg-emerald-50 hover:scale-105 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-emerald-500/20"
                                     >
                                         Hire Your VA Now <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
