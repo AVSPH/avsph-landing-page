@@ -61,7 +61,7 @@ export default function ResourcesPage() {
                         <ResourceCard
                             title="Case Studies"
                             description="Real-world examples of how businesses scaled with AVSPH."
-                            href="/case-studies"
+                            href=""
                             icon={FileText}
                             badge="Coming Soon"
                         />

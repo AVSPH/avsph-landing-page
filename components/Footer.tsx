@@ -33,7 +33,7 @@ export default function Footer() {
       { label: "FAQs", href: "/faqs" },
       { label: "Savings Calculator", href: "/resources/savings-calculator" },
       { label: "Delegation Matrix", href: "/resources/delegation-matrix" },
-      { label: "Case Studies", href: "/case-studies" },
+      { label: "Case Studies", href: "" },
       { label: "Contact Us", href: "#contact" },
     ],
   };
