@@ -2,21 +2,21 @@ import { NextRequest, NextResponse } from 'next/server'
 
 // Country codes to block (ISO 3166-1 alpha-2)
 const BLOCKED_COUNTRIES = [
-    'PK', // Pakistan
-    'BD', // Bangladesh
-    'IN', // India
-    'CN', // China
-    'TW', // Taiwan
-    'JP', // Japan
+  'PK', // Pakistan
+  'BD', // Bangladesh
+  'IN', // India
+  'CN', // China
+  'TW', // Taiwan
+  'JP', // Japan
 ]
 
 export function middleware(request: NextRequest) {
-    // Vercel injects the visitor's country via the x-vercel-ip-country header
-    const country = request.headers.get('x-vercel-ip-country')
+  // Vercel injects the visitor's country via the x-vercel-ip-country header
+  const country = request.headers.get('x-vercel-ip-country')
 
-    if (country && BLOCKED_COUNTRIES.includes(country)) {
-        return new NextResponse(
-            `<!DOCTYPE html>
+  if (country && BLOCKED_COUNTRIES.includes(country)) {
+    return new NextResponse(
+      `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -48,17 +48,17 @@ export function middleware(request: NextRequest) {
   </div>
 </body>
 </html>`,
-            {
-                status: 403,
-                headers: { 'Content-Type': 'text/html' },
-            }
-        )
-    }
+      {
+        status: 403,
+        headers: { 'Content-Type': 'text/html' },
+      }
+    )
+  }
 
-    return NextResponse.next()
+  return NextResponse.next()
 }
 
 export const config = {
-    // Run on all routes except Next.js internals and static assets
-    matcher: ['/((?!_next/static|_next/image|favicon.ico).*)'],
+  // Run on all routes except Next.js internals and static assets
+  matcher: ['/((?!_next/static|_next/image|favicon.ico|assets/).*)'],
 }

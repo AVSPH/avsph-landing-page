@@ -1,4 +1,7 @@
 import Footer from "@/components/Footer";
+
+// ISR — revalidate every hour to pick up new blog posts
+export const revalidate = 3600;
 import BlogSection from "@/components/BlogSection";
 
 export default function BlogPage() {

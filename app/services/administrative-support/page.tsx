@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+
+// Fully static — built once at deploy time, served from CDN edge globally
+export const revalidate = false;
 import Image from "next/image";
 import { CheckCircle, Clock, DollarSign, Shield, Star, Users } from "lucide-react";
 import ServiceBenefitsSection from "@/components/ServiceBenefitsSection";

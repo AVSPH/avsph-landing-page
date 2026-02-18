@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+
+// Fully static — built once at deploy time, served from CDN edge globally
+export const revalidate = false;
 import Image from "next/image";
 import { CheckCircle, Clock, DollarSign, Shield, Phone, Headset } from "lucide-react";
 import CTABookACall from "@/components/CTABookACall";

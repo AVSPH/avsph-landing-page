@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+
+// Fully static — built once at deploy time, served from CDN edge globally
+export const revalidate = false;
 import Image from "next/image";
 import { CheckCircle, Star, MessageSquare, Shield, Globe, TrendingUp } from "lucide-react";
 import ServiceBenefitsSection from '@/components/ServiceBenefitsSection'
@@ -9,7 +12,7 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion";
-import { reviewFeatures, reviewFaqs } from "@/data/service.data";   
+import { reviewFeatures, reviewFaqs } from "@/data/service.data";
 
 
 export const metadata: Metadata = {
