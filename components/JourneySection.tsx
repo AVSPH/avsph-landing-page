@@ -7,7 +7,7 @@ interface TeamMember {
 }
 
 const teamMembers: TeamMember[] = [
-    { name: "Team Member 1", src: "/team/1.png" }, 
+    { name: "Team Member 1", src: "/team/1.png" },
     { name: "Team Member 2", src: "/team/2.png" },
     { name: "Team Member 3", src: "/team/3.png" },
 
@@ -16,24 +16,24 @@ const teamMembers: TeamMember[] = [
 export default function JourneySection() {
     const milestones = [
         {
-            year: "2020",
-            title: "Our Early Beginning",
-            description: "Started as a small virtual assistant service supporting entrepreneurs with essential administrative tasks."
+            year: "July 2022",
+            title: "AVS Started",
+            description: "In July 2022, AVS (Advanced Virtual Staff) was established as a new business venture."
         },
         {
-            year: "2022",
-            title: "Expanding Our Services",
-            description: "Grew our capabilities into project coordination, detailed research tasks, responsive customer support, and operational help."
+            year: "August 2022",
+            title: "Gained 3 Clients",
+            description: "It quickly gained momentum and acquired three clients within a month, in August 2022."
         },
         {
-            year: "2023",
-            title: "Strengthening Our Workflow",
-            description: "Built a more structured, productivity-focused VA system with efficient processes and task automation."
+            year: "May 2023",
+            title: "Hired 30+ VAs",
+            description: "AVS hired over 30 virtual assistants on the 10th month with purely organic marketing."
         },
         {
-            year: "2025",
-            title: "Becoming a VA Partner",
-            description: "Evolved into a complete virtual support team helping startups and growing businesses operate smoothly."
+            year: "July 2023",
+            title: "One Year Anniversary",
+            description: "70+ Virtual Assistants, more than 30+ clients in different fields."
         },
     ];
 
