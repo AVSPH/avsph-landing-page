@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://res.cloudinary.com/drpxke63n/image/upload/v1771585157/advancedvirtualstaff.com__4_zzm13x.png",
+        url: "https://res.cloudinary.com/drpxke63n/image/upload/v1771586449/advancedvirtualstaff.com__4_1_qdwoxu.png",
         width: 1200,
         height: 630,
         alt: "Advanced Virtual Staff",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     title: "Advanced Virtual Staff | Your Growth. Our Mission.",
     description:
       "Get matched with exceptional virtual assistants from our top 1% talent pool. 24/7 support, affordable rates, no contracts.",
-    images: ["https://res.cloudinary.com/drpxke63n/image/upload/v1771585157/advancedvirtualstaff.com__4_zzm13x.png"],
+    images: ["https://res.cloudinary.com/drpxke63n/image/upload/v1771586449/advancedvirtualstaff.com__4_1_qdwoxu.png"],
   },
 };
 
