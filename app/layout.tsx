@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://res.cloudinary.com/drpxke63n/image/upload/v1771584366/Screenshot_2026-02-20_184224_kapwc1.png",
+        url: "https://res.cloudinary.com/drpxke63n/image/upload/v1771584884/advancedvirtualstaff.com__3_aw2moz.png",
         width: 1200,
         height: 630,
         alt: "Advanced Virtual Staff",
