@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   keywords:
     "virtual assistant, VA services, outsourcing, remote staff, Philippines, admin support, customer service, bookkeeping",
   openGraph: {
-    title: "Advanced Virtual Staff | Your Growth. Our Mission.",
+    title: "Advanced Virtual Staff | Your Success. Our Mission.",
     description:
       "Get matched with exceptional virtual assistants from our top 1% talent pool. 24/7 support, affordable rates, no contracts.",
     type: "website",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Advanced Virtual Staff | Your Growth. Our Mission.",
+    title: "Advanced Virtual Staff | Your Success. Our Mission.",
     description:
       "Get matched with exceptional virtual assistants from our top 1% talent pool. 24/7 support, affordable rates, no contracts.",
     images: ["https://res.cloudinary.com/drpxke63n/image/upload/v1771586449/advancedvirtualstaff.com__4_1_qdwoxu.png"],
