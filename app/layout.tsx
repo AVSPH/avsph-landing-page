@@ -35,6 +35,14 @@ export const metadata: Metadata = {
     description:
       "Get matched with exceptional virtual assistants from our top 1% talent pool. 24/7 support, affordable rates, no contracts.",
     type: "website",
+    images: [
+      {
+        url: "https://res.cloudinary.com/drpxke63n/image/upload/v1771584366/Screenshot_2026-02-20_184224_kapwc1.png",
+        width: 1200,
+        height: 630,
+        alt: "Advanced Virtual Staff",
+      },
+    ],
   },
 };
 
