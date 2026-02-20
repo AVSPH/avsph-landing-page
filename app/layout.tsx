@@ -44,6 +44,13 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Advanced Virtual Staff | Your Growth. Our Mission.",
+    description:
+      "Get matched with exceptional virtual assistants from our top 1% talent pool. 24/7 support, affordable rates, no contracts.",
+    images: ["https://res.cloudinary.com/drpxke63n/image/upload/v1771585157/advancedvirtualstaff.com__4_zzm13x.png"],
+  },
 };
 
 export default function RootLayout({
