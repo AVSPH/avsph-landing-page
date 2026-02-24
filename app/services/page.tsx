@@ -26,14 +26,14 @@ export default function ServicesPage() {
                 <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[var(--accent)]/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
 
                 <div className="container relative z-10 text-center">
-                    <span className="text-[var(--accent)] font-bold tracking-wider uppercase mb-4 block animate-fade-in">
+                    <span className="text-[var(--accent)] font-bold tracking-wider uppercase mb-4 block ">
                         Our Services
                     </span>
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 text-[var(--primary)] animate-slide-up leading-tight">
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 text-[var(--primary)]  leading-tight">
                         Dedicated, SOP-Trained <br className="hidden md:block" />
                         <span className="text-[var(--accent)]">Virtual Staff</span> for Service-Based Businesses
                     </h1>
-                    <p className="text-lg md:text-xl text-[var(--foreground-light)] max-w-3xl mx-auto mb-10 leading-relaxed animate-slide-up" style={{ animationDelay: "0.2s" }}>
+                    <p className="text-lg md:text-xl text-[var(--foreground-light)] max-w-3xl mx-auto mb-10 leading-relaxed" style={{ animationDelay: "0.2s" }}>
                         Every role we provide is backed by clear Standard Operating Procedures (SOPs), structured onboarding, and ongoing quality checks. Our virtual staff don’t “figure it out as they go”, they follow proven systems aligned with your business.
                     </p>
                 </div>

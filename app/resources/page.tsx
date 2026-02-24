@@ -7,7 +7,8 @@ import {
     LayoutDashboard,
     FileText,
     Phone,
-    Users
+    Users,
+    BookOpen
 } from "lucide-react";
 
 export default function ResourcesPage() {
@@ -58,6 +59,13 @@ export default function ResourcesPage() {
                         />
 
                         {/* Standard Items */}
+                        <ResourceCard
+                            title="VA Onboarding Guide"
+                            description="The complete, step-by-step blueprint to integrate your Virtual Assistant into your business for long-term success."
+                            href="/resources/va-onboarding"
+                            icon={BookOpen}
+                        />
+
                         <ResourceCard
                             title="Case Studies"
                             description="Real-world examples of how businesses scaled with AVSPH."
