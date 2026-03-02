@@ -15,19 +15,19 @@ export default function Footer() {
   const footerLinks = {
     company: [
       { label: "About Us", href: "/about" },
-      { label: "How We Work", href: "#how-it-works" },
+      { label: "How We Work", href: "/about" },
       { label: "Careers", href: "/careers" },
       { label: "Blog", href: "/blog" },
     ],
     services: [
       { label: "Administrative Support", href: "/services/administrative-support" },
-      { label: "Call Handling & Customer Support", href: "#services" },
-      { label: "Scheduling & Dispatching", href: "#services" },
-      { label: "Estimates & Invoicing", href: "#services" },
-      { label: "Bookkeeping Support", href: "#services" },
-      { label: "Lead Intake & Follow-Ups", href: "#services" },
-      { label: "Review & Reputation Management", href: "#services" },
-      { label: "Operations & Task Coordination", href: "#services" },
+      { label: "Call Handling & Customer Support", href: "/services/call-handling-and-customer-support" },
+      { label: "Scheduling & Dispatching", href: "/services/scheduling-and-dispatching" },
+      { label: "Estimates & Invoicing", href: "/services/estimates-and-invoicing" },
+      { label: "Bookkeeping Support", href: "/services/bookkeeping-support" },
+      { label: "Lead Intake & Follow-Ups", href: "/services/lead-intake-and-follow-ups" },
+      { label: "Review & Reputation Management", href: "/services/review-and-reputation-management" },
+      { label: "Operations & Task Coordination", href: "/services/operations-and-task-coordination" },
     ],
     resources: [
       { label: "FAQs", href: "/faqs" },
@@ -41,8 +41,8 @@ export default function Footer() {
   const socialLinks = [
     { name: "Facebook", icon: <Facebook className="w-5 h-5 " />, href: "https://www.facebook.com/avsphvirtualassistanceservices" },
     { name: "LinkedIn", icon: <Linkedin className="w-5 h-5" />, href: "https://www.linkedin.com/company/advanced-virtual-staff-ph/" },
-    { name: "Twitter", icon: <Twitter className="w-5 h-5" />, href: "#" },
-    { name: "Instagram", icon: <Instagram className="w-5 h-5" />, href: "#" },
+    { name: "Twitter", icon: <Twitter className="w-5 h-5" />, href: "https://x.com/advancedvstaff" },
+    { name: "Instagram", icon: <Instagram className="w-5 h-5" />, href: "https://www.instagram.com/advancedvirtualstaff"},
   ];
 
   return (
