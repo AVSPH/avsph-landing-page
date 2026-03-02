@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import CTASection from "@/components/CTASection";
 
 const PRE_ONBOARDING_CHECKLIST = [
     {
@@ -361,7 +362,7 @@ export default function VAOnboardingPage() {
 
             {/* Deep Dive & Welcome Kit */}
             <section className="py-20 bg-gray-50 border-t border-gray-100">
-                <div className="container px-4 md:px-6">
+                <div className="container px-4 md:px-6 mb-10">
                     <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
 
                         {/* Deep Dive Activity Templates */}
@@ -431,17 +432,9 @@ export default function VAOnboardingPage() {
                             </div>
                         </div>
 
-                    </div>
-
-                    <div className="mt-20 max-w-4xl mx-auto text-center">
-                        <Link
-                            href="/booking"
-                            className="inline-flex items-center gap-2 bg-[var(--accent)] text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-orange-600 transition-colors shadow-lg hover:shadow-orange-500/20"
-                        >
-                            Book a Strategy Call <ArrowRight className="w-5 h-5" />
-                        </Link>
-                    </div>
+                    </div>  
                 </div>
+                <CTASection/>
             </section>
         </main>
     );

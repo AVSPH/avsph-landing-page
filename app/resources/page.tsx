@@ -11,6 +11,7 @@ import {
     BookOpen
 } from "lucide-react";
 
+
 export default function ResourcesPage() {
     return (
         <main className="min-h-screen bg-[var(--background)]">

@@ -121,7 +121,7 @@ export const Header = () => {
           Book a Free Call
         </a>
         <a
-          href="#services"
+          href="/services"
           className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-[var(--primary)] border-2 border-[var(--primary)] transition-all duration-300 bg-primary text-[var(--primary)] text-white"
         >
           Explore Services
