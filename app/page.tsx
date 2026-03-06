@@ -19,7 +19,7 @@ export default function Home() {
         <ResourcesSection />
         <WhyChooseUsSection />
         <JourneySection />
-        <TestimonialsSection />
+        {/* <TestimonialsSection /> */}
         <CTASection />
       </main>
     </>
