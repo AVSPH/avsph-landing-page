@@ -47,17 +47,13 @@ type Quadrant = {
 
 // Initial Data
 const INITIAL_TASKS: TaskItem[] = [
-    { id: "email", label: "Email Management", icon: Mail, category: "bank" },
-    { id: "scheduling", label: "Calendar Scheduling", icon: Calendar, category: "bank" },
-    { id: "social", label: "Social Media Posting", icon: Instagram, category: "bank" },
-    { id: "travel", label: "Travel Booking", icon: Plane, category: "bank" },
-    { id: "data", label: "Data Entry", icon: Database, category: "bank" },
-    { id: "invoicing", label: "Invoicing & Billing", icon: DollarSign, category: "bank" },
-    { id: "research", label: "Market Research", icon: FileText, category: "bank" },
-    { id: "calls", label: "Taking Calls", icon: Phone, category: "bank" },
-    { id: "crm", label: "CRM Management", icon: Briefcase, category: "bank" },
-    { id: "strategy", label: "Business Strategy", icon: LayoutDashboard, category: "bank" },
-    { id: "hiring", label: "Hiring & Interviews", icon: User, category: "bank" },
+    { id: "admin", label: "Managing emails, booking meetings, travel planning, filing digital receipts.", icon: Mail, category: "bank" },
+    { id: "sales", label: "Finding leads on LinkedIn, cold emailing, following up with prospects.", icon: Briefcase, category: "bank" },
+    { id: "support", label: "Answering \"how-to\" questions, onboarding new clients, sending contracts.", icon: User, category: "bank" },
+    { id: "appointments", label: "Inbound Calls & Setting appointments.", icon: Phone, category: "bank" },
+    { id: "content", label: "Posting to Instagram/LinkedIn, editing TikToks/Reels, writing blog posts.", icon: Instagram, category: "bank" },
+    { id: "bookkeeping", label: "Sending invoices, following up on late payments, basic bookkeeping.", icon: DollarSign, category: "bank" },
+    { id: "technical", label: "Fixing website bugs, setting up email automations, CRM data entry.", icon: Database, category: "bank" },
 ];
 
 const QUADRANTS: Quadrant[] = [
@@ -132,7 +128,7 @@ function DraggableTaskCard({
             <div className="flex items-center gap-3 pointer-events-none">
                 <div
                     className={cn(
-                        "p-2 rounded-lg border transition-colors",
+                        "p-2 rounded-lg border transition-colors shrink-0",
                         variant === "bank"
                             ? "bg-white border-gray-100 text-gray-500 group-hover:text-[var(--primary)]"
                             : "bg-gray-50 border-gray-100 text-gray-500"
@@ -140,7 +136,7 @@ function DraggableTaskCard({
                 >
                     <task.icon className="w-4 h-4" />
                 </div>
-                <span className="font-medium text-sm text-gray-700">{task.label}</span>
+                <span className="font-medium text-sm text-gray-700 text-left leading-snug tracking-tight">{task.label}</span>
             </div>
 
             {variant === "quadrant" && onRemove ? (
@@ -188,12 +184,12 @@ function OverlayCard({ task }: { task: TaskItem }) {
     const Icon = task.icon;
 
     return (
-        <div className="p-3 rounded-xl border-2 border-[var(--primary)] bg-white shadow-2xl flex items-center gap-3 select-none ring-2 ring-[var(--primary)]/30 rotate-2 scale-105 min-w-[200px]">
-            <div className="p-2 rounded-lg border bg-white border-gray-100 text-[var(--primary)]">
+        <div className="p-3 rounded-xl border-2 border-[var(--primary)] bg-white shadow-2xl flex items-center gap-3 select-none ring-2 ring-[var(--primary)]/30 rotate-2 scale-105 min-w-[200px] max-w-[400px]">
+            <div className="p-2 rounded-lg border bg-white border-gray-100 text-[var(--primary)] shrink-0">
                 <Icon className="w-4 h-4" />
             </div>
-            <span className="font-medium text-sm text-gray-800">{task.label}</span>
-            <GripVertical className="w-4 h-4 text-[var(--primary)] ml-auto" />
+            <span className="font-medium text-sm text-gray-800 text-left leading-snug tracking-tight">{task.label}</span>
+            <GripVertical className="w-4 h-4 text-[var(--primary)] ml-auto shrink-0" />
         </div>
     );
 }
@@ -227,22 +223,22 @@ export default function DelegationMatrixPage() {
 
         if (totalDelegatable.length === 0) return null;
 
-        const hasAdmin = totalDelegatable.some((t) =>
-            ["email", "scheduling", "travel", "calls", "crm"].includes(t.id)
-        );
-        const hasMarketing = totalDelegatable.some((t) =>
-            ["social", "research"].includes(t.id)
-        );
-        const hasFinance = totalDelegatable.some((t) =>
-            ["invoicing", "data"].includes(t.id)
-        );
+        const vaMapping: Record<string, string> = {
+            admin: "General Admin VA",
+            sales: "Lead Gen / Sales VA",
+            support: "Customer Support VA",
+            appointments: "Appointment Setter / Call Dispatch",
+            content: "Social Media / Content VA",
+            bookkeeping: "Bookkeeping VA",
+            technical: "Technical VA"
+        };
 
-        if (hasAdmin && hasMarketing) return "Executive Assistant (Generalist)";
-        if (hasAdmin && hasFinance) return "Admin & Bookkeeping Specialist";
-        if (hasAdmin) return "Executive Assistant";
-        if (hasMarketing) return "Marketing Specialist";
-        if (hasFinance) return "Bookkeeper";
-        return "General Virtual Assistant";
+        const neededVAs = Array.from(new Set(totalDelegatable.map(t => vaMapping[t.id]).filter(Boolean)));
+
+        if (neededVAs.length === 0) return null;
+        if (neededVAs.length === 1) return neededVAs[0];
+        if (neededVAs.length === 2) return neededVAs.join(" & ");
+        return "Multiple VA Specialists";
     };
 
     const recommendation = getRecommendation();
@@ -380,7 +376,7 @@ export default function DelegationMatrixPage() {
                                             Based on your matrix, your immediate next hire should be:
                                         </p>
 
-                                        <div className="inline-block bg-white text-gray-900 px-8 py-4 rounded-xl text-3xl font-black mb-8 shadow-xl transform rotate-1 hover:rotate-0 transition-transform duration-300">
+                                        <div className="inline-block bg-white text-gray-900 px-8 py-4 rounded-xl text-xl md:text-2xl font-black mb-8 shadow-xl transform rotate-1 hover:rotate-0 transition-transform duration-300">
                                             {recommendation}
                                         </div>
 
@@ -394,7 +390,7 @@ export default function DelegationMatrixPage() {
                                             </Link>
                                         </div>
                                         <p className="mt-4 text-sm text-white">
-                                            We have pre-vetted {recommendation}s ready to start in 72h.
+                                            We have pre-vetted professionals ready to start in 72h.
                                         </p>
                                     </div>
                                 </div>
