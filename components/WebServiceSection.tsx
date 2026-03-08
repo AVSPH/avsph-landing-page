@@ -1,3 +1,5 @@
+"use client";
+
 import { ArrowRight, ExternalLink, Maximize2 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -8,25 +10,29 @@ export default function WebServiceSection() {
       title: "Crystal Clean Pro",
       category: "Cleaning Services",
       imageColor: "from-blue-100 to-blue-200",
-      image: "https://res.cloudinary.com/dg1i3ew9w/image/upload/v1772971893/pool-cleaning-service-landing-page.vercel.app__usrucn.png"
+      image: "https://res.cloudinary.com/dg1i3ew9w/image/upload/v1772971893/pool-cleaning-service-landing-page.vercel.app__usrucn.png",
+      url: "https://pool-cleaning-service-landing-page.vercel.app/"
     },
     {
       title: "Apex Roofing Solutions",
       category: "Roofing",
       imageColor: "from-orange-100 to-orange-200",
-      image: "https://res.cloudinary.com/dg1i3ew9w/image/upload/v1772971753/home-remodeling-service-landing-pag-zeta.vercel.app__vnt49o.png"
+      image: "https://res.cloudinary.com/dg1i3ew9w/image/upload/v1772971753/home-remodeling-service-landing-pag-zeta.vercel.app__vnt49o.png",
+      url: "https://home-remodeling-service-landing-pag-zeta.vercel.app/"
     },
     {
       title: "Reliable Handyman Co.",
       category: "Handyman Services",
       imageColor: "from-green-100 to-green-200",
-      image: "https://res.cloudinary.com/dg1i3ew9w/image/upload/v1772971924/handymain-service-landing-page.vercel.app__qqvtvn.png"
+      image: "https://res.cloudinary.com/dg1i3ew9w/image/upload/v1772971924/handymain-service-landing-page.vercel.app__qqvtvn.png",
+      url: "https://handymain-service-landing-page.vercel.app/"
     },
     {
       title: "Shield Pest Control",
       category: "Pest Control",
       imageColor: "from-red-100 to-red-200",
-      image: "https://res.cloudinary.com/dg1i3ew9w/image/upload/v1772971951/pest-control-landing-page.vercel.app__guwj5s.png"
+      image: "https://res.cloudinary.com/dg1i3ew9w/image/upload/v1772971951/pest-control-landing-page.vercel.app__guwj5s.png",
+      url: "https://pest-control-landing-page.vercel.app/"
     },
   ];
 
@@ -47,8 +53,9 @@ export default function WebServiceSection() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {portfolioItems.map((item, index) => (
-            <div
+            <Link
               key={index}
+              href="/web-services"
               className="relative group overflow-hidden border border-gray-200 bg-gray-50 flex flex-col cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500 ease-out will-change-transform translate-y-4 opacity-0 animate-[fade-in-up_0.6s_ease-out_forwards]"
               style={{ animationDelay: `${index * 100}ms` }}
             >
@@ -82,13 +89,17 @@ export default function WebServiceSection() {
                       <h3 className="font-bold text-gray-900 text-lg">{item.title}</h3>
                       <p className="text-sm text-gray-500 font-medium tracking-wide uppercase mt-1">{item.category}</p>
                   </div>
-                  <div 
-                      className="p-3 bg-gray-100 group-hover:bg-[var(--accent)] group-hover:text-white rounded-none transition-colors duration-300"
+                  <a 
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()} // Prevent triggering the overarching Link click
+                      className="p-3 bg-gray-100 group-hover:bg-[var(--accent)] group-hover:text-white rounded-none transition-colors duration-300 relative z-20 hover:!bg-[var(--primary)]"
                   >
                       <ExternalLink className="w-5 h-5" />
-                  </div>
+                  </a>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
