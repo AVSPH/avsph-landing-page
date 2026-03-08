@@ -1,6 +1,7 @@
 import HeroSection from "../components/HeroSection";
 import ChallengeSection from "../components/ChallengeSection";
 import ServicesSection from "../components/ServicesSection";
+import WebServiceSection from "../components/WebServiceSection";
 import JourneySection from "../components/JourneySection";
 import WhyChooseUsSection from "../components/WhyChooseUsSection";
 import TestimonialsSection from "../components/TestimonialsSection";
@@ -14,11 +15,12 @@ export default function Home() {
       <main>
         <HeroSection />
         <ServicesSection />
+        <WebServiceSection />
         <ChallengeSection />
         <HowItWorksSection />
         <ResourcesSection />
-        <WhyChooseUsSection />
         <JourneySection />
+        <WhyChooseUsSection />
         {/* <TestimonialsSection /> */}
         <CTASection />
       </main>
