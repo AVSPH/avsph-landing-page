@@ -61,6 +61,20 @@ const MOCKUPS: Mockup[] = [
         url: "https://electrician-service-landing-page.vercel.app/",
         image: "https://res.cloudinary.com/dg1i3ew9w/image/upload/v1772971850/electrician-service-landing-page.vercel.app__xrxjom.png",
         category: "Electrical Services"
+    },
+    {
+        id: "landscaping",
+        title: "Landscaping & Lawn",
+        url: "https://landscapping-landing-page.vercel.app/",
+        image: "https://res.cloudinary.com/dg1i3ew9w/image/upload/v1773056540/landscapping-landing-page.vercel.app__fev72x.png",
+        category: "Lawn & Garden"
+    },
+    {
+        id: "plumbing-prof",
+        title: "Professional Plumbing",
+        url: "https://plumbing-service-landing-page.vercel.app/",
+        image: "https://res.cloudinary.com/dg1i3ew9w/image/upload/v1773056541/plumbing-service-landing-page.vercel.app__1_j9bsaf.png",
+        category: "Plumbing Services"
     }
 ];
 

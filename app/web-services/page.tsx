@@ -57,6 +57,20 @@ export default function WebServicesPage() {
                 </div>
             </section>
 
+            {/* Portfolio / Industry Section */}
+            <section className="py-16 md:py-24">
+                <div className="container">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[var(--primary)]">Targeted Solutions by Industry</h2>
+                        <p className="text-lg text-[var(--foreground-light)] max-w-2xl mx-auto">
+                            We understand that every service industry has unique needs. Our websites are built with your specific customer journey in mind.
+                        </p>
+                    </div>
+
+                    <MockupGallery />
+                </div>
+            </section>
+                    
             {/* Core Features */}
             <section className="py-16 bg-[var(--card)] border-y border-[var(--border-light)]">
                 <div className="container">
@@ -71,20 +85,6 @@ export default function WebServicesPage() {
                             </div>
                         ))}
                     </div>
-                </div>
-            </section>
-
-            {/* Portfolio / Industry Section */}
-            <section className="py-16 md:py-24">
-                <div className="container">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[var(--primary)]">Targeted Solutions by Industry</h2>
-                        <p className="text-lg text-[var(--foreground-light)] max-w-2xl mx-auto">
-                            We understand that every service industry has unique needs. Our websites are built with your specific customer journey in mind.
-                        </p>
-                    </div>
-
-                    <MockupGallery />
                 </div>
             </section>
 
