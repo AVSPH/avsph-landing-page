@@ -35,6 +35,7 @@
 }
 
 :root {
+  --banner-height: 56px;
   /* Primary - Dark Blue from Logo */
   --primary: #044465;
   --primary-light: #0A5C87;
