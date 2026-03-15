@@ -34,12 +34,12 @@ export default function CTABookACall({
             <Phone className="w-5 h-5" />
             Book a Free Call
           </a>
-          <a
+          {/* <a
             href="mailto:info@advancedvirtualstaff.com"
             className="inline-flex items-center gap-2 px-8 py-3 bg-white/10 backdrop-blur-sm border-2 border-white text-white rounded-lg font-semibold transition-all hover:bg-white hover:text-[var(--primary)]"
           >
             Send us an Email
-          </a>
+          </a> */}
         </div>
       </div>
     </div>

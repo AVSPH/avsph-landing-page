@@ -174,7 +174,7 @@ export default function LimitedOffersPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="#pricing"
+                href="/booking"
                 className="btn-primary flex items-center gap-2"
               >
                 Get Started for $289/mo <ArrowRight className="w-5 h-5" />
@@ -242,7 +242,7 @@ export default function LimitedOffersPage() {
                 ))}
               </div>
               <a
-                href="#contact"
+                href="/booking"
                 className="mt-6 inline-flex w-full items-center justify-center rounded-xl bg-primary px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#0F2143]"
               >
                 Claim This Plan
@@ -348,7 +348,7 @@ export default function LimitedOffersPage() {
                   ))}
                 </div>
                 <a
-                  href="#contact"
+                  href="/booking"
                   className={`mt-auto ${card.primary ? "btn-primary" : "btn-secondary"} justify-center`}
                 >
                   {card.cta}
