@@ -30,7 +30,7 @@ const planIncludeItems = [
 
 const highlightPills = [
   "$176/mo software included free (GHL + Klicktiv)",
-  "21 days average time to full launch",
+  "Landing page live in 24hrs · Full launch in 7 days",
   "5+ automations pre-built and live on day one",
   "30+ local directories your business is listed on",
 ];
@@ -39,7 +39,7 @@ const includedItems = [
   {
     title: "Professional Website",
     description:
-      "A custom-built, conversion-focused website for field service businesses. Mobile-first and live within 14 business days.",
+      "A custom-built, conversion-focused website for field service businesses. Landing page live in 24hrs, full site in 7 days.",
     icon: <MonitorSmartphone className="w-6 h-6 text-[var(--primary)]" />,
     features: [
       "Up to 8 pages (Home, Services, About, Contact + more)",
@@ -109,7 +109,7 @@ const includedItems = [
       "We build, configure, and launch your entire stack, no technical work required on your end, ever.",
     icon: <Rocket className="w-6 h-6 text-[var(--accent)]" />,
     features: [
-      "Full launch completed in 21 days or less",
+      "Landing page in 24hrs · Full stack in 7 days",
       "2 dedicated onboarding calls with your AVS team",
       "30-point pre-launch checklist completed for you",
       "GHL automations + Klicktiv + website all configured",
@@ -134,7 +134,7 @@ const pricingCards = [
       "5 website edits/mo, completed in 48 hrs",
       "Monthly SEO rank report",
       "Dedicated AVS account manager",
-      "Full launch in 21 days or less",
+      "Landing page in 24hrs · Full stack in 7 days",
     ],
     cta: "Claim this plan",
   },
@@ -164,7 +164,7 @@ const pricingCards = [
       "Full-time dispatcher included",
       "One consolidated monthly invoice",
       "Single AVS team managing the full stack",
-      "Priority onboarding — live in 14 days",
+      "Priority onboarding — live in 7 days",
       "Equivalent to $3,676+/mo in standalone value",
     ],
     cta: "Bundle and save",
@@ -207,7 +207,7 @@ export default function LimitedOffersPage() {
               AVSPH - Field Service Plan
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 text-[var(--primary)] leading-tight">
-              Your website, SEO, and full digital stack live in 21 days or less.
+              Landing page live in 24hrs. Full website & CRM in 7 days.
             </h1>
             <p className="text-lg md:text-xl text-[var(--foreground-light)] max-w-2xl mb-10 leading-relaxed">
               One complete package built for field service businesses. You get a
