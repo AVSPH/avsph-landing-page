@@ -6,7 +6,7 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import Link from "next/link";
 import { StickyBanner } from "@/components/ui/sticky-banner";
-import { GoogleTagManager } from "@next/third-parties/google";
+import { GoogleTagManager, GoogleAnalytics } from "@next/third-parties/google";
 
 const lexend = Lexend({
   variable: "--font-heading",
@@ -67,6 +67,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <GoogleTagManager gtmId="GTM-TWXNMT6C" />
+      <GoogleAnalytics gaId="G-ZYWKX4SN8K" />
       <body
         className={`${lexend.variable} ${sourceSans3.variable} ${plusJakartaSans.variable} antialiased`}
       >
