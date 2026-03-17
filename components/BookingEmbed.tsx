@@ -54,7 +54,7 @@ export default function BookingEmbed() {
             <div className="relative min-h-[650px]">
               <iframe
                 key={iframeKey}
-                src="https://avsph.advancedvirtualstaff.com/widget/booking/exTl4Yfikib3XZlM9CTe"
+                src="https://links.talentmucho.com/widget/bookings/emdiscoverycall"
                 style={{
                   width: "100%",
                   border: "none",
