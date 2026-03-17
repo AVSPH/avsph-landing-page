@@ -3,7 +3,7 @@ import { Lexend, Source_Sans_3, Plus_Jakarta_Sans } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
 import Link from "next/link";
 import { StickyBanner } from "@/components/ui/sticky-banner";
 
@@ -27,6 +27,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://advancedvirtualstaff.com"),
   title: "Advanced Virtual Staff | 24/7 Premium Outsource Support",
   description:
     "Partner with Advanced Virtual Staff for dedicated, exceptional virtual assistants. We match you with top 1% talent for admin support, customer service, bookkeeping, and more. Cancel anytime, affordable rates.",
@@ -51,7 +52,9 @@ export const metadata: Metadata = {
     title: "Advanced Virtual Staff | Your Success. Our Mission.",
     description:
       "Get matched with exceptional virtual assistants from our top 1% talent pool. 24/7 support, affordable rates, flexible contracts.",
-    images: ["https://res.cloudinary.com/drpxke63n/image/upload/v1771586449/advancedvirtualstaff.com__4_1_qdwoxu.png"],
+    images: [
+      "https://res.cloudinary.com/drpxke63n/image/upload/v1771586449/advancedvirtualstaff.com__4_1_qdwoxu.png",
+    ],
   },
 };
 
