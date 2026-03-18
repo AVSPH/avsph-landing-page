@@ -207,7 +207,7 @@ export default function LimitedOffersPage() {
               AVSPH - Field Service Plan
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 text-[var(--primary)] leading-tight">
-              Landing page live in 24hrs. Full website & CRM in 7 days.
+             LANDING PAGE LIVE IN 24HRS. <span className="text-[var(--accent)] font-bold tracking-wider uppercase mb-4 ">Full website & CRM in 7 days.</span>
             </h1>
             <p className="text-lg md:text-xl text-[var(--foreground-light)] max-w-2xl mb-10 leading-relaxed">
               One complete package built for field service businesses. You get a

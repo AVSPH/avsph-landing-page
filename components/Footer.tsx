@@ -24,7 +24,7 @@ export default function Footer() {
       { label: "Call Handling & Customer Support", href: "/services/call-handling-and-customer-support" },
       { label: "Scheduling & Dispatching", href: "/services/scheduling-and-dispatching" },
       { label: "Estimates & Invoicing", href: "/services/estimates-and-invoicing" },
-      { label: "Bookkeeping Support", href: "/services/bookkeeping-support" },
+      { label: "Bookkeeping Support", href: "/services/book-keeping-support" },
       { label: "Lead Intake & Follow-Ups", href: "/services/lead-intake-and-follow-ups" },
       { label: "Review & Reputation Management", href: "/services/review-and-reputation-management" },
       { label: "Operations & Task Coordination", href: "/services/operations-and-task-coordination" },

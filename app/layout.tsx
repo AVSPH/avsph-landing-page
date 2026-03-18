@@ -71,14 +71,14 @@ export default function RootLayout({
       <body
         className={`${lexend.variable} ${sourceSans3.variable} ${plusJakartaSans.variable} antialiased`}
       >
-        <StickyBanner className="bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] text-white">
-          <div className="container flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-3 text-center text-[11px] sm:text-sm md:text-base pr-8 sm:pr-10">
-            <span className="inline-flex items-center gap-2 font-semibold uppercase tracking-wider text-[10px] sm:text-sm">
-              Limited Offer
+        <StickyBanner className="py-2 bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] text-white">
+          <div className="container flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-center text-[13px] sm:text-sm md:text-lg pr-8 sm:pr-10">
+            <span className="inline-flex items-center gap-2 font-semibold uppercase tracking-wider text-[11px] sm:text-sm shrink-0">
+              Limited Offer:
             </span>
-            <span className="text-white/90 leading-tight max-w-[30ch] sm:max-w-none">
+            <span className="text-white/90 leading-tight ml-1">
               <span className="sm:hidden">
-                Field Service Bundle - $289/mo.{" "}
+                Field Service Bundle - $289/mo.{"  "}
                 <Link
                   href="/limited-offers"
                   className="font-semibold text-white underline underline-offset-4 decoration-white/70 hover:decoration-white"
@@ -93,9 +93,9 @@ export default function RootLayout({
             </span>
             <Link
               href="/limited-offers"
-              className="hidden sm:inline font-semibold text-white underline underline-offset-4 decoration-white/70 hover:decoration-white"
+              className="hidden sm:inline font-semibold text-white underline underline-offset-4 decoration-white/70 hover:decoration-white ml-1"
             >
-              View Offer
+               View Offer
             </Link>
           </div>
         </StickyBanner>
