@@ -106,7 +106,7 @@ export default function Footer() {
                 className="flex items-center gap-2 hover:text-primary transition-colors text-gray-600"
               >
                 <Mail className="w-4 h-4" />
-                admin@advancedvirtualstaff.com
+                hello@advancedvirtualstaff.com
               </a>
             </div>
           </div>
@@ -173,7 +173,10 @@ export default function Footer() {
             >
               Privacy Policy
             </Link>
-            <Link href="/terms" className="hover:text-primary transition-colors">
+            <Link
+              href="/terms"
+              className="hover:text-primary transition-colors"
+            >
               Terms of Service
             </Link>
           </div>
