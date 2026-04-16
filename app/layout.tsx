@@ -88,7 +88,7 @@ export default function RootLayout({
               </span>
               <span className="hidden sm:inline">
                 Field Service Bundle - Website, SEO, GHL, and Klicktiv for
-                $289/mo.
+                $489/mo.
               </span>
             </span>
             <Link
