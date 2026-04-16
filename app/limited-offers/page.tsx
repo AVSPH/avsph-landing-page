@@ -70,7 +70,6 @@ const includedItems = [
     badge: "Included free",
     features: [
       "5 pre-built automation workflows configured",
-      "Missed call text-back in under 60 seconds",
       "Automated review request sequences (3-step)",
       "Estimate follow-up & appointment booking pipeline",
       "Valued at $97/mo, included free",
@@ -121,7 +120,7 @@ const includedItems = [
 const pricingCards = [
   {
     title: "CORE PLAN",
-    price: "$289",
+    price: "$489",
     cadence: "/mo",
     note: "Billed monthly. 12-month commitment. Rate locked for the full term.",
     features: [
@@ -174,7 +173,7 @@ const pricingCards = [
 
 const faqs = [
   {
-    question: "Is the $289/month rate locked?",
+    question: "Is the $489/month rate locked?",
     answer:
       "Yes. The core plan rate is locked for a full 12-month term once you start.",
   },
@@ -221,7 +220,7 @@ export default function LimitedOffersPage() {
                 href="/booking"
                 className="btn-primary flex items-center gap-2"
               >
-                Get Started for $289/mo <ArrowRight className="w-5 h-5" />
+                Get Started for $489/mo <ArrowRight className="w-5 h-5" />
               </a>
               <a href="#included" className="btn-secondary flex items-center gap-1">
                 See what&apos;s included <ArrowRight className="w-4 h-4 rotate-90" />
@@ -253,7 +252,7 @@ export default function LimitedOffersPage() {
               <div className="mt-6 flex items-end gap-2">
                 <span className="text-lg font-semibold text-white">$</span>
                 <span className="text-5xl font-extrabold leading-none text-white">
-                  289
+                  489
                 </span>
                 <span className="text-sm font-medium text-white">/month</span>
               </div>
@@ -467,7 +466,7 @@ export default function LimitedOffersPage() {
       </section>
 
       <CTABookACall
-        title="Ready to lock in the $289/month offer?"
+        title="Ready to lock in the $489/month offer?"
         subtitle="Book a free call and we will walk you through the Field Service Bundle and next steps."
       />
     </main>
