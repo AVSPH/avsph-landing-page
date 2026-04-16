@@ -78,7 +78,7 @@ export default function RootLayout({
             </span>
             <span className="text-white/90 leading-tight ml-1">
               <span className="sm:hidden">
-                Field Service Bundle - $289/mo.{"  "}
+                Field Service Bundle - $489/mo.{"  "}
                 <Link
                   href="/limited-offers"
                   className="font-semibold text-white underline underline-offset-4 decoration-white/70 hover:decoration-white"
