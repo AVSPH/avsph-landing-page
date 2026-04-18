@@ -1,5 +1,4 @@
-import Footer from "../../components/Footer";
-import BookingEmbed from "../../components/BookingEmbed";
+import BookingEmbed from "@/components/BookingEmbed";
 
 // Fully static — built once at deploy time, served from CDN edge globally
 export const revalidate = false;
