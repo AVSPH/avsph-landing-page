@@ -3,7 +3,6 @@ import {
   CheckCircle2,
   DollarSign,
   MonitorSmartphone,
-  PhoneCall,
   Rocket,
   Search,
   Wrench,
@@ -65,11 +64,12 @@ const includedItems = [
   {
     title: "GoHighLevel (GHL) Account",
     description:
-      "Your GHL CRM fully configured and ready on launch day, valued at $97/mo, included at no extra cost.",
+      "Your GHL CRM fully configured and ready on launch day, included at no extra cost.",
     icon: <Zap className="w-6 h-6 text-[var(--primary)]" />,
-    badge: "Included free",
+    badge: "Free — $97/mo value",
     features: [
       "5 pre-built automation workflows configured",
+      "Missed call text-back in under 60 seconds",
       "Automated review request sequences (3-step)",
       "Estimate follow-up & appointment booking pipeline",
       "Valued at $97/mo, included free",
@@ -78,43 +78,58 @@ const includedItems = [
   {
     title: "Klicktiv Account",
     description:
-      "A financial operating system built for field service, eliminates spreadsheets and manual reconciliation for good.",
+      "A financial operating system built for field service, eliminates spreadsheets and manual reconciliation.",
     icon: <DollarSign className="w-6 h-6 text-[var(--accent)]" />,
-    badge: "Included free",
+    badge: "Free — $79/mo value",
     features: [
       "Commission split rules for up to 10 technicians",
       "Real-time job cost & revenue dashboards",
       "Automated payroll breakdowns per pay cycle",
-      "Saves owners 5–8 hrs/week on manual tracking",
+      "Saves 5–8 hours/week on manual tracking",
       "Valued at $79/mo, included free",
     ],
   },
   {
     title: "Ongoing Monthly Management",
     description:
-      "We handle all the technical upkeep so you stay focused on the field, no maintenance tasks on your end.",
+      "We handle all technical upkeep so you stay focused on operations.",
     icon: <Wrench className="w-6 h-6 text-[var(--primary)]" />,
     features: [
-      "Up to 5 website edits or updates per month",
+      "Up to 5 website edits per month",
       "Changes completed within 48 business hours",
       "Monthly SEO performance review & updates",
-      "GHL & Klicktiv platform optimization included",
-      "99.9% uptime monitoring with proactive alerts",
+      "GHL & Klicktiv optimization included",
+      "99.9% uptime monitoring",
     ],
   },
   {
     title: "Full Onboarding & Configuration",
     description:
-      "We build, configure, and launch your entire stack, no technical work required on your end, ever.",
+      "We build, configure, and launch your entire stack — no technical work required.",
     icon: <Rocket className="w-6 h-6 text-[var(--accent)]" />,
     features: [
       "Landing page in 24hrs · Full stack in 7 days",
-      "2 dedicated onboarding calls with your AVS team",
-      "30-point pre-launch checklist completed for you",
-      "GHL automations + Klicktiv + website all configured",
-      "Dedicated account manager from day one",
+      "2 onboarding calls",
+      "30-point pre-launch checklist",
+      "Full system configuration (GHL + Klicktiv + website)",
+      "Dedicated account manager",
     ],
   },
+];
+
+const valueComparison = [
+  { item: "Website design + hosting", market: "$300–500/mo", label: "Included" },
+  { item: "Local SEO", market: "$800–1,500/mo", label: "Included" },
+  { item: "GHL CRM", market: "$97/mo", label: "Free" },
+  { item: "Klicktiv", market: "$79/mo", label: "Free" },
+  { item: "Ongoing management", market: "$200–400/mo", label: "Included" },
+];
+
+const pricingStats = [
+  { value: "$489", label: "All-inclusive monthly rate" },
+  { value: "24 hrs", label: "Landing page live" },
+  { value: "7 days", label: "Full stack launched" },
+  { value: "$16", label: "Less than per day" },
 ];
 
 const pricingCards = [
@@ -122,7 +137,7 @@ const pricingCards = [
     title: "CORE PLAN",
     price: "$489",
     cadence: "/mo",
-    note: "Billed monthly. 12-month commitment. Rate locked for the full term.",
+    note: "Billed monthly. 12-month commitment. Rate locked.",
     features: [
       "8-page custom conversion website",
       "Local SEO — 15 keywords + Google Maps",
@@ -135,36 +150,37 @@ const pricingCards = [
       "Dedicated AVS account manager",
       "Landing page in 24hrs · Full stack in 7 days",
     ],
-    cta: "Claim this plan",
+    cta: "Claim this plan →",
   },
   {
     title: "ADD-ON",
     price: "$1,100",
     cadence: "/mo",
+    description: "Full-time dedicated dispatcher",
     note: "Add a full-time dedicated dispatcher to your core plan — billed separately.",
     features: [
-      "Full-time dispatcher, 40 hrs/week",
-      "Inbound call handling & job booking",
-      "Schedule management & technician coordination",
-      "Customer confirmations & follow-up calls",
-      "CRM updates inside your GHL account",
-      "Works seamlessly with core plan stack",
-      "Replaces a $3,500+/mo in-house hire",
+      "40 hrs/week support",
+      "Call handling & booking",
+      "Schedule management",
+      "Customer follow-ups",
+      "CRM updates",
+      "Replaces $3,500+/mo hire",
     ],
     cta: "Add dispatch to my plan",
   },
   {
     title: "CORE + DISPATCH BUNDLE",
-    price: "$1,389",
+    price: "$1,589",
     cadence: "/mo",
-    note: "Save $1/mo vs. buying separately. Everything included — website, SEO, GHL, Klicktiv, and a full-time dispatcher.",
+    description: "Full system + dispatcher",
+    note: "Everything included — website, SEO, GHL, Klicktiv, and a full-time dispatcher.",
     features: [
       "Everything in the core plan",
       "Full-time dispatcher included",
-      "One consolidated monthly invoice",
-      "Single AVS team managing the full stack",
-      "Priority onboarding — live in 7 days",
-      "Equivalent to $3,676+/mo in standalone value",
+      "One invoice",
+      "Single team management",
+      "Priority onboarding",
+      "Equivalent to $3,676+/mo value",
     ],
     cta: "Bundle and save",
     primary: true,
@@ -203,23 +219,22 @@ export default function LimitedOffersPage() {
         <div className="container relative z-10 grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
           <div className="text-left">
             <span className="text-[var(--accent)] font-bold tracking-wider uppercase mb-4 block">
-              AVSPH - Field Service Plan
+              AVSPH — Field Service Plan
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 text-[var(--primary)] leading-tight">
-             LANDING PAGE LIVE IN 24HRS. <span className="text-[var(--accent)] font-bold tracking-wider uppercase mb-4 ">Full website & CRM in 7 days.</span>
+              LANDING PAGE LIVE IN 24HRS.{" "}
+              <span className="text-[var(--accent)] font-bold tracking-wider uppercase mb-4">
+                Full website & CRM in 7 days.
+              </span>
             </h1>
             <p className="text-lg md:text-xl text-[var(--foreground-light)] max-w-2xl mb-10 leading-relaxed">
-              One complete package built for field service businesses. You get a
-              professional 8-page website, local SEO targeting 15+ keywords, a
-              fully configured GHL CRM, and a Klicktiv financial system — all
-              managed for you every month. No tech work. No separate vendors. One
-              simple price.
+              One complete package built for field service businesses. Professional
+              website, local SEO, fully configured GHL CRM, and Klicktiv financial
+              system — all managed for you every month. No tech work. No separate
+              vendors. One simple price.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="/booking"
-                className="btn-primary flex items-center gap-2"
-              >
+              <a href="/booking" className="btn-primary flex items-center gap-2">
                 Get Started for $489/mo <ArrowRight className="w-5 h-5" />
               </a>
               <a href="#included" className="btn-secondary flex items-center gap-1">
@@ -244,7 +259,7 @@ export default function LimitedOffersPage() {
           <div className="rounded-3xl overflow-hidden bg-white shadow-xl border border-[var(--border)]">
             <div className="px-8 py-8 text-white bg-primary">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
-                AVSPH Core Plan
+                AVSPH Core Plan — Field Service Bundle
               </p>
               <h3 className="text-2xl md:text-3xl font-bold mt-3 text-white">
                 Field Service Bundle
@@ -257,7 +272,7 @@ export default function LimitedOffersPage() {
                 <span className="text-sm font-medium text-white">/month</span>
               </div>
               <p className="mt-4 text-sm text-white">
-                12-month commitment - All inclusive
+                12-month commitment · All inclusive
               </p>
             </div>
 
@@ -291,14 +306,14 @@ export default function LimitedOffersPage() {
                 href="/booking"
                 className="mt-6 inline-flex w-full items-center justify-center rounded-xl bg-primary px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#0F2143]"
               >
-                Claim This Plan
+                Claim This Plan →
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Included */}
+      {/* Features */}
       <section id="included" className="section bg-[var(--background-alt)]">
         <div className="container">
           <div className="text-center mb-12">
@@ -333,7 +348,10 @@ export default function LimitedOffersPage() {
                 {item.features && (
                   <ul className="space-y-2 mt-auto">
                     {item.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-2 text-sm text-[var(--foreground)]">
+                      <li
+                        key={feature}
+                        className="flex items-start gap-2 text-sm text-[var(--foreground)]"
+                      >
                         <CheckCircle2 className="w-4 h-4 text-emerald-500 mt-0.5 shrink-0" />
                         <span>{feature}</span>
                       </li>
@@ -346,28 +364,98 @@ export default function LimitedOffersPage() {
         </div>
       </section>
 
-      <section className="section bg-[var(--background-alt)]">
-        <div className="container">
+      {/* Value Comparison */}
+      <section className="section bg-white">
+        <div className="container max-w-4xl">
           <div className="text-center mb-12">
-            <h2 className="section-title">Targeted Solutions by Industry</h2>
+            <h2 className="section-title">
+              What You&apos;d Pay Buying This Separately
+            </h2>
             <p className="section-subtitle">
-              We build websites tailored to each service industry so your
-              customers see the exact solutions they need.
+              The $489/mo bundle replaces over $1,400/mo worth of tools and
+              agency retainers.
             </p>
           </div>
-          <MockupGallery />
+
+          <div className="rounded-2xl border border-[var(--border)] overflow-hidden">
+            <div className="grid grid-cols-3 bg-[var(--background-alt)] px-6 py-3 text-xs font-bold uppercase tracking-widest text-[var(--muted)]">
+              <span>What You Need</span>
+              <span className="text-center">Market Rate</span>
+              <span className="text-center">With AVSPH</span>
+            </div>
+            {valueComparison.map((row, i) => (
+              <div
+                key={row.item}
+                className={`grid grid-cols-3 px-6 py-4 items-center border-t border-[var(--border)] ${
+                  i % 2 === 0 ? "bg-white" : "bg-[var(--background-alt)]/50"
+                }`}
+              >
+                <span className="font-medium text-[var(--foreground)]">
+                  {row.item}
+                </span>
+                <span className="text-center text-[var(--foreground-light)] line-through text-sm">
+                  {row.market}
+                </span>
+                <span className="text-center text-emerald-600 font-semibold text-sm">
+                  {row.label}
+                </span>
+              </div>
+            ))}
+            <div className="grid grid-cols-3 px-6 py-5 bg-[var(--primary)] items-center">
+              <span className="font-bold text-white text-lg">Total Value</span>
+              <span className="text-center text-white/70 line-through text-sm">
+                $1,476–$2,576/mo
+              </span>
+              <span className="text-center text-white font-extrabold text-xl">
+                $489/mo
+              </span>
+            </div>
+          </div>
+
+          <div className="mt-8 space-y-3">
+            <div className="flex items-start gap-3">
+              <CheckCircle2 className="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" />
+              <p className="text-[var(--foreground-light)]">
+                If your average job is $500, one additional job per month covers
+                the entire investment.
+              </p>
+            </div>
+            <div className="flex items-start gap-3">
+              <CheckCircle2 className="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" />
+              <p className="text-[var(--foreground-light)]">
+                Most clients see their first inbound Google Maps lead within 30
+                days.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Pricing */}
-      <section id="pricing" className="section">
+      <section id="pricing" className="section bg-[var(--background-alt)]">
         <div className="container">
           <div className="text-center mb-12">
             <h2 className="section-title">Simple, Transparent Pricing</h2>
             <p className="section-subtitle">
               One core plan covers your entire digital foundation. Add full-time
-              call dispatch when you are ready to scale.
+              call dispatch when ready to scale.
             </p>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-12">
+            {pricingStats.map((stat) => (
+              <div
+                key={stat.label}
+                className="text-center bg-white rounded-2xl border border-[var(--border)] px-4 py-6"
+              >
+                <p className="text-3xl font-extrabold text-[var(--primary)]">
+                  {stat.value}
+                </p>
+                <p className="text-sm text-[var(--foreground-light)] mt-1">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
           </div>
 
           <div className="grid lg:grid-cols-3 gap-6">
@@ -382,6 +470,11 @@ export default function LimitedOffersPage() {
                   <p className="text-xs font-bold text-[var(--muted)] uppercase tracking-widest">
                     {card.title}
                   </p>
+                  {"description" in card && card.description && (
+                    <p className="text-sm text-[var(--foreground-light)] mt-1">
+                      {card.description}
+                    </p>
+                  )}
                 </div>
                 <div className="flex items-end gap-1 mb-4">
                   <span className="text-4xl font-extrabold text-[var(--primary)]">
@@ -425,6 +518,19 @@ export default function LimitedOffersPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Industries */}
+      <section className="section bg-white">
+        <div className="container">
+          <div className="text-center mb-12">
+            <h2 className="section-title">Targeted Solutions by Industry</h2>
+            <p className="section-subtitle">
+              Websites tailored per service industry.
+            </p>
+          </div>
+          <MockupGallery />
         </div>
       </section>
 
@@ -472,15 +578,3 @@ export default function LimitedOffersPage() {
     </main>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
