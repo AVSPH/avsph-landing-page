@@ -2,124 +2,37 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import Floating, { FloatingElement } from "@/components/ui/parallax-floating";
 
 const exampleImages = [
-  {
-    url: "https://res.cloudinary.com/dg1i3ew9w/image/upload/q_auto/f_auto/v1776587985/electric-hero_zexubx.jpg",
-    author: "Branislav Rodman",
-    title: "A Black and White Photo of a Woman Brushing Her Teeth",
-  },
-  {
-    url: "https://res.cloudinary.com/dg1i3ew9w/image/upload/q_auto/f_auto/v1776587057/klicktiv-hero_ho2v77.png",
-    link: "https://unsplash.com/photos/a-painting-of-a-palm-leaf-on-a-multicolored-background-AaNPwrSNOFE",
-    title: "Neon Palm",
-    author: "Tim Mossholder",
-  },
-  {
-    url: "https://res.cloudinary.com/dg1i3ew9w/image/upload/q_auto/f_auto/v1776587252/pool-hero_w6r5fr.jpg",
-    link: "https://unsplash.com/photos/a-blurry-photo-of-a-crowd-of-people-UgbxzloNGsc",
-    author: "ANDRII SOLOK",
-    title: "A blurry photo of a crowd of people",
-  },
-  {
-    url: "https://res.cloudinary.com/dg1i3ew9w/image/upload/q_auto/f_auto/v1776587933/home-hero_uitpvz.jpg",
-    link: "https://unsplash.com/photos/rippling-crystal-blue-water-9-OCsKoyQlk",
-    author: "Wesley Tingey",
-    title: "Rippling Crystal Blue Water",
-  },
-  {
-    url: "https://res.cloudinary.com/dg1i3ew9w/image/upload/q_auto/f_auto/v1776587934/plumbing-hero_zjnjca.jpg",
-    link: "https://unsplash.com/de/fotos/mann-im-schwarzen-hemd-unter-blauem-himmel-m8RDNiuEXro",
-    author: "Serhii Tyaglovsky",
-    title: "Mann im schwarzen Hemd unter blauem Himmel",
-  },
-  {
-    url: "https://res.cloudinary.com/dg1i3ew9w/image/upload/q_auto/f_auto/v1776587985/electric-hero_zexubx.jpg",
-    link: "https://unsplash.com/photos/a-woman-with-a-flower-crown-on-her-head-0S3muIttbsY",
-    author: "Vladimir Yelizarov",
-    title: "A women with a flower crown on her head",
-  },
+  { url: "https://res.cloudinary.com/dg1i3ew9w/image/upload/q_auto/f_auto/v1776590232/home-1_emez7q.jpg", title: "Home service" },
+  { url: "https://res.cloudinary.com/dg1i3ew9w/image/upload/q_auto/f_auto/v1776590232/electric-2_bjcgki.jpg", title: "Electrical service" },
+  { url: "https://res.cloudinary.com/dg1i3ew9w/image/upload/q_auto/f_auto/v1776590231/electric-1_wnp2qt.jpg", title: "Electrical work" },
+  { url: "https://res.cloudinary.com/dg1i3ew9w/image/upload/q_auto/f_auto/v1776590231/pool-2_foflrt.jpg", title: "Pool service" },
+  { url: "https://res.cloudinary.com/dg1i3ew9w/image/upload/q_auto/f_auto/v1776590230/plumbing-2_e5zlx9.png", title: "Plumbing service" },
+  { url: "https://res.cloudinary.com/dg1i3ew9w/image/upload/q_auto/f_auto/v1776590230/pool-1_s6vriq.jpg", title: "Pool maintenance" },
+  { url: "https://res.cloudinary.com/dg1i3ew9w/image/upload/q_auto/f_auto/v1776590229/klicktiv-1_kv2av9.jpg", title: "Klicktiv dashboard" },
+  { url: "https://res.cloudinary.com/dg1i3ew9w/image/upload/q_auto/f_auto/v1776590229/plumbing-1_d1fvfo.jpg", title: "Plumbing work" },
+  { url: "https://res.cloudinary.com/dg1i3ew9w/image/upload/q_auto/f_auto/v1776590229/klicktiv-2_n5f5gb.jpg", title: "Klicktiv system" },
+  { url: "https://res.cloudinary.com/dg1i3ew9w/image/upload/q_auto/f_auto/v1776590229/home-2_jjnkzd.jpg", title: "Home service 2" },
 ];
+
+const marqueeImages = [...exampleImages, ...exampleImages];
 
 function LandingHero() {
   return (
-    <section className="w-full h-screen overflow-hidden flex flex-col items-center justify-center relative">
-      <Floating sensitivity={-0.5} className="h-screen">
-        <FloatingElement
-          depth={0.5}
-          className="top-[18%] left-[2%] md:top-[26%] md:left-[6%]"
-        >
-          <motion.img
-            src={exampleImages[0].url}
-            alt={exampleImages[0].title}
-            className="w-56 h-36 md:w-80 md:h-48 lg:w-96 lg:h-60 object-cover hover:scale-105 duration-200 cursor-pointer transition-transform -rotate-[3deg] shadow-2xl rounded-xl"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-          />
-        </FloatingElement>
-
-        <FloatingElement
-          depth={1}
-          className="top-[10%] left-[20%] md:top-[5%] md:left-[40%]"
-        >
-          <motion.img
-            src={exampleImages[1].url}
-            alt={exampleImages[1].title}
-            className="w-56 h-36 md:w-80 md:h-48 lg:w-96 lg:h-60 object-cover hover:scale-105 duration-200 cursor-pointer transition-transform -rotate-12 shadow-2xl rounded-xl"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.7 }}
-          />
-        </FloatingElement>
-
-        <FloatingElement
-          depth={4}
-          className="top-[82%] left-[2%] md:top-[72%] md:left-[20%]"
-        >
-          <motion.img
-            src={exampleImages[2].url}
-            alt={exampleImages[2].title}
-            className="w-56 h-36 md:w-80 md:h-48 lg:w-96 lg:h-60 object-cover -rotate-[4deg] hover:scale-105 duration-200 cursor-pointer transition-transform shadow-2xl rounded-xl"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.9 }}
-          />
-        </FloatingElement>
-
-        <FloatingElement
-          depth={2}
-          className="top-[20%] left-[58%] md:top-[26%] md:left-[70%]"
-        >
-          <motion.img
-            src={exampleImages[3].url}
-            alt={exampleImages[3].title}
-            className="w-56 h-36 md:w-80 md:h-48 lg:w-96 lg:h-60 object-cover hover:scale-105 duration-200 cursor-pointer transition-transform shadow-2xl rotate-[6deg] rounded-xl"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.1 }}
-          />
-        </FloatingElement>
-
-        <FloatingElement
-          depth={1}
-          className="top-[76%] left-[58%] md:top-[66%] md:left-[65%]"
-        >
-          <motion.img
-            src={exampleImages[4].url}
-            alt={exampleImages[4].title}
-            className="w-56 h-36 md:w-80 md:h-48 lg:w-96 lg:h-60 object-cover hover:scale-105 duration-200 cursor-pointer transition-transform shadow-2xl rotate-[19deg] rounded-xl"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.3 }}
-          />
-        </FloatingElement>
-      </Floating>
-
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_55%_60%_at_50%_50%,_white_30%,_transparent_100%)] pointer-events-none z-40" />
-
-      <div className="flex flex-col justify-center items-center w-[280px] sm:w-[420px] md:w-[600px] lg:w-[750px] z-50 pointer-events-auto text-center">
+    <section className="w-full min-h-[120vh] flex flex-col items-center justify-center gap-14 pb-16 pt-24 overflow-x-hidden relative">
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: `linear-gradient(to right, #e7e5e4 1px, transparent 1px), linear-gradient(to bottom, #e7e5e4 1px, transparent 1px)`,
+          backgroundSize: "20px 20px",
+          maskImage: `repeating-linear-gradient(to right, black 0px, black 3px, transparent 3px, transparent 8px), repeating-linear-gradient(to bottom, black 0px, black 3px, transparent 3px, transparent 8px), radial-gradient(ellipse 70% 60% at 50% 0%, #000 60%, transparent 100%)`,
+          WebkitMaskImage: `repeating-linear-gradient(to right, black 0px, black 3px, transparent 3px, transparent 8px), repeating-linear-gradient(to bottom, black 0px, black 3px, transparent 3px, transparent 8px), radial-gradient(ellipse 70% 60% at 50% 0%, #000 60%, transparent 100%)`,
+          maskComposite: "intersect",
+          WebkitMaskComposite: "source-in",
+        }}
+      />
+      <div className="flex flex-col justify-center items-center w-[280px] sm:w-[420px] md:w-[600px] lg:w-[750px] text-center z-10">
         <motion.div
           className="flex items-center gap-2 mb-4"
           animate={{ opacity: 1, y: 0 }}
@@ -128,7 +41,7 @@ function LandingHero() {
         >
           <span className="text-amber-400 text-sm">★★★★★</span>
           <span className="text-sm font-semibold text-[var(--foreground)]">4.9</span>
-          <span className="text-sm text-[var(--muted)]">· Rated by 47+ field service businesses</span>
+          <span className="text-sm text-[var(--muted)]">Rated by field services</span>
         </motion.div>
 
         <motion.h1
@@ -183,6 +96,29 @@ function LandingHero() {
           12-month commitment · Rate locked · No setup fee · Cancel after 12 months
         </motion.p>
       </div>
+
+      <motion.div
+        className="w-full overflow-hidden pb-4 z-10"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 0.6 }}
+      >
+        <motion.div
+          className="flex gap-4"
+          style={{ width: "max-content" }}
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ duration: 60, ease: "linear", repeat: Infinity }}
+        >
+          {marqueeImages.map((img, i) => (
+            <img
+              key={i}
+              src={img.url}
+              alt={img.title}
+              className="w-80 h-120 object-cover rounded-xl flex-shrink-0 shadow-lg"
+            />
+          ))}
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
