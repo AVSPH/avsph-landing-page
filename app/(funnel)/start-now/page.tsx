@@ -1,5 +1,4 @@
 import {
-  ArrowRight,
   CheckCircle2,
   DollarSign,
   MonitorSmartphone,
@@ -10,6 +9,7 @@ import {
   Wrench,
   Zap,
 } from "lucide-react";
+import { LandingHero } from "@/components/funnel/hero";
 import CTABookACall from "@/components/CTABookACall";
 import MockupGallery from "@/components/MockupGallery";
 import KlicktivShowcaseSection from "@/components/KlicktivShowcaseSection";
@@ -22,21 +22,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const planIncludeItems = [
-  { label: "Professional 8-page website" },
-  { label: "Local SEO targeting 15+ keywords" },
-  { label: "Fully configured GHL CRM", badge: "FREE" },
-  { label: "Klicktiv financial system", badge: "FREE" },
-  { label: "5+ automations pre-built and live" },
-  { label: "30+ local directories listed on" },
-];
-
-const highlightPills = [
-  "$176/mo software included free (GHL + Klicktiv)",
-  "Landing page live in 24hrs · Full launch in 7 days",
-  "5+ automations pre-built and live on day one",
-  "30+ local directories your business is listed on",
-];
 
 const trustStats = [
   { value: "47+", label: "Field service clients" },
@@ -296,127 +281,10 @@ export default function LimitedOffersPage() {
     <main className="bg-[var(--background)]">
       <StickyCtaBar />
 
-      {/* Hero */}
-      <section className="relative min-h-screen pt-40 lg:pt-48 pb-16 overflow-hidden bg-white">
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[var(--accent)]/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none" />
-        <div className="container relative z-10 grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
-          <div className="text-left">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="flex text-amber-400 text-sm">
-                {"★★★★★".split("").map((s, i) => (
-                  <span key={i}>{s}</span>
-                ))}
-              </div>
-              <span className="text-sm font-semibold text-[var(--foreground)]">
-                4.9
-              </span>
-              <span className="text-sm text-[var(--muted)]">
-                · Rated by 47+ field service businesses
-              </span>
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 text-[var(--primary)] leading-tight">
-              LANDING PAGE LIVE IN 24HRS.{" "}
-              <span className="text-[var(--accent)] font-bold tracking-wider uppercase mb-4">
-                Full website & CRM in 7 days.
-              </span>
-            </h1>
-            <p className="text-lg md:text-xl text-[var(--foreground-light)] max-w-2xl mb-10 leading-relaxed">
-              One complete package built for field service businesses.
-              Professional website, local SEO, fully configured GHL CRM, and
-              Klicktiv financial system — all managed for you every month. No
-              tech work. No separate vendors. One simple price.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 items-center">
-              <a
-                href="/booking"
-                className="btn-primary flex items-center gap-2"
-              >
-                Get My Landing Page Live <ArrowRight className="w-5 h-5" />
-              </a>
-              <a
-                href="#included"
-                className="text-sm font-semibold text-[var(--primary)] underline underline-offset-4 hover:text-[var(--accent)] transition-colors"
-              >
-                See what&apos;s included ↓
-              </a>
-            </div>
-            <p className="mt-3 text-xs text-[var(--muted)]">
-              Setup call takes 15 min. Landing page live next day.
-            </p>
-            <p className="mt-1 text-xs text-[var(--muted)]">
-              12-month commitment · Rate locked for full term · No setup fee ·
-              Cancel after 12 months
-            </p>
-            <div className="mt-10 flex flex-wrap gap-3">
-              {highlightPills.map((pill) => (
-                <span
-                  key={pill}
-                  className="px-4 py-2 rounded-full text-sm font-medium bg-[var(--background-alt)] text-[var(--foreground)] border border-[var(--border)]"
-                >
-                  {pill}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div className="rounded-3xl overflow-hidden bg-white shadow-xl border border-[var(--border)]">
-            <div className="px-8 py-8 text-white bg-primary">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
-                AVSPH Core Plan — Field Service Bundle
-              </p>
-              <h3 className="text-2xl md:text-3xl font-bold mt-3 text-white">
-                Field Service Bundle
-              </h3>
-              <div className="mt-6 flex items-end gap-2">
-                <span className="text-lg font-semibold text-white">$</span>
-                <span className="text-5xl font-extrabold leading-none text-white">
-                  489
-                </span>
-                <span className="text-sm font-medium text-white">/month</span>
-              </div>
-              <p className="mt-4 text-sm text-white">
-                12-month commitment · All inclusive
-              </p>
-            </div>
-            <div className="px-8 py-6">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--muted)] mb-4">
-                Includes
-              </p>
-              <div className="space-y-3">
-                {planIncludeItems.map((item) => (
-                  <div
-                    key={item.label}
-                    className="flex items-center justify-between gap-3"
-                  >
-                    <div className="flex items-center gap-3">
-                      <span className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
-                        <CheckCircle2 className="w-4 h-4" />
-                      </span>
-                      <span className="text-[var(--foreground)]">
-                        {item.label}
-                      </span>
-                    </div>
-                    {item.badge ? (
-                      <span className="text-[10px] font-semibold tracking-wide text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full">
-                        {item.badge}
-                      </span>
-                    ) : null}
-                  </div>
-                ))}
-              </div>
-              <a
-                href="/booking"
-                className="mt-6 inline-flex w-full items-center justify-center rounded-xl bg-primary px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#0F2143]"
-              >
-                Claim This Plan →
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <LandingHero />
 
       {/* Trust Strip */}
-      <section className="bg-[var(--primary)] py-6">
+      {/* <section className="bg-[var(--primary)] py-6">
         <div className="container">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
             {trustStats.map((stat) => (
@@ -429,7 +297,7 @@ export default function LimitedOffersPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Launch Timeline */}
       <section className="section bg-white">
