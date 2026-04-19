@@ -5,12 +5,16 @@ import {
   MonitorSmartphone,
   Rocket,
   Search,
+  ShieldCheck,
+  Star,
   Wrench,
   Zap,
 } from "lucide-react";
 import CTABookACall from "@/components/CTABookACall";
 import MockupGallery from "@/components/MockupGallery";
 import KlicktivShowcaseSection from "@/components/KlicktivShowcaseSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import StickyCtaBar from "@/components/StickyCtaBar";
 import {
   Accordion,
   AccordionContent,
@@ -32,6 +36,36 @@ const highlightPills = [
   "Landing page live in 24hrs · Full launch in 7 days",
   "5+ automations pre-built and live on day one",
   "30+ local directories your business is listed on",
+];
+
+const trustStats = [
+  { value: "47+", label: "Field service clients" },
+  { value: "30 days", label: "Avg. first Google Maps lead" },
+  { value: "$176/mo", label: "Software included free" },
+  { value: "⭐ 4.9", label: "Average client rating" },
+];
+
+const launchSteps = [
+  {
+    day: "Day 0",
+    title: "You Sign Up",
+    desc: "Complete onboarding form. We start configuration same day.",
+  },
+  {
+    day: "Day 1",
+    title: "Landing Page Live",
+    desc: "Your first page is live and capturing leads within 24 hours.",
+  },
+  {
+    day: "Day 3",
+    title: "GHL + Klicktiv Active",
+    desc: "CRM automations running. Financial system fully configured.",
+  },
+  {
+    day: "Day 7",
+    title: "Full Stack Launched",
+    desc: "Complete 8-page site, SEO submitted, all systems live.",
+  },
 ];
 
 const includedItems = [
@@ -65,8 +99,9 @@ const includedItems = [
     title: "GoHighLevel (GHL) Account",
     description:
       "Your GHL CRM fully configured and ready on launch day, included at no extra cost.",
-    icon: <Zap className="w-6 h-6 text-[var(--primary)]" />,
+    icon: <Zap className="w-6 h-6 text-emerald-600" />,
     badge: "Free — $97/mo value",
+    highlight: true,
     features: [
       "5 pre-built automation workflows configured",
       "Missed call text-back in under 60 seconds",
@@ -79,8 +114,9 @@ const includedItems = [
     title: "Klicktiv Account",
     description:
       "A financial operating system built for field service, eliminates spreadsheets and manual reconciliation.",
-    icon: <DollarSign className="w-6 h-6 text-[var(--accent)]" />,
+    icon: <DollarSign className="w-6 h-6 text-emerald-600" />,
     badge: "Free — $79/mo value",
+    highlight: true,
     features: [
       "Commission split rules for up to 10 technicians",
       "Real-time job cost & revenue dashboards",
@@ -138,6 +174,7 @@ const pricingCards = [
     price: "$489",
     cadence: "/mo",
     note: "Billed monthly. 12-month commitment. Rate locked.",
+    badge: "Most Popular",
     features: [
       "8-page custom conversion website",
       "Local SEO — 15 keywords + Google Maps",
@@ -151,6 +188,7 @@ const pricingCards = [
       "Landing page in 24hrs · Full stack in 7 days",
     ],
     cta: "Claim this plan →",
+    primary: true,
   },
   {
     title: "ADD-ON",
@@ -174,6 +212,7 @@ const pricingCards = [
     cadence: "/mo",
     description: "Full system + dispatcher",
     note: "Everything included — website, SEO, GHL, Klicktiv, and a full-time dispatcher.",
+    badge: "Best Value",
     features: [
       "Everything in the core plan",
       "Full-time dispatcher included",
@@ -182,8 +221,25 @@ const pricingCards = [
       "Priority onboarding",
       "Equivalent to $3,676+/mo value",
     ],
-    cta: "Bundle and save",
-    primary: true,
+    cta: "Get the Full Stack →",
+  },
+];
+
+const riskReversal = [
+  {
+    icon: <ShieldCheck className="w-5 h-5 text-emerald-500" />,
+    title: "Rate locked for 12 months",
+    desc: "No surprise price increases mid-term.",
+  },
+  {
+    icon: <Star className="w-5 h-5 text-emerald-500" />,
+    title: "Dedicated account manager from day 1",
+    desc: "One person owns your results. We stay until it works.",
+  },
+  {
+    icon: <CheckCircle2 className="w-5 h-5 text-emerald-500" />,
+    title: "Cancel after 12 months",
+    desc: "No long-term lock-in beyond your first year.",
   },
 ];
 
@@ -191,7 +247,17 @@ const faqs = [
   {
     question: "Is the $489/month rate locked?",
     answer:
-      "Yes. The core plan rate is locked for a full 12-month term once you start.",
+      "Yes. The core plan rate is locked for a full 12-month term once you start. No mid-term increases.",
+  },
+  {
+    question: "What if I already have a website?",
+    answer:
+      "We replace it with a conversion-optimized 8-page site built for field service. If you want to keep your existing domain, we handle the migration.",
+  },
+  {
+    question: "What if I already use GoHighLevel?",
+    answer:
+      "We configure your existing account with our field service automation stack — 5 workflows, missed call text-back, review sequences, and booking pipeline.",
   },
   {
     question: "Do I need a GoHighLevel account already?",
@@ -204,23 +270,50 @@ const faqs = [
       "We build your website, set up automations, connect your GHL workflows, and configure Klicktiv so everything launches ready to use.",
   },
   {
+    question: "What happens to the rate after 12 months?",
+    answer:
+      "Your rate stays the same unless you choose to change your plan. There are no surprise price increases after the commitment period.",
+  },
+  {
+    question: "How is this different from a local digital agency?",
+    answer:
+      "Local agencies typically charge $800–1,500/mo for SEO alone, bill separately for website maintenance, and don't include CRM or financial tools. AVSPH bundles everything at one fixed price with a guaranteed launch timeline.",
+  },
+  {
     question: "Can I add dispatch later?",
     answer:
       "Yes. You can start with the core plan and add the full-time dispatcher when you are ready to scale operations.",
+  },
+  {
+    question: "What if I want to cancel early?",
+    answer:
+      "The plan is a 12-month commitment. After 12 months, you can cancel any time with 30 days notice.",
   },
 ];
 
 export default function LimitedOffersPage() {
   return (
     <main className="bg-[var(--background)]">
+      <StickyCtaBar />
+
       {/* Hero */}
       <section className="relative min-h-screen pt-40 lg:pt-48 pb-16 overflow-hidden bg-white">
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[var(--accent)]/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[var(--accent)]/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none" />
         <div className="container relative z-10 grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
           <div className="text-left">
-            <span className="text-[var(--accent)] font-bold tracking-wider uppercase mb-4 block">
-              AVSPH — Field Service Plan
-            </span>
+            <div className="flex items-center gap-2 mb-4">
+              <div className="flex text-amber-400 text-sm">
+                {"★★★★★".split("").map((s, i) => (
+                  <span key={i}>{s}</span>
+                ))}
+              </div>
+              <span className="text-sm font-semibold text-[var(--foreground)]">
+                4.9
+              </span>
+              <span className="text-sm text-[var(--muted)]">
+                · Rated by 47+ field service businesses
+              </span>
+            </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 text-[var(--primary)] leading-tight">
               LANDING PAGE LIVE IN 24HRS.{" "}
               <span className="text-[var(--accent)] font-bold tracking-wider uppercase mb-4">
@@ -228,21 +321,31 @@ export default function LimitedOffersPage() {
               </span>
             </h1>
             <p className="text-lg md:text-xl text-[var(--foreground-light)] max-w-2xl mb-10 leading-relaxed">
-              One complete package built for field service businesses. Professional
-              website, local SEO, fully configured GHL CRM, and Klicktiv financial
-              system — all managed for you every month. No tech work. No separate
-              vendors. One simple price.
+              One complete package built for field service businesses.
+              Professional website, local SEO, fully configured GHL CRM, and
+              Klicktiv financial system — all managed for you every month. No
+              tech work. No separate vendors. One simple price.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href="/booking" className="btn-primary flex items-center gap-2">
-                Get Started for $489/mo <ArrowRight className="w-5 h-5" />
+            <div className="flex flex-col sm:flex-row gap-4 items-center">
+              <a
+                href="/booking"
+                className="btn-primary flex items-center gap-2"
+              >
+                Get My Landing Page Live <ArrowRight className="w-5 h-5" />
               </a>
-              <a href="#included" className="btn-secondary flex items-center gap-1">
-                See what&apos;s included <ArrowRight className="w-4 h-4 rotate-90" />
+              <a
+                href="#included"
+                className="text-sm font-semibold text-[var(--primary)] underline underline-offset-4 hover:text-[var(--accent)] transition-colors"
+              >
+                See what&apos;s included ↓
               </a>
             </div>
-            <p className="mt-4 text-xs text-[var(--muted)]">
-              12-month commitment · Rate locked for full term · No setup fee · Cancel after 12 months
+            <p className="mt-3 text-xs text-[var(--muted)]">
+              Setup call takes 15 min. Landing page live next day.
+            </p>
+            <p className="mt-1 text-xs text-[var(--muted)]">
+              12-month commitment · Rate locked for full term · No setup fee ·
+              Cancel after 12 months
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               {highlightPills.map((pill) => (
@@ -275,7 +378,6 @@ export default function LimitedOffersPage() {
                 12-month commitment · All inclusive
               </p>
             </div>
-
             <div className="px-8 py-6">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--muted)] mb-4">
                 Includes
@@ -313,28 +415,117 @@ export default function LimitedOffersPage() {
         </div>
       </section>
 
+      {/* Trust Strip */}
+      <section className="bg-[var(--primary)] py-6">
+        <div className="container">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+            {trustStats.map((stat) => (
+              <div key={stat.label}>
+                <p className="text-2xl font-extrabold text-white">
+                  {stat.value}
+                </p>
+                <p className="text-xs text-white/60 mt-1">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Launch Timeline */}
+      <section className="section bg-white">
+        <div className="container max-w-5xl">
+          <div className="text-center mb-12">
+            <h2 className="section-title">
+              What Happens After{" "}
+              <span className="text-[var(--accent)]">You Sign Up</span>
+            </h2>
+            <p className="section-subtitle">
+              Most clients are live and capturing leads before the week is out.
+            </p>
+          </div>
+          <div className="relative">
+            {/* connector line - desktop only */}
+            <div className="hidden md:block absolute top-8 left-[calc(12.5%+1rem)] right-[calc(12.5%+1rem)] h-0.5 bg-[var(--border)]" />
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              {launchSteps.map((step, i) => (
+                <div
+                  key={step.day}
+                  className="relative flex flex-col items-center text-center"
+                >
+                  <div className="relative z-10 w-16 h-16 rounded-full bg-[var(--primary)] flex flex-col items-center justify-center mb-4 shadow-lg">
+                    <span className="text-[10px] font-bold text-white/70 uppercase tracking-wider">
+                      {step.day}
+                    </span>
+                    <span className="text-lg font-extrabold text-white leading-none">
+                      {i + 1}
+                    </span>
+                  </div>
+                  <h3 className="font-bold text-[var(--primary)] mb-2">
+                    {step.title}
+                  </h3>
+                  <p className="text-sm text-[var(--foreground-light)] leading-relaxed">
+                    {step.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Features */}
       <section id="included" className="section bg-[var(--background-alt)]">
         <div className="container">
           <div className="text-center mb-12">
             <h2 className="section-title">
-              Everything Your Business Needs. Nothing You Don&apos;t.
+              Everything Your Business Needs.{" "}
+              <span className="text-[var(--accent)]">
+                Nothing You Don&apos;t.
+              </span>
             </h2>
             <p className="section-subtitle">
               One plan covers your entire digital foundation. Simple,
               transparent, and ready to launch.
             </p>
           </div>
-
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {includedItems.map((item) => (
-              <div key={item.title} className="card">
+              <div
+                key={item.title}
+                className="card"
+                style={
+                  item.highlight
+                    ? { background: "#ecfdf5", borderColor: "#6ee7b7" }
+                    : undefined
+                }
+              >
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-[var(--background-alt)] border border-[var(--border)]">
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center border"
+                    style={
+                      item.highlight
+                        ? { background: "#d1fae5", borderColor: "#6ee7b7" }
+                        : {
+                            background: "var(--background-alt)",
+                            borderColor: "var(--border)",
+                          }
+                    }
+                  >
                     {item.icon}
                   </div>
                   {item.badge ? (
-                    <span className="text-xs font-semibold uppercase tracking-wide text-[var(--accent)] bg-[var(--accent)]/10 px-3 py-1 rounded-full">
+                    <span
+                      className="text-xs font-semibold uppercase tracking-wide px-3 py-1 rounded-full"
+                      style={
+                        item.highlight
+                          ? { color: "#065f46", background: "#a7f3d0" }
+                          : {
+                              color: "var(--accent)",
+                              background:
+                                "color-mix(in srgb, var(--accent) 10%, transparent)",
+                            }
+                      }
+                    >
                       {item.badge}
                     </span>
                   ) : null}
@@ -364,12 +555,31 @@ export default function LimitedOffersPage() {
         </div>
       </section>
 
-      {/* Value Comparison */}
+      {/* Industries */}
       <section className="section bg-white">
+        <div className="container">
+          <div className="text-center mb-12">
+            <h2 className="section-title">
+              Targeted Solutions{" "}
+              <span className="text-[var(--accent)]">by Industry</span>
+            </h2>
+            <p className="section-subtitle">
+              Websites tailored per service industry.
+            </p>
+          </div>
+          <MockupGallery />
+        </div>
+      </section>
+
+      {/* Value Comparison */}
+      <section className="section bg-[var(--background-alt)]">
         <div className="container max-w-4xl">
           <div className="text-center mb-12">
             <h2 className="section-title">
-              What You&apos;d Pay Buying This Separately
+              What You&apos;d Pay{" "}
+              <span className="text-[var(--accent)]">
+                Buying This Separately
+              </span>
             </h2>
             <p className="section-subtitle">
               The $489/mo bundle replaces over $1,400/mo worth of tools and
@@ -380,7 +590,7 @@ export default function LimitedOffersPage() {
           <div className="rounded-2xl border border-[var(--border)] overflow-hidden">
             <div className="grid grid-cols-3 bg-[var(--background-alt)] px-6 py-3 text-xs font-bold uppercase tracking-widest text-[var(--muted)]">
               <span>What You Need</span>
-              <span className="text-center">Market Rate</span>
+              <span className="text-center">What Others Charge</span>
               <span className="text-center">With AVSPH</span>
             </div>
             {valueComparison.map((row, i) => (
@@ -412,7 +622,19 @@ export default function LimitedOffersPage() {
             </div>
           </div>
 
-          <div className="mt-8 space-y-3">
+          <div className="mt-6 rounded-2xl bg-emerald-50 border border-emerald-200 px-6 py-5 text-center">
+            <p className="text-emerald-700 text-sm font-medium uppercase tracking-widest mb-1">
+              Your total savings
+            </p>
+            <p className="text-3xl font-extrabold text-emerald-700">
+              $987–$2,087<span className="text-xl font-bold">/mo</span>
+            </p>
+            <p className="text-emerald-600 text-sm mt-1">
+              vs. buying website, SEO, GHL, Klicktiv, and management separately
+            </p>
+          </div>
+
+          <div className="mt-6 space-y-3">
             <div className="flex items-start gap-3">
               <CheckCircle2 className="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" />
               <p className="text-[var(--foreground-light)]">
@@ -435,7 +657,10 @@ export default function LimitedOffersPage() {
       <section id="pricing" className="section bg-[var(--background-alt)]">
         <div className="container">
           <div className="text-center mb-12">
-            <h2 className="section-title">Simple, Transparent Pricing</h2>
+            <h2 className="section-title">
+              Simple, Transparent{" "}
+              <span className="text-[var(--accent)]">Pricing</span>
+            </h2>
             <p className="section-subtitle">
               One core plan covers your entire digital foundation. Add full-time
               call dispatch when ready to scale.
@@ -466,6 +691,19 @@ export default function LimitedOffersPage() {
                   card.primary ? "border-2 border-[var(--accent)]" : ""
                 }`}
               >
+                {"badge" in card && card.badge && (
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
+                    <span
+                      className={`text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full whitespace-nowrap ${
+                        card.primary
+                          ? "bg-[var(--accent)] text-white"
+                          : "bg-[var(--primary)] text-white"
+                      }`}
+                    >
+                      {card.badge}
+                    </span>
+                  </div>
+                )}
                 <div className="mb-4">
                   <p className="text-xs font-bold text-[var(--muted)] uppercase tracking-widest">
                     {card.title}
@@ -503,7 +741,7 @@ export default function LimitedOffersPage() {
                   ))}
                 </div>
 
-                <div className="mt-auto pt-6 flex flex-col items-center gap-4">
+                <div className="mt-auto pt-6">
                   <a
                     href="/booking"
                     className={`inline-flex w-full items-center justify-center rounded-xl px-4 py-3 text-sm font-bold transition-all ${
@@ -518,29 +756,42 @@ export default function LimitedOffersPage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* Industries */}
-      <section className="section bg-white">
-        <div className="container">
-          <div className="text-center mb-12">
-            <h2 className="section-title">Targeted Solutions by Industry</h2>
-            <p className="section-subtitle">
-              Websites tailored per service industry.
-            </p>
+          {/* Risk Reversal */}
+          <div className="mt-12 grid sm:grid-cols-3 gap-6">
+            {riskReversal.map((item) => (
+              <div
+                key={item.title}
+                className="flex items-start gap-3 bg-white rounded-2xl border border-[var(--border)] px-5 py-4"
+              >
+                {item.icon}
+                <div>
+                  <p className="font-semibold text-sm text-[var(--primary)]">
+                    {item.title}
+                  </p>
+                  <p className="text-xs text-[var(--foreground-light)] mt-0.5">
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
-          <MockupGallery />
         </div>
       </section>
 
       <KlicktivShowcaseSection />
 
+      {/* Testimonials */}
+      <TestimonialsSection />
+
       {/* FAQ */}
       <section className="section bg-white">
         <div className="container max-w-4xl">
           <div className="text-center mb-10">
-            <h2 className="section-title">FAQ</h2>
+            <h2 className="section-title">
+              <span className="text-[var(--accent)]">Frequently Asked</span>{" "}
+              Questions
+            </h2>
             <p className="section-subtitle">
               Quick answers to the most common questions about the field service
               plan.
@@ -575,6 +826,21 @@ export default function LimitedOffersPage() {
         title="Ready to lock in the $489/month offer?"
         subtitle="Book a free call and we will walk you through the Field Service Bundle and next steps."
       />
+
+      {/* Low-friction contact fallback */}
+      <section className="bg-white py-6 border-t border-[var(--border)]">
+        <div className="container text-center">
+          <p className="text-sm text-[var(--muted)]">
+            Not ready to book a call?{" "}
+            <a
+              href="/contact"
+              className="font-semibold text-[var(--primary)] underline underline-offset-4 hover:text-[var(--accent)] transition-colors"
+            >
+              Send us a question first →
+            </a>
+          </p>
+        </div>
+      </section>
     </main>
   );
 }

@@ -31,7 +31,7 @@ const klicktivShowcase = {
   subtitle: "Financial Operating System for Field Service",
   url: "https://www.klicktiv.io/",
   image:
-    "https://res.cloudinary.com/dg1i3ew9w/image/upload/v1773576903/www.klicktiv.io__1_fhbojw.png",
+    "https://res.cloudinary.com/dg1i3ew9w/image/upload/q_auto/f_auto/v1776569099/www.klicktiv.io__3_w8nwot.png",
 };
 
 export default function KlicktivShowcaseSection() {
@@ -53,7 +53,7 @@ export default function KlicktivShowcaseSection() {
     <section className="section bg-[var(--primary)] text-white">
       <div className="container">
         <div className="text-center mb-12">
-          <h2 className="section-title text-white">Introducing Klicktiv.io</h2>
+          <h2 className="section-title text-white">Introducing <span className="text-[var(--accent)]">Klicktiv.io</span></h2>
           <p className="section-subtitle text-white/80">
             A financial operating system built for field service businesses.
             Here is the full landing page experience.
