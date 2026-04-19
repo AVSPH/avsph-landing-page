@@ -690,10 +690,12 @@ export default function LimitedOffersPage() {
         </div>
       </section>
 
-      <CTABookACall
-        title="Ready to lock in the $489/month offer?"
-        subtitle="Book a free call and we will walk you through the Field Service Bundle and next steps."
-      />
+      <div className="px-6 md:px-16 lg:px-24">
+        <CTABookACall
+          title="Ready to lock in the $489/month offer?"
+          subtitle="Book a free call and we will walk you through the Field Service Bundle and next steps."
+        />
+      </div>
 
       {/* Low-friction contact fallback */}
       <section className="bg-white py-6 border-t border-[var(--border)]">

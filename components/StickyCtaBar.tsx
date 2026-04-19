@@ -18,7 +18,7 @@ export default function StickyCtaBar() {
         visible ? "translate-y-0" : "translate-y-full"
       }`}
     >
-      <div className="container flex items-center justify-between gap-4 py-3">
+      <div className="container flex items-center justify-center sm:justify-between gap-4 py-3">
         <div className="hidden sm:block">
           <p className="text-white font-semibold text-sm">
             AVSPH Core Plan — $489/mo
@@ -29,7 +29,7 @@ export default function StickyCtaBar() {
         </div>
         <a
           href="/booking"
-          className="ml-auto inline-flex items-center gap-2 bg-[var(--accent)] text-white font-bold px-6 py-2.5 rounded-xl text-sm hover:opacity-90 transition-opacity whitespace-nowrap"
+          className="sm:ml-auto inline-flex items-center gap-2 bg-[var(--accent)] text-white font-bold px-6 py-2.5 rounded-xl text-sm hover:opacity-90 transition-opacity whitespace-nowrap"
         >
           Get Started for $489/mo <ArrowRight className="w-4 h-4" />
         </a>
