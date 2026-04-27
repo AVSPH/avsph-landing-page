@@ -1,4 +1,6 @@
 import type { MetadataRoute } from "next";
+import { readdirSync } from "fs";
+import { join } from "path";
 import { getPublicBlogs } from "@/api/blogs.api";
 import { CASE_STUDIES } from "@/data/case-studies.data";
 
@@ -6,83 +8,56 @@ const SITE_URL = "https://advancedvirtualstaff.com";
 
 export const revalidate = 3600;
 
-type StaticRouteConfig = {
-  path: string;
-  changeFrequency: NonNullable<
-    MetadataRoute.Sitemap[number]["changeFrequency"]
-  >;
+type RouteConfig = {
+  changeFrequency: NonNullable<MetadataRoute.Sitemap[number]["changeFrequency"]>;
   priority: number;
 };
 
-const STATIC_ROUTES: StaticRouteConfig[] = [
-  { path: "/", changeFrequency: "weekly", priority: 1 },
-  { path: "/about", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/blog", changeFrequency: "daily", priority: 0.8 },
-  { path: "/booking", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/case-studies", changeFrequency: "monthly", priority: 0.7 },
-  { path: "/faqs", changeFrequency: "monthly", priority: 0.7 },
-  { path: "/limited-offers", changeFrequency: "weekly", priority: 0.7 },
-  { path: "/privacy", changeFrequency: "yearly", priority: 0.3 },
-  { path: "/resources", changeFrequency: "monthly", priority: 0.8 },
-  {
-    path: "/resources/delegation-matrix",
-    changeFrequency: "monthly",
-    priority: 0.7,
-  },
-  {
-    path: "/resources/savings-calculator",
-    changeFrequency: "monthly",
-    priority: 0.7,
-  },
-  {
-    path: "/resources/va-onboarding",
-    changeFrequency: "monthly",
-    priority: 0.7,
-  },
-  { path: "/services", changeFrequency: "weekly", priority: 0.9 },
-  {
-    path: "/services/administrative-support",
-    changeFrequency: "monthly",
-    priority: 0.8,
-  },
-  {
-    path: "/services/book-keeping-support",
-    changeFrequency: "monthly",
-    priority: 0.8,
-  },
-  {
-    path: "/services/call-handling-and-customer-support",
-    changeFrequency: "monthly",
-    priority: 0.8,
-  },
-  {
-    path: "/services/estimates-and-invoicing",
-    changeFrequency: "monthly",
-    priority: 0.8,
-  },
-  {
-    path: "/services/lead-intake-and-follow-ups",
-    changeFrequency: "monthly",
-    priority: 0.8,
-  },
-  {
-    path: "/services/operations-and-task-coordination",
-    changeFrequency: "monthly",
-    priority: 0.8,
-  },
-  {
-    path: "/services/review-and-reputation-management",
-    changeFrequency: "monthly",
-    priority: 0.8,
-  },
-  {
-    path: "/services/scheduling-and-dispatching",
-    changeFrequency: "monthly",
-    priority: 0.8,
-  },
-  { path: "/terms", changeFrequency: "yearly", priority: 0.3 },
-  { path: "/web-services", changeFrequency: "monthly", priority: 0.8 },
-];
+// Explicit overrides — everything else gets DEFAULT_CONFIG
+const ROUTE_OVERRIDES: Record<string, RouteConfig> = {
+  "/": { changeFrequency: "weekly", priority: 1 },
+  "/services": { changeFrequency: "weekly", priority: 0.9 },
+  "/about": { changeFrequency: "monthly", priority: 0.8 },
+  "/blog": { changeFrequency: "daily", priority: 0.8 },
+  "/booking": { changeFrequency: "monthly", priority: 0.8 },
+  "/resources": { changeFrequency: "monthly", priority: 0.8 },
+  "/web-services": { changeFrequency: "monthly", priority: 0.8 },
+  "/privacy": { changeFrequency: "yearly", priority: 0.3 },
+  "/terms": { changeFrequency: "yearly", priority: 0.3 },
+};
+
+const DEFAULT_CONFIG: RouteConfig = { changeFrequency: "monthly", priority: 0.7 };
+
+function getRouteConfig(path: string): RouteConfig {
+  return ROUTE_OVERRIDES[path] ?? DEFAULT_CONFIG;
+}
+
+function discoverStaticRoutes(appDir: string): string[] {
+  const routes: string[] = [];
+
+  function walk(dir: string) {
+    const entries = readdirSync(dir, { withFileTypes: true });
+    for (const entry of entries) {
+      const fullPath = join(dir, entry.name);
+      if (entry.isDirectory()) {
+        walk(fullPath);
+      } else if (/^page\.(tsx|ts|jsx|js)$/.test(entry.name)) {
+        const route = dir
+          .replace(appDir, "")
+          .replace(/\\/g, "/")
+          .replace(/\/\([^)]+\)/g, ""); // strip route groups like (main), (funnel)
+
+        // skip dynamic segments like [slug]
+        if (!route.includes("[")) {
+          routes.push(route || "/");
+        }
+      }
+    }
+  }
+
+  walk(appDir);
+  return [...new Set(routes)];
+}
 
 async function getAllBlogEntries(): Promise<MetadataRoute.Sitemap> {
   const blogEntries: MetadataRoute.Sitemap = [];
@@ -95,10 +70,7 @@ async function getAllBlogEntries(): Promise<MetadataRoute.Sitemap> {
       totalPages = response.pagination.totalPages || 1;
 
       for (const blog of response.data) {
-        if (!blog.slug) {
-          continue;
-        }
-
+        if (!blog.slug) continue;
         blogEntries.push({
           url: `${SITE_URL}/blog/${blog.slug}`,
           lastModified: blog.createdAt ? new Date(blog.createdAt) : new Date(),
@@ -118,12 +90,13 @@ async function getAllBlogEntries(): Promise<MetadataRoute.Sitemap> {
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const lastModified = new Date();
+  const appDir = join(process.cwd(), "app");
 
-  const staticEntries: MetadataRoute.Sitemap = STATIC_ROUTES.map((route) => ({
-    url: `${SITE_URL}${route.path}`,
+  const staticRoutes = discoverStaticRoutes(appDir);
+  const staticEntries: MetadataRoute.Sitemap = staticRoutes.map((route) => ({
+    url: `${SITE_URL}${route}`,
     lastModified,
-    changeFrequency: route.changeFrequency,
-    priority: route.priority,
+    ...getRouteConfig(route),
   }));
 
   const caseStudyEntries: MetadataRoute.Sitemap = CASE_STUDIES.map((study) => ({

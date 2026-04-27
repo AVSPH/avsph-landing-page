@@ -1,0 +1,47 @@
+# Advanced Virtual Staff
+
+> Premium virtual assistant services based in the Philippines. We match businesses with top 1% VA talent for admin support, customer service, bookkeeping, scheduling, and more. Flexible contracts, affordable rates, 24/7 availability.
+
+## About
+
+Advanced Virtual Staff is a Philippine-based outsourcing company that provides dedicated virtual assistants to businesses and entrepreneurs worldwide. Our VAs are pre-vetted, trained, and matched to your specific needs.
+
+## Services
+
+- [Administrative Support](/services/administrative-support): Email management, calendar scheduling, data entry, document preparation
+- [Bookkeeping Support](/services/book-keeping-support): Financial records, invoicing, expense tracking, reconciliation
+- [Call Handling & Customer Support](/services/call-handling-and-customer-support): Inbound/outbound calls, live chat, ticket resolution
+- [Estimates & Invoicing](/services/estimates-and-invoicing): Quote preparation, invoice generation, follow-ups
+- [Lead Intake & Follow-Ups](/services/lead-intake-and-follow-ups): CRM management, lead qualification, follow-up sequences
+- [Operations & Task Coordination](/services/operations-and-task-coordination): Project coordination, SOPs, workflow management
+- [Review & Reputation Management](/services/review-and-reputation-management): Review monitoring, response management, reputation building
+- [Scheduling & Dispatching](/services/scheduling-and-dispatching): Appointment booking, crew dispatch, route coordination
+- [Web Services](/web-services): Website management, content updates, basic design tasks
+
+## Key Pages
+
+- [Home](https://advancedvirtualstaff.com/): Main landing page with service overview and contact form
+- [Services](/services): Complete list of virtual assistant service offerings
+- [About](/about): Company background, mission, and team
+- [Blog](/blog): Industry guides, VA tips, and business outsourcing insights
+- [Case Studies](/case-studies): Real client results and success stories
+- [FAQs](/faqs): Answers to common questions about hiring and working with VAs
+- [Resources](/resources): Free tools including delegation matrix, savings calculator, VA onboarding guide
+- [Booking](/booking): Schedule a free discovery call
+
+## Contact
+
+- Email: info@advancedvirtualstaff.com
+- Booking: https://advancedvirtualstaff.com/booking
+
+## Target Clients
+
+Small to medium businesses, home service companies, real estate professionals, e-commerce operators, and entrepreneurs looking to delegate operations and scale without hiring full-time staff.
+
+## Why Choose Us
+
+- Top 1% pre-vetted VA talent
+- Philippines-based (English-proficient, US timezone-aligned)
+- Flexible contracts — cancel anytime
+- Dedicated account management
+- Specialized industry expertise (home services, real estate, healthcare admin)

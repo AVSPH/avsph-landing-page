@@ -55,6 +55,53 @@ export const metadata: Metadata = {
   },
 };
 
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Advanced Virtual Staff",
+  url: "https://advancedvirtualstaff.com",
+  logo: "https://res.cloudinary.com/drpxke63n/image/upload/v1771586449/advancedvirtualstaff.com__4_1_qdwoxu.png",
+  description:
+    "Philippine-based virtual assistant company providing dedicated admin support, customer service, bookkeeping, and more to businesses worldwide.",
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "PH",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "customer service",
+    email: "info@advancedvirtualstaff.com",
+    availableLanguage: "English",
+  },
+  sameAs: [
+    "https://www.facebook.com/advancedvirtualstaff",
+    "https://www.linkedin.com/company/advanced-virtual-staff",
+  ],
+  areaServed: "Worldwide",
+  knowsAbout: [
+    "Virtual Assistant Services",
+    "Administrative Support",
+    "Customer Service Outsourcing",
+    "Bookkeeping Support",
+    "Remote Staffing",
+  ],
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Advanced Virtual Staff",
+  url: "https://advancedvirtualstaff.com",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: "https://advancedvirtualstaff.com/blog?q={search_term_string}",
+    },
+    "query-input": "required name=search_term_string",
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -67,6 +114,14 @@ export default function RootLayout({
       <body
         className={`${lexend.variable} ${sourceSans3.variable} ${plusJakartaSans.variable} antialiased`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
         {children}
         <Analytics />
       </body>
