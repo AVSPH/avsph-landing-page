@@ -105,8 +105,7 @@ export default function HeroSection() {
             transition={{ duration: 0.6 }}
             className="font-[family-name:var(--font-hero)] text-5xl md:text-7xl font-bold leading-tight text-slate-900 tracking-tight"
           >
-            Empowering the Digital-First World with
-            <span className="text-primary"> AI-Driven </span> Virtual Assistant.
+            Virtual Assistants &amp; Dispatchers for Field Service Businesses
           </motion.h1>
 
           <motion.p
@@ -115,9 +114,7 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-lg md:text-xl text-slate-700 leading-relaxed max-w-2xl mx-auto font-medium"
           >
-            We help service-based businesses reclaim 20+ hours a week by
-            building and managing a reliable offshore team for them without
-            hiring headaches, long contracts, or HR stress.
+            HVAC, plumbing, roofing, pest control, landscaping, electrical — we build you an SOP-trained Filipino support team plus the website, CRM, and financial systems to run on. Launch in 7 days. Save up to 70% vs. a local hire.
           </motion.p>
 
           <motion.div

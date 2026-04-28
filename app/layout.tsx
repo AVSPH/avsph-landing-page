@@ -25,9 +25,9 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://advancedvirtualstaff.com"),
-  title: "Advanced Virtual Staff | 24/7 Premium Outsource Support",
+  title: "Virtual Assistants for Field Service Businesses | Advanced Virtual Staff",
   description:
-    "Partner with Advanced Virtual Staff for dedicated, exceptional virtual assistants. We match you with top 1% talent for admin support, customer service, bookkeeping, and more. Cancel anytime, affordable rates.",
+    "Dedicated virtual assistants and dispatchers for HVAC, plumbing, roofing, and field service businesses. SOP-trained Filipino VAs, full-time dispatch from $1,100/mo, and a complete website + CRM + SEO bundle from $489/mo. Launch in 7 days. No setup fee.",
   keywords:
     "virtual assistant, VA services, outsourcing, remote staff, Philippines, admin support, customer service, bookkeeping",
   openGraph: {
