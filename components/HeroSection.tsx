@@ -43,7 +43,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 overflow-hidden z-0 mask-gradient-vertical">
         <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-4 h-[120vh] -mt-[10vh] opacity-100">
           {/* Column 1 (Visible on all) */}
-          <MarqueeColumn images={column1} direction="up" duration={200} />
+          <MarqueeColumn images={column1} direction="up" duration={200} priorityCount={2} />
 
           {/* Column 2 (Visible on all) */}
           <MarqueeColumn
@@ -51,10 +51,11 @@ export default function HeroSection() {
             direction="down"
             duration={220}
             className="mt-[-50px]"
+            priorityCount={2}
           />
 
           {/* Column 3 (Visible on all) */}
-          <MarqueeColumn images={column3} direction="up" duration={210} />
+          <MarqueeColumn images={column3} direction="up" duration={210} priorityCount={2} />
 
           {/* Column 4 (Hidden on mobile < md) */}
           <MarqueeColumn
@@ -105,7 +106,7 @@ export default function HeroSection() {
             transition={{ duration: 0.6 }}
             className="font-[family-name:var(--font-hero)] text-5xl md:text-7xl font-bold leading-tight text-slate-900 tracking-tight"
           >
-            Virtual Assistants &amp; Dispatchers for Field Service Businesses
+            Field Service Virtual Assistants &amp; Dispatchers
           </motion.h1>
 
           <motion.p
@@ -147,11 +148,13 @@ function MarqueeColumn({
   direction = "up",
   duration = 40,
   className = "",
+  priorityCount = 0,
 }: {
   images: string[];
   direction?: "up" | "down";
   duration?: number;
   className?: string;
+  priorityCount?: number;
 }) {
   return (
     <div className={`relative h-full overflow-hidden ${className}`}>
@@ -162,14 +165,14 @@ function MarqueeColumn({
         className="flex flex-col gap-4"
       >
         {images.map((src, i) => (
-          <MarqueeImage key={i} src={src} />
+          <MarqueeImage key={i} src={src} priority={i < priorityCount} />
         ))}
       </motion.div>
     </div>
   );
 }
 
-function MarqueeImage({ src }: { src: string }) {
+function MarqueeImage({ src, priority = false }: { src: string; priority?: boolean }) {
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (
@@ -184,6 +187,7 @@ function MarqueeImage({ src }: { src: string }) {
         fill
         sizes="(max-width: 768px) 33vw, (max-width: 1200px) 25vw, 20vw"
         className={`object-cover transition-opacity duration-700 ease-in-out ${isLoaded ? "opacity-100" : "opacity-0"}`}
+        priority={priority}
         onLoad={() => setIsLoaded(true)}
       />
     </div>

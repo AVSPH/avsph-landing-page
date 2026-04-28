@@ -25,30 +25,35 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://advancedvirtualstaff.com"),
-  title: "Virtual Assistants for Field Service Businesses | Advanced Virtual Staff",
+  title: "Field Service Virtual Assistants | Advanced Virtual Staff",
+  alternates: {
+    canonical: "/",
+  },
   description:
     "Dedicated virtual assistants and dispatchers for HVAC, plumbing, roofing, and field service businesses. SOP-trained Filipino VAs, full-time dispatch from $1,100/mo, and a complete website + CRM + SEO bundle from $489/mo. Launch in 7 days. No setup fee.",
   keywords:
-    "virtual assistant, VA services, outsourcing, remote staff, Philippines, admin support, customer service, bookkeeping",
+    "virtual assistant, field service virtual assistant, dispatch support, HVAC virtual assistant, plumbing VA, roofing VA, Filipino VA, remote staff, Philippines, admin support",
   openGraph: {
-    title: "Advanced Virtual Staff | Your Success. Our Mission.",
+    siteName: "Advanced Virtual Staff",
+    title: "Field Service Virtual Assistants | Advanced Virtual Staff",
     description:
-      "Get matched with exceptional virtual assistants from our top 1% talent pool. 24/7 support, affordable rates, flexible contracts.",
+      "SOP-trained Filipino virtual assistants and dispatchers for HVAC, plumbing, roofing, and field service businesses. Launch in 7 days. Save up to 70% vs. local hires.",
     type: "website",
+    url: "https://advancedvirtualstaff.com",
     images: [
       {
         url: "https://res.cloudinary.com/drpxke63n/image/upload/v1771586449/advancedvirtualstaff.com__4_1_qdwoxu.png",
         width: 1200,
         height: 630,
-        alt: "Advanced Virtual Staff",
+        alt: "Advanced Virtual Staff — Field Service Virtual Assistants",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Advanced Virtual Staff | Your Success. Our Mission.",
+    title: "Field Service Virtual Assistants | Advanced Virtual Staff",
     description:
-      "Get matched with exceptional virtual assistants from our top 1% talent pool. 24/7 support, affordable rates, flexible contracts.",
+      "SOP-trained Filipino virtual assistants and dispatchers for HVAC, plumbing, roofing, and field service businesses. Launch in 7 days.",
     images: [
       "https://res.cloudinary.com/drpxke63n/image/upload/v1771586449/advancedvirtualstaff.com__4_1_qdwoxu.png",
     ],
@@ -73,9 +78,12 @@ const organizationJsonLd = {
     email: "info@advancedvirtualstaff.com",
     availableLanguage: "English",
   },
+  foundingDate: "2020",
   sameAs: [
-    "https://www.facebook.com/advancedvirtualstaff",
-    "https://www.linkedin.com/company/advanced-virtual-staff",
+    "https://www.facebook.com/avsphvirtualassistanceservices",
+    "https://www.linkedin.com/company/advanced-virtual-staff-ph/",
+    "https://x.com/advancedvstaff",
+    "https://www.instagram.com/advancedvirtualstaff",
   ],
   areaServed: "Worldwide",
   knowsAbout: [
@@ -84,6 +92,43 @@ const organizationJsonLd = {
     "Customer Service Outsourcing",
     "Bookkeeping Support",
     "Remote Staffing",
+  ],
+};
+
+const authorJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Advanced Virtual Staff Team",
+  url: "https://advancedvirtualstaff.com/about",
+  jobTitle: "Virtual Staffing Specialists",
+  affiliation: {
+    "@type": "Organization",
+    name: "Advanced Virtual Staff",
+    url: "https://advancedvirtualstaff.com",
+  },
+  knowsAbout: [
+    "Field Service Virtual Assistants",
+    "Dispatch Support for Home Services",
+    "HVAC Business Operations",
+    "Plumbing and Roofing Scheduling",
+    "Filipino Remote Staffing",
+  ],
+  sameAs: [
+    "https://www.linkedin.com/company/advanced-virtual-staff-ph/",
+    "https://www.facebook.com/avsphvirtualassistanceservices",
+  ],
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://advancedvirtualstaff.com",
+    },
   ],
 };
 
@@ -120,7 +165,15 @@ export default function RootLayout({
         />
         <script
           type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(authorJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
         />
         {children}
         <Analytics />

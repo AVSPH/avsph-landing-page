@@ -70,9 +70,9 @@ export default function HowItWorksSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <ol className="grid md:grid-cols-3 gap-8" role="list">
           {steps.map((step, index) => (
-            <div key={index} className="relative">
+            <li key={index} className="relative">
               <div className="relative text-center flex flex-col items-center">
                 {/* Icon with Step Label */}
                 <div className="relative inline-block mb-8">
@@ -83,9 +83,11 @@ export default function HowItWorksSection() {
                       background: "var(--secondary)",
                       color: "var(--primary)",
                     }}
+                    aria-hidden="true"
                   >
                     {step.icon}
                   </div>
+                  <span className="sr-only">Step {step.number}:</span>
                 </div>
 
                 <h3 className="text-xl font-bold text-white mb-3">
@@ -95,9 +97,9 @@ export default function HowItWorksSection() {
                   {step.description}
                 </p>
               </div>
-            </div>
+            </li>
           ))}
-        </div>
+        </ol>
 
         <div className="text-center mt-12">
           <a
