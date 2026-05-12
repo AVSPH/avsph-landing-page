@@ -277,7 +277,7 @@ export const staticBlogs: StaticBlog[] = [
     category: "Guides",
     createdAt: "2026-02-08T00:00:00.000Z",
     publishedAt: "2026-02-08T00:00:00.000Z",
-    featuredImage: "https://images.unsplash.com/photo-1661700152890-931fb04588e6?w=1200&q=80&fit=crop",
+    featuredImage: "https://images.unsplash.com/photo-1763718528755-4bca23f82ac3?w=1200&q=80&fit=crop",
     excerpt: "GoHighLevel is the most powerful CRM and automation platform for HVAC companies — if it's set up correctly. This guide covers every configuration step.",
     content: `
 <h2>Why GoHighLevel Works So Well for HVAC</h2>
@@ -733,7 +733,7 @@ export const staticBlogs: StaticBlog[] = [
     category: "SEO",
     createdAt: "2026-03-15T00:00:00.000Z",
     publishedAt: "2026-03-15T00:00:00.000Z",
-    featuredImage: "https://images.unsplash.com/photo-1690060216823-f69256563b2c?w=1200&q=80&fit=crop",
+    featuredImage: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=1200&q=80&fit=crop",
     excerpt: "A 47-item SEO checklist built specifically for HVAC and plumbing websites — covering technical, on-page, local, and conversion optimization.",
     content: `
 <h2>Technical SEO (Items 1–10)</h2>
@@ -1013,7 +1013,7 @@ export const staticBlogs: StaticBlog[] = [
     category: "Guides",
     createdAt: "2026-04-08T00:00:00.000Z",
     publishedAt: "2026-04-08T00:00:00.000Z",
-    featuredImage: "https://images.unsplash.com/photo-1720091339077-d0f56397a0c9?w=1200&q=80&fit=crop",
+    featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80&fit=crop",
     excerpt: "Stop doing double-entry. This walkthrough shows how to connect QuickBooks and GoHighLevel for automatic invoice creation, payment sync, and revenue reporting.",
     content: `
 <h2>The Double-Entry Problem</h2>
@@ -1338,7 +1338,7 @@ GHL Opportunity (Closed Won)
     category: "Case Study",
     createdAt: "2026-04-29T00:00:00.000Z",
     publishedAt: "2026-04-29T00:00:00.000Z",
-    featuredImage: "https://images.unsplash.com/photo-HsNtqUNWOqk?w=1200&q=80&fit=crop",
+    featuredImage: "https://images.unsplash.com/photo-1769360153801-66be36055f5f?w=1200&q=80&fit=crop",
     excerpt: "Mark Davis ran a 6-tech HVAC company in Phoenix and answered calls until 9pm every night. Six weeks after hiring an AVS virtual dispatcher, that changed completely.",
     content: `
 <h2>Meet Mark Davis</h2>
