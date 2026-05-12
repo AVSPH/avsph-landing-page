@@ -5,6 +5,11 @@ import Image from "next/image";
 import { ArrowLeft, Calendar, Tag } from "lucide-react";
 import Footer from "@/components/Footer";
 import { getBlogBySlug } from "@/api/blogs.api";
+import { staticBlogs } from "@/data/static-blogs";
+
+export async function generateStaticParams() {
+  return staticBlogs.map((b) => ({ slug: b.slug }));
+}
 
 const SITE_URL = "https://advancedvirtualstaff.com";
 const FALLBACK_OG =
@@ -16,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
 
   try {
-    const blog = await getBlogBySlug(slug);
+    const blog = staticBlogs.find((b) => b.slug === slug) ?? await getBlogBySlug(slug);
     const title = `${blog.title} | Advanced Virtual Staff Blog`;
     const description = blog.excerpt || `Read ${blog.title} on the Advanced Virtual Staff blog.`;
     const canonical = `${SITE_URL}/blog/${slug}`;
@@ -69,10 +74,15 @@ export default async function BlogPostPage({ params }: Props) {
     publishedAt?: string;
   } | null = null;
 
-  try {
-    blog = await getBlogBySlug(slug);
-  } catch {
-    notFound();
+  const staticMatch = staticBlogs.find((b) => b.slug === slug);
+  if (staticMatch) {
+    blog = staticMatch;
+  } else {
+    try {
+      blog = await getBlogBySlug(slug);
+    } catch {
+      notFound();
+    }
   }
 
   if (!blog) notFound();

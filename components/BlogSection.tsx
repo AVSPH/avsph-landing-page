@@ -8,31 +8,40 @@ import {
   Calendar,
   Tag,
   ArrowRight,
-  Clock,
   Loader2,
 } from "lucide-react";
 import { getPublicBlogs, type PublicBlog } from "@/api/blogs.api";
+import { staticBlogs } from "@/data/static-blogs";
 
 export default function BlogSection() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [blogs, setBlogs] = useState<PublicBlog[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
         setLoading(true);
-        setError(null);
         const response = await getPublicBlogs({
           businessId: process.env.NEXT_PUBLIC_BUSINESS_ID,
           limit: 50,
         });
-        setBlogs(response.data);
+        const apiSlugs = new Set(response.data.map((b) => b.slug));
+        const merged = [
+          ...response.data,
+          ...staticBlogs.filter((s) => !apiSlugs.has(s.slug)),
+        ].sort(
+          (a, b) =>
+            new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+        );
+        setBlogs(merged);
       } catch (err) {
         console.error("Failed to fetch blogs:", err);
-        setError("Failed to load blogs. Please try again later.");
+        setBlogs([...staticBlogs].sort(
+          (a, b) =>
+            new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+        ));
       } finally {
         setLoading(false);
       }
@@ -74,26 +83,8 @@ export default function BlogSection() {
           </div>
         )}
 
-        {/* Error State */}
-        {error && !loading && (
-          <div
-            className="text-center py-16 px-6 rounded-2xl max-w-2xl mx-auto"
-            style={{
-              background: "var(--card)",
-              border: "1px solid var(--border)",
-            }}
-          >
-            <h3
-              className="text-xl font-semibold mb-2"
-              style={{ color: "var(--primary)" }}
-            >
-              {error}
-            </h3>
-          </div>
-        )}
-
         {/* Results Count */}
-        {!loading && !error && (
+        {!loading && (
           <div className="mb-8">
             <p
               className="text-center"
@@ -106,7 +97,7 @@ export default function BlogSection() {
         )}
 
         {/* Blog Grid */}
-        {!loading && !error && filteredPosts.length === 0 && (
+        {!loading && filteredPosts.length === 0 && (
           <div
             className="text-center py-16 px-6 rounded-2xl max-w-2xl mx-auto"
             style={{
@@ -130,7 +121,7 @@ export default function BlogSection() {
           </div>
         )}
 
-        {!loading && !error && filteredPosts.length > 0 && (
+        {!loading && filteredPosts.length > 0 && (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredPosts.map((post) => (
               <Link
