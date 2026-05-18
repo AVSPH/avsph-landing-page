@@ -156,12 +156,18 @@ export default function RootLayout({
     <html lang="en">
       <GoogleTagManager gtmId="GTM-TWXNMT6C" />
       <GoogleAnalytics gaId="G-ZYWKX4SN8K" />
+      <meta
+        name="google-site-verification"
+        content="Lp-tR63RTVtOZwOWYgTT_bQwVE7bFFZEOqdhq9JPrlo"
+      />
       <body
         className={`${lexend.variable} ${sourceSans3.variable} ${plusJakartaSans.variable} antialiased`}
       >
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd),
+          }}
         />
         <script
           type="application/ld+json"
